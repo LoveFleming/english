@@ -1,0 +1,1302 @@
+[
+  {
+    "id": "q1",
+    "question": "I _____ to school every day.",
+    "options": [
+      "go",
+      "goes",
+      "going",
+      "to go"
+    ],
+    "correctAnswer": "go",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q2",
+    "question": "_____ you go to school?",
+    "options": [
+      "Do",
+      "Does",
+      "Is",
+      "Are"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q3",
+    "question": "We _____ have a car.",
+    "options": [
+      "doesn't",
+      "isn't",
+      "aren't",
+      "don't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q4",
+    "question": "She _____ like apples.",
+    "options": [
+      "doesn't",
+      "aren't",
+      "don't",
+      "isn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q5",
+    "question": "My friends _____ breakfast together.",
+    "options": [
+      "is eating",
+      "to eat",
+      "eats",
+      "eat"
+    ],
+    "correctAnswer": "eat",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q6",
+    "question": "We _____ watch TV.",
+    "options": [
+      "isn't",
+      "aren't",
+      "doesn't",
+      "don't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "success"
+  },
+  {
+    "id": "q7",
+    "question": "_____ they play tennis?",
+    "options": [
+      "Do",
+      "Does",
+      "Are",
+      "Is"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q8",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "to work",
+      "working",
+      "work",
+      "works"
+    ],
+    "correctAnswer": "works",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q9",
+    "question": "We _____ go to school.",
+    "options": [
+      "aren't",
+      "isn't",
+      "doesn't",
+      "don't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q10",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "to watch",
+      "watch",
+      "watching",
+      "watches"
+    ],
+    "correctAnswer": "watches",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q11",
+    "question": "_____ you do homework?",
+    "options": [
+      "Does",
+      "Is",
+      "Are",
+      "Do"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q12",
+    "question": "We _____ eat breakfast.",
+    "options": [
+      "don't",
+      "aren't",
+      "doesn't",
+      "isn't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q13",
+    "question": "She _____ study English.",
+    "options": [
+      "aren't",
+      "don't",
+      "doesn't",
+      "isn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q14",
+    "question": "_____ she read books?",
+    "options": [
+      "Are",
+      "Is",
+      "Do",
+      "Does"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q15",
+    "question": "I _____ tennis every day.",
+    "options": [
+      "playing",
+      "plays",
+      "to play",
+      "play"
+    ],
+    "correctAnswer": "play",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q16",
+    "question": "The cat _____ do homework.",
+    "options": [
+      "doesn't",
+      "don't",
+      "isn't",
+      "aren't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q17",
+    "question": "_____ she play tennis?",
+    "options": [
+      "Are",
+      "Do",
+      "Does",
+      "Is"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q18",
+    "question": "_____ they do homework?",
+    "options": [
+      "Is",
+      "Are",
+      "Does",
+      "Do"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q19",
+    "question": "_____ you eat breakfast?",
+    "options": [
+      "Is",
+      "Do",
+      "Does",
+      "Are"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q20",
+    "question": "He _____ homework on weekends.",
+    "options": [
+      "does",
+      "do",
+      "is doing",
+      "did"
+    ],
+    "correctAnswer": "does",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q21",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "likes",
+      "to like",
+      "like",
+      "liking"
+    ],
+    "correctAnswer": "likes",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q22",
+    "question": "_____ they like apples?",
+    "options": [
+      "Is",
+      "Do",
+      "Does",
+      "Are"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q23",
+    "question": "I _____ TV every day.",
+    "options": [
+      "to watch",
+      "watching",
+      "watches",
+      "watch"
+    ],
+    "correctAnswer": "watch",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q24",
+    "question": "_____ they study English?",
+    "options": [
+      "Does",
+      "Is",
+      "Do",
+      "Are"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q25",
+    "question": "_____ she do homework?",
+    "options": [
+      "Is",
+      "Are",
+      "Do",
+      "Does"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q26",
+    "question": "My friends _____ apples together.",
+    "options": [
+      "to like",
+      "likes",
+      "is liking",
+      "like"
+    ],
+    "correctAnswer": "like",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q27",
+    "question": "_____ she watch TV?",
+    "options": [
+      "Is",
+      "Do",
+      "Does",
+      "Are"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q28",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "works",
+      "to work",
+      "work",
+      "working"
+    ],
+    "correctAnswer": "works",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q29",
+    "question": "The cat _____ read books.",
+    "options": [
+      "aren't",
+      "isn't",
+      "doesn't",
+      "don't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q30",
+    "question": "I _____ English every day.",
+    "options": [
+      "study",
+      "studies",
+      "studying",
+      "to study"
+    ],
+    "correctAnswer": "study",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q31",
+    "question": "She _____ like apples.",
+    "options": [
+      "aren't",
+      "isn't",
+      "don't",
+      "doesn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q32",
+    "question": "The cat _____ read books.",
+    "options": [
+      "aren't",
+      "doesn't",
+      "don't",
+      "isn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q33",
+    "question": "She _____ watch TV.",
+    "options": [
+      "aren't",
+      "doesn't",
+      "isn't",
+      "don't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q34",
+    "question": "The cat _____ study English.",
+    "options": [
+      "doesn't",
+      "don't",
+      "isn't",
+      "aren't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q35",
+    "question": "_____ you work hard?",
+    "options": [
+      "Does",
+      "Do",
+      "Is",
+      "Are"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q36",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "to read",
+      "reads",
+      "read",
+      "reading"
+    ],
+    "correctAnswer": "reads",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q37",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "work",
+      "works",
+      "to work",
+      "working"
+    ],
+    "correctAnswer": "works",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q38",
+    "question": "_____ they like apples?",
+    "options": [
+      "Does",
+      "Is",
+      "Do",
+      "Are"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q39",
+    "question": "The cat _____ read books.",
+    "options": [
+      "isn't",
+      "aren't",
+      "don't",
+      "doesn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q40",
+    "question": "The cat _____ have a car.",
+    "options": [
+      "doesn't",
+      "don't",
+      "isn't",
+      "aren't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q41",
+    "question": "_____ she work hard?",
+    "options": [
+      "Are",
+      "Is",
+      "Do",
+      "Does"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q42",
+    "question": "She _____ read books.",
+    "options": [
+      "aren't",
+      "isn't",
+      "don't",
+      "doesn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q43",
+    "question": "My friends _____ homework together.",
+    "options": [
+      "to do",
+      "is doing",
+      "does",
+      "do"
+    ],
+    "correctAnswer": "do",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q44",
+    "question": "_____ she like apples?",
+    "options": [
+      "Do",
+      "Does",
+      "Are",
+      "Is"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q45",
+    "question": "He _____ TV on weekends.",
+    "options": [
+      "watched",
+      "watches",
+      "watch",
+      "is watching"
+    ],
+    "correctAnswer": "watches",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q46",
+    "question": "My friends _____ English together.",
+    "options": [
+      "is studying",
+      "studies",
+      "to study",
+      "study"
+    ],
+    "correctAnswer": "study",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q47",
+    "question": "_____ she do homework?",
+    "options": [
+      "Does",
+      "Is",
+      "Do",
+      "Are"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q48",
+    "question": "_____ you do homework?",
+    "options": [
+      "Are",
+      "Do",
+      "Does",
+      "Is"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q49",
+    "question": "_____ they work hard?",
+    "options": [
+      "Does",
+      "Are",
+      "Is",
+      "Do"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q50",
+    "question": "She _____ study English.",
+    "options": [
+      "aren't",
+      "doesn't",
+      "isn't",
+      "don't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "success"
+  },
+  {
+    "id": "q51",
+    "question": "_____ you go to school?",
+    "options": [
+      "Is",
+      "Are",
+      "Does",
+      "Do"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q52",
+    "question": "She _____ have a car.",
+    "options": [
+      "isn't",
+      "aren't",
+      "don't",
+      "doesn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q53",
+    "question": "The cat _____ study English.",
+    "options": [
+      "aren't",
+      "isn't",
+      "don't",
+      "doesn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q54",
+    "question": "He _____ homework on weekends.",
+    "options": [
+      "do",
+      "is doing",
+      "did",
+      "does"
+    ],
+    "correctAnswer": "does",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q55",
+    "question": "My friends _____ tennis together.",
+    "options": [
+      "play",
+      "plays",
+      "is playing",
+      "to play"
+    ],
+    "correctAnswer": "play",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q56",
+    "question": "He _____ homework on weekends.",
+    "options": [
+      "did",
+      "is doing",
+      "do",
+      "does"
+    ],
+    "correctAnswer": "does",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q57",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "has",
+      "have",
+      "having",
+      "to have"
+    ],
+    "correctAnswer": "has",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q58",
+    "question": "We _____ do homework.",
+    "options": [
+      "don't",
+      "isn't",
+      "aren't",
+      "doesn't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q59",
+    "question": "I _____ tennis every day.",
+    "options": [
+      "play",
+      "plays",
+      "playing",
+      "to play"
+    ],
+    "correctAnswer": "play",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q60",
+    "question": "She _____ go to school.",
+    "options": [
+      "isn't",
+      "don't",
+      "doesn't",
+      "aren't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q61",
+    "question": "My friends _____ to school together.",
+    "options": [
+      "to go",
+      "goes",
+      "is going",
+      "go"
+    ],
+    "correctAnswer": "go",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q62",
+    "question": "The cat _____ watch TV.",
+    "options": [
+      "don't",
+      "doesn't",
+      "aren't",
+      "isn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q63",
+    "question": "My friends _____ books together.",
+    "options": [
+      "is reading",
+      "reads",
+      "to read",
+      "read"
+    ],
+    "correctAnswer": "read",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q64",
+    "question": "_____ they study English?",
+    "options": [
+      "Do",
+      "Does",
+      "Are",
+      "Is"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q65",
+    "question": "My friends _____ breakfast together.",
+    "options": [
+      "eat",
+      "eats",
+      "is eating",
+      "to eat"
+    ],
+    "correctAnswer": "eat",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q66",
+    "question": "She _____ eat breakfast.",
+    "options": [
+      "aren't",
+      "doesn't",
+      "don't",
+      "isn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q67",
+    "question": "_____ you eat breakfast?",
+    "options": [
+      "Do",
+      "Does",
+      "Is",
+      "Are"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q68",
+    "question": "She _____ eat breakfast.",
+    "options": [
+      "aren't",
+      "doesn't",
+      "isn't",
+      "don't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q69",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "watch",
+      "watches",
+      "to watch",
+      "watching"
+    ],
+    "correctAnswer": "watches",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q70",
+    "question": "I _____ tennis every day.",
+    "options": [
+      "to play",
+      "playing",
+      "play",
+      "plays"
+    ],
+    "correctAnswer": "play",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q71",
+    "question": "_____ she work hard?",
+    "options": [
+      "Do",
+      "Is",
+      "Does",
+      "Are"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q72",
+    "question": "_____ they go to school?",
+    "options": [
+      "Do",
+      "Does",
+      "Is",
+      "Are"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q73",
+    "question": "I _____ hard every day.",
+    "options": [
+      "to work",
+      "works",
+      "working",
+      "work"
+    ],
+    "correctAnswer": "work",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q74",
+    "question": "I _____ hard every day.",
+    "options": [
+      "work",
+      "works",
+      "working",
+      "to work"
+    ],
+    "correctAnswer": "work",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q75",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "works",
+      "work",
+      "to work",
+      "working"
+    ],
+    "correctAnswer": "works",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q76",
+    "question": "I _____ a car every day.",
+    "options": [
+      "to have",
+      "having",
+      "have",
+      "has"
+    ],
+    "correctAnswer": "have",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q77",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "working",
+      "to work",
+      "work",
+      "works"
+    ],
+    "correctAnswer": "works",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q78",
+    "question": "_____ she do homework?",
+    "options": [
+      "Are",
+      "Is",
+      "Do",
+      "Does"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q79",
+    "question": "She _____ do homework.",
+    "options": [
+      "don't",
+      "aren't",
+      "doesn't",
+      "isn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q80",
+    "question": "_____ she work hard?",
+    "options": [
+      "Are",
+      "Is",
+      "Do",
+      "Does"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  },
+  {
+    "id": "q81",
+    "question": "She _____ have a car.",
+    "options": [
+      "doesn't",
+      "isn't",
+      "aren't",
+      "don't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q82",
+    "question": "_____ you go to school?",
+    "options": [
+      "Do",
+      "Does",
+      "Are",
+      "Is"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q83",
+    "question": "We _____ play tennis.",
+    "options": [
+      "isn't",
+      "aren't",
+      "doesn't",
+      "don't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q84",
+    "question": "We _____ go to school.",
+    "options": [
+      "don't",
+      "isn't",
+      "aren't",
+      "doesn't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q85",
+    "question": "He _____ a car on weekends.",
+    "options": [
+      "has",
+      "have",
+      "is having",
+      "had"
+    ],
+    "correctAnswer": "has",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q86",
+    "question": "My friends _____ TV together.",
+    "options": [
+      "watch",
+      "watches",
+      "is watching",
+      "to watch"
+    ],
+    "correctAnswer": "watch",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q87",
+    "question": "She _____ have a car.",
+    "options": [
+      "doesn't",
+      "aren't",
+      "don't",
+      "isn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q88",
+    "question": "_____ you read books?",
+    "options": [
+      "Is",
+      "Are",
+      "Does",
+      "Do"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q89",
+    "question": "My friends _____ apples together.",
+    "options": [
+      "is liking",
+      "likes",
+      "to like",
+      "like"
+    ],
+    "correctAnswer": "like",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q90",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "to go",
+      "going",
+      "go",
+      "goes"
+    ],
+    "correctAnswer": "goes",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q91",
+    "question": "We _____ read books.",
+    "options": [
+      "don't",
+      "doesn't",
+      "aren't",
+      "isn't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q92",
+    "question": "My friends _____ tennis together.",
+    "options": [
+      "play",
+      "plays",
+      "to play",
+      "is playing"
+    ],
+    "correctAnswer": "play",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q93",
+    "question": "The cat _____ watch TV.",
+    "options": [
+      "isn't",
+      "aren't",
+      "doesn't",
+      "don't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q94",
+    "question": "It _____ a lot in spring.",
+    "options": [
+      "to work",
+      "works",
+      "work",
+      "working"
+    ],
+    "correctAnswer": "works",
+    "explanation": "現在簡單式中，主詞為第三人稱單數時，動詞字尾要加 s 或 es。",
+    "status": "untest"
+  },
+  {
+    "id": "q95",
+    "question": "We _____ play tennis.",
+    "options": [
+      "doesn't",
+      "isn't",
+      "don't",
+      "aren't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q96",
+    "question": "We _____ do homework.",
+    "options": [
+      "doesn't",
+      "isn't",
+      "aren't",
+      "don't"
+    ],
+    "correctAnswer": "don't",
+    "explanation": "I, you, we, they 及複數名詞的否定助動詞為 don't (do not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q97",
+    "question": "The cat _____ play tennis.",
+    "options": [
+      "aren't",
+      "isn't",
+      "don't",
+      "doesn't"
+    ],
+    "correctAnswer": "doesn't",
+    "explanation": "He, she, it 及單數名詞的否定助動詞為 doesn't (does not)。",
+    "status": "untest"
+  },
+  {
+    "id": "q98",
+    "question": "_____ they study English?",
+    "options": [
+      "Is",
+      "Are",
+      "Does",
+      "Do"
+    ],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數 (they) 或第一/二人稱 (I, you, we) 形成疑問句時使用 Do。",
+    "status": "untest"
+  },
+  {
+    "id": "q99",
+    "question": "I _____ English every day.",
+    "options": [
+      "study",
+      "studies",
+      "studying",
+      "to study"
+    ],
+    "correctAnswer": "study",
+    "explanation": "遇到第一、二人稱或複數主詞時，動詞保持原形。",
+    "status": "untest"
+  },
+  {
+    "id": "q100",
+    "question": "_____ she watch TV?",
+    "options": [
+      "Does",
+      "Do",
+      "Is",
+      "Are"
+    ],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數 (he, she, it) 形成疑問句時使用 Does。",
+    "status": "untest"
+  }
+]
