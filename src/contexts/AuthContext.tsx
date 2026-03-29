@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
+const API_URL = "http://localhost:3001/api";
+
 export interface User {
   username: string;
   createdAt: string;
@@ -28,8 +30,8 @@ interface AuthContextType {
   user: User | null;
   scores: ExamScore[];
   isAuthenticated: boolean;
-  login: (username: string, password: string) => boolean;
-  register: (username: string, password: string) => boolean;
+  login: (username: string, password: string) => Promise<boolean>;
+  register: (username: string, password: string) => Promise<boolean>;
   logout: () => void;
   saveScore: (score: ExamScore) => void;
   exportWrongQuestions: () => string;
@@ -37,120 +39,103 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const STORAGE_KEYS = {
-  USERS: "english_app_users",
-  CURRENT_USER: "english_app_current_user",
-  SCORES: "english_app_scores",
-};
-
-function getUsers(): Record<string, string> {
-  const data = localStorage.getItem(STORAGE_KEYS.USERS);
-  return data ? JSON.parse(data) : {};
-}
-
-function saveUsers(users: Record<string, string>) {
-  localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(users));
-}
-
-function getStoredScores(username: string): ExamScore[] {
-  const data = localStorage.getItem(`${STORAGE_KEYS.SCORES}_${username}`);
-  return data ? JSON.parse(data) : [];
-}
-
-function saveStoredScores(username: string, scores: ExamScore[]) {
-  localStorage.setItem(`${STORAGE_KEYS.SCORES}_${username}`, JSON.stringify(scores));
-}
-
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [scores, setScores] = useState<ExamScore[]>([]);
 
+  // On mount, check session
   useEffect(() => {
-    // Check for logged in user on load
-    const storedUser = localStorage.getItem(STORAGE_KEYS.CURRENT_USER);
-    if (storedUser) {
-      const userData = JSON.parse(storedUser);
+    const session = sessionStorage.getItem("english_app_session");
+    if (session) {
+      const userData = JSON.parse(session);
       setUser(userData);
-      setScores(getStoredScores(userData.username));
+      // Load scores from API
+      fetch(`${API_URL}/scores/${userData.username}`)
+        .then(res => res.json())
+        .then(data => setScores(data))
+        .catch(() => setScores([]));
     }
   }, []);
 
-  const register = (username: string, password: string): boolean => {
-    if (!username || !password) return false;
-    if (username.length < 3 || password.length < 3) return false;
-    
-    const users = getUsers();
-    if (users[username]) return false; // User already exists
-    
-    // Simple password hashing (for demo - not secure for production)
-    const hashedPassword = btoa(password + "english_app_salt");
-    users[username] = hashedPassword;
-    saveUsers(users);
-    
-    // Auto login after register
-    const newUser: User = { username, createdAt: new Date().toISOString() };
-    setUser(newUser);
-    setScores([]);
-    localStorage.setItem(STORAGE_KEYS.CURRENT_USER, JSON.stringify(newUser));
-    
-    return true;
+  const register = async (username: string, password: string): Promise<boolean> => {
+    if (!username || !password || username.length < 3 || password.length < 3) return false;
+
+    try {
+      const res = await fetch(`${API_URL}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        const newUser: User = { username, createdAt: new Date().toISOString() };
+        setUser(newUser);
+        setScores([]);
+        sessionStorage.setItem("english_app_session", JSON.stringify(newUser));
+        return true;
+      }
+      return false;
+    } catch {
+      return false;
+    }
   };
 
-  const login = (username: string, password: string): boolean => {
+  const login = async (username: string, password: string): Promise<boolean> => {
     if (!username || !password) return false;
-    
-    const users = getUsers();
-    const hashedPassword = btoa(password + "english_app_salt");
-    
-    if (users[username] === hashedPassword) {
-      const newUser: User = { username, createdAt: users[username + "_created"] || new Date().toISOString() };
-      setUser(newUser);
-      setScores(getStoredScores(username));
-      localStorage.setItem(STORAGE_KEYS.CURRENT_USER, JSON.stringify(newUser));
-      return true;
+
+    try {
+      const res = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        const userData: User = { username, createdAt: data.createdAt };
+        setUser(userData);
+        // Load scores
+        const scoresRes = await fetch(`${API_URL}/scores/${username}`);
+        const scoresData = await scoresRes.json();
+        setScores(scoresData);
+        sessionStorage.setItem("english_app_session", JSON.stringify(userData));
+        return true;
+      }
+      return false;
+    } catch {
+      return false;
     }
-    return false;
   };
 
   const logout = () => {
     setUser(null);
     setScores([]);
-    localStorage.removeItem(STORAGE_KEYS.CURRENT_USER);
+    sessionStorage.removeItem("english_app_session");
   };
 
   const saveScore = (score: ExamScore) => {
     if (!user) return;
     const newScores = [score, ...scores];
     setScores(newScores);
-    saveStoredScores(user.username, newScores);
+    // Save to API
+    fetch(`${API_URL}/scores/${user.username}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(score),
+    }).catch(() => {});
   };
 
   const exportWrongQuestions = (): string => {
     if (!user || scores.length === 0) return "";
-    
     const allWrong: WrongQuestion[] = [];
-    scores.forEach(score => {
-      allWrong.push(...score.wrongQuestions);
-    });
-    
-    // Remove duplicates by question id
-    const uniqueWrong = Array.from(
-      new Map(allWrong.map(q => [q.id, q])).values()
-    );
-    
-    return JSON.stringify(uniqueWrong, null, 2);
+    scores.forEach(s => allWrong.push(...s.wrongQuestions));
+    const unique = Array.from(new Map(allWrong.map(q => [q.id, q])).values());
+    return JSON.stringify(unique, null, 2);
   };
 
   return (
     <AuthContext.Provider value={{
-      user,
-      scores,
-      isAuthenticated: !!user,
-      login,
-      register,
-      logout,
-      saveScore,
-      exportWrongQuestions,
+      user, scores, isAuthenticated: !!user,
+      login, register, logout, saveScore, exportWrongQuestions,
     }}>
       {children}
     </AuthContext.Provider>
@@ -159,8 +144,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
 export function useAuth() {
   const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within AuthProvider");
-  }
+  if (!context) throw new Error("useAuth must be used within AuthProvider");
   return context;
 }

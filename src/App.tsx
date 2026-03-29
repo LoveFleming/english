@@ -13,142 +13,139 @@ function AppContent() {
   const { user, isAuthenticated, logout, scores } = useAuth();
   const [activeAppId, setActiveAppId] = useState<string>("present-simple");
   const [openTabs, setOpenTabs] = useState<string[]>(["present-simple"]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Show auth page if not logged in
-  if (!isAuthenticated) {
-    return <AuthPage />;
-  }
+  if (!isAuthenticated) return <AuthPage />;
 
   const openApp = (id: string) => {
-    setOpenTabs((prev) => {
-      if (!prev.includes(id)) return [...prev, id];
-      return prev;
-    });
+    setOpenTabs((prev) => prev.includes(id) ? prev : [...prev, id]);
     setActiveAppId(id);
+    setSidebarOpen(false); // Close sidebar on mobile after selection
   };
 
   const closeTab = (id: string) => {
     setOpenTabs((prev) => {
       const next = prev.filter((t) => t !== id);
-      if (activeAppId === id) {
-        setActiveAppId(next.length > 0 ? next[next.length - 1] : "present-simple");
-      }
+      if (activeAppId === id) setActiveAppId(next.length > 0 ? next[next.length - 1] : "present-simple");
       return next;
     });
   };
 
-  // Static navigation data for the English app
-  const nav = {
-    "Grammar Essentials": [
-      { id: "present-simple", title: "現在簡單式 (Present Simple)" }
+  const nav: Record<string, { id: string; title: string }[]> = {
+    "📚 英文 English": [
+      { id: "present-simple", title: "現在簡單式" },
+      { id: "vocab-cards", title: "英文單字卡" },
     ],
-    "📚 單字卡 Vocab": [
-      { id: "vocab-cards", title: "英文單字卡" }
-    ],
-    "🔢 數學練習": [
+    "🔢 數學 Math": [
       { id: "linear-equations", title: "二元一次方程式" },
-      { id: "quadrant", title: "象限座標挑戰" }
+      { id: "quadrant", title: "象限座標挑戰" },
     ],
-    "👤 會員專區": [
-      { id: "score-history", title: "📊 考試成績" }
-    ]
+    "👤 會員": [
+      { id: "score-history", title: "📊 考試成績" },
+    ],
   };
 
   const labelFor = (id: string) => {
     if (id === "quiz.present-simple") return "測驗: 現在簡單式";
-    if (id === "score-history") return "考試成績";
     for (const category in nav) {
-      const item = nav[category as keyof typeof nav].find(i => i.id === id);
+      const item = nav[category].find(i => i.id === id);
       if (item) return item.title;
     }
     return id;
   };
 
   const renderContent = () => {
-    if (activeAppId === "present-simple") return <PresentSimple openApp={openApp} />;
-    if (activeAppId === "vocab-cards") return <VocabCards />;
-    if (activeAppId === "quiz.present-simple") return <QuizPage />;
-    if (activeAppId === "score-history") return <ScoreHistoryPage />;
-    if (activeAppId === "linear-equations") return <LinearEquations />;
-    if (activeAppId === "quadrant") return <QuadrantPage />;
-    return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
+    switch (activeAppId) {
+      case "present-simple": return <PresentSimple openApp={openApp} />;
+      case "vocab-cards": return <VocabCards />;
+      case "quiz.present-simple": return <QuizPage />;
+      case "score-history": return <ScoreHistoryPage />;
+      case "linear-equations": return <LinearEquations />;
+      case "quadrant": return <QuadrantPage />;
+      default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
+    }
   };
 
-  // Calculate stats
   const totalExams = scores.length;
   const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b.score, 0) / scores.length) : 0;
 
   return (
-    <div className="h-screen w-full flex flex-col bg-zinc-50 text-stone-900 font-sans selection:bg-blue-100 overflow-hidden">
-      {/* Top Header */}
-      <header className="h-14 flex items-center justify-between bg-white border-b border-zinc-200 px-4 shrink-0 shadow-sm z-10">
-        <div className="flex items-center gap-4">
-          <button className="p-2 -ml-2 rounded-full text-zinc-500 hover:bg-zinc-100 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+    <div className="h-screen w-full flex flex-col bg-zinc-50 text-stone-900 font-sans overflow-hidden">
+      {/* Header */}
+      <header className="h-12 sm:h-14 flex items-center justify-between bg-white border-b border-zinc-200 px-3 sm:px-4 shrink-0 shadow-sm z-30">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="p-2 -ml-1 rounded-lg text-zinc-500 hover:bg-zinc-100 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
-          <div className="text-lg font-bold tracking-tight text-blue-700" style={{ fontFamily: "cursive, sans-serif" }}>
+          <div className="text-base sm:text-lg font-bold tracking-tight text-blue-700" style={{ fontFamily: "cursive, sans-serif" }}>
             👑 國王的學習空間
           </div>
         </div>
-        
-        {/* User Info */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 text-sm">
+
+        <div className="flex items-center gap-2 sm:gap-4">
+          <div className="hidden sm:flex items-center gap-2 text-sm">
             <span className="text-stone-500">👋 歡迎，</span>
             <span className="font-semibold text-blue-700">{user?.username}</span>
             <span className="text-stone-400">|</span>
-            <span className="text-stone-500">考試次數: <span className="font-semibold text-stone-700">{totalExams}</span></span>
+            <span className="text-stone-500">考試: <span className="font-semibold">{totalExams}</span></span>
             <span className="text-stone-400">|</span>
-            <span className="text-stone-500">平均: <span className="font-semibold text-stone-700">{avgScore}%</span></span>
+            <span className="text-stone-500">平均: <span className="font-semibold">{avgScore}%</span></span>
           </div>
-          <button
-            onClick={logout}
-            className="px-3 py-1.5 text-sm bg-stone-100 hover:bg-stone-200 text-stone-600 rounded-lg transition-colors"
-          >
+          {/* Mobile: show username only */}
+          <span className="sm:hidden text-sm font-semibold text-blue-700">{user?.username}</span>
+          <button onClick={logout} className="px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-stone-100 hover:bg-stone-200 text-stone-600 rounded-lg transition-colors">
             登出
           </button>
         </div>
       </header>
 
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div className="fixed inset-0 bg-black/30 z-20 sm:hidden" onClick={() => setSidebarOpen(false)} />
+      )}
+
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
-        <aside className="w-64 bg-white border-r border-zinc-200 flex-shrink-0 flex flex-col py-2 justify-between">
-          <div className="flex flex-col overflow-y-auto">
-            {(Object.keys(nav) as Array<keyof typeof nav>).map((cat) => (
+        <aside className={cn(
+          "fixed sm:relative inset-y-0 left-0 z-20 sm:z-0 w-64 bg-white border-r border-zinc-200 flex-shrink-0 flex flex-col py-2 transition-transform duration-200 sm:translate-x-0",
+          sidebarOpen ? "translate-x-0" : "-translate-x-full sm:translate-x-0"
+        )}>
+          <div className="flex-1 flex flex-col overflow-y-auto pt-10 sm:pt-0">
+            {(Object.keys(nav) as string[]).map((cat) => (
               <SidebarSection key={cat} title={cat}>
                 <div className="space-y-1">
-                  {nav[cat].map((item) => {
-                    const active = activeAppId === item.id;
-                    return (
-                      <NavItem
-                        key={item.id}
-                        active={active}
-                        label={item.title}
-                        onClick={() => openApp(item.id)}
-                      />
-                    );
-                  })}
+                  {nav[cat].map((item) => (
+                    <NavItem
+                      key={item.id}
+                      active={activeAppId === item.id}
+                      label={item.title}
+                      onClick={() => openApp(item.id)}
+                    />
+                  ))}
                 </div>
               </SidebarSection>
             ))}
           </div>
 
-          <div className="mt-auto border-t border-zinc-200 opacity-95 hover:opacity-100 transition-opacity overflow-hidden bg-white">
-            <img 
-               src="/king.jpeg" 
-               alt="Little Yuanbao King" 
-               className="w-full aspect-square object-cover hover:scale-105 transition-transform origin-bottom"
-               onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          <div className="mt-auto border-t border-zinc-200 opacity-95 hover:opacity-100 transition-opacity overflow-hidden bg-white hidden sm:block">
+            <img
+              src="/king.jpeg"
+              alt="Little Yuanbao King"
+              className="w-full aspect-square object-cover hover:scale-105 transition-transform origin-bottom"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>
         </aside>
 
         {/* Main */}
-        <main className="flex-1 overflow-y-auto bg-zinc-50 flex flex-col">
-          {/* Tabs */}
-          <div className="flex w-full items-end gap-1 overflow-x-auto bg-zinc-100 px-4 pt-2 border-b border-zinc-200">
+        <main className="flex-1 overflow-y-auto bg-zinc-50 flex flex-col min-w-0">
+          {/* Tabs - scrollable on mobile */}
+          <div className="flex w-full items-end gap-1 overflow-x-auto bg-zinc-100 px-2 sm:px-4 pt-2 border-b border-zinc-200">
             {openTabs.map((tabId) => {
               const isActive = activeAppId === tabId;
               return (
@@ -156,20 +153,17 @@ function AppContent() {
                   key={tabId}
                   onClick={() => openApp(tabId)}
                   className={cn(
-                    "group relative flex cursor-pointer items-center justify-between gap-3 px-4 py-2 text-sm transition-all border-t border-l border-r border-transparent rounded-t-md",
+                    "group relative flex cursor-pointer items-center justify-between gap-1 sm:gap-3 px-2 sm:px-4 py-2 text-xs sm:text-sm transition-all border-t border-l border-r border-transparent rounded-t-md whitespace-nowrap shrink-0",
                     isActive
                       ? "bg-white text-blue-600 font-medium border-zinc-200 -mb-px pb-[9px]"
                       : "bg-transparent text-zinc-600 hover:bg-zinc-200/50"
                   )}
                 >
-                  <span className="truncate whitespace-nowrap">{labelFor(tabId)}</span>
+                  <span className="truncate">{labelFor(tabId)}</span>
                   <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      closeTab(tabId);
-                    }}
+                    onClick={(e) => { e.stopPropagation(); closeTab(tabId); }}
                     className={cn(
-                      "flex h-4 w-4 items-center justify-center rounded-full transition-colors hover:bg-zinc-200",
+                      "flex h-4 w-4 items-center justify-center rounded-full hover:bg-zinc-200",
                       isActive ? "text-zinc-400 hover:text-red-500" : "text-zinc-400 opacity-0 group-hover:opacity-100 hover:text-red-500"
                     )}
                   >
@@ -182,7 +176,7 @@ function AppContent() {
             })}
           </div>
 
-          <div className="flex-1 w-full px-6 py-4 flex flex-col min-h-0 bg-zinc-50">
+          <div className="flex-1 w-full px-3 sm:px-6 py-3 sm:py-4 flex flex-col min-h-0 bg-zinc-50 overflow-y-auto">
             {renderContent()}
           </div>
         </main>
