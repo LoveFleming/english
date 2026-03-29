@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PresentSimple from "./pages/PresentSimple";
 import QuizPage from "./pages/QuizPage";
+import VocabCards from "./pages/VocabCards";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
 export default function App() {
@@ -29,6 +30,9 @@ export default function App() {
   const nav = {
     "Grammar Essentials": [
       { id: "present-simple", title: "現在簡單式 (Present Simple)" }
+    ],
+    "📚 單字卡 Vocab": [
+      { id: "vocab-cards", title: "英文單字卡" }
     ]
   };
 
@@ -43,6 +47,7 @@ export default function App() {
 
   const renderContent = () => {
     if (activeAppId === "present-simple") return <PresentSimple openApp={openApp} />;
+    if (activeAppId === "vocab-cards") return <VocabCards />;
     if (activeAppId === "quiz.present-simple") return <QuizPage />;
     return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
   };
