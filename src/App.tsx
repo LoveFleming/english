@@ -4,6 +4,8 @@ import QuizPage from "./pages/QuizPage";
 import VocabCards from "./pages/VocabCards";
 import AuthPage from "./pages/AuthPage";
 import ScoreHistoryPage from "./pages/ScoreHistoryPage";
+import LinearEquations from "./pages/LinearEquations";
+import QuadrantPage from "./pages/QuadrantPage";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -43,6 +45,10 @@ function AppContent() {
     "📚 單字卡 Vocab": [
       { id: "vocab-cards", title: "英文單字卡" }
     ],
+    "🔢 數學練習": [
+      { id: "linear-equations", title: "二元一次方程式" },
+      { id: "quadrant", title: "象限座標挑戰" }
+    ],
     "👤 會員專區": [
       { id: "score-history", title: "📊 考試成績" }
     ]
@@ -63,6 +69,8 @@ function AppContent() {
     if (activeAppId === "vocab-cards") return <VocabCards />;
     if (activeAppId === "quiz.present-simple") return <QuizPage />;
     if (activeAppId === "score-history") return <ScoreHistoryPage />;
+    if (activeAppId === "linear-equations") return <LinearEquations />;
+    if (activeAppId === "quadrant") return <QuadrantPage />;
     return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
   };
 
@@ -80,8 +88,8 @@ function AppContent() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
-          <div className="text-lg font-bold tracking-tight text-blue-700 italic" style={{ fontFamily: "cursive, sans-serif" }}>
-            ~ENGLISH APP~
+          <div className="text-lg font-bold tracking-tight text-blue-700" style={{ fontFamily: "cursive, sans-serif" }}>
+            👑 國王的學習空間
           </div>
         </div>
         

@@ -48,8 +48,8 @@ export default function AuthPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <Card className="w-full max-w-md shadow-xl border-0">
         <div className="text-center mb-8">
-          <div className="text-3xl font-bold text-blue-700 italic mb-2" style={{ fontFamily: "cursive, sans-serif" }}>
-            ~ENGLISH APP~
+          <div className="text-3xl font-bold text-blue-700 mb-2" style={{ fontFamily: "cursive, sans-serif" }}>
+            👑 國王的學習空間
           </div>
           <p className="text-stone-500">
             {isRegister ? "建立帳號成為會員" : "登入你的帳號"}

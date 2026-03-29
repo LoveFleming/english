@@ -8,6 +8,7 @@ export interface User {
 export interface ExamScore {
   id: string;
   date: string;
+  subject?: string;
   score: number;
   totalQuestions: number;
   correctAnswers: number;
