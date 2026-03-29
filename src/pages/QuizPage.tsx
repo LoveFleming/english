@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "../components/ui/shared";
+import { useAuth, ExamScore, WrongQuestion } from "../contexts/AuthContext";
 
 type QuizItemScrubbed = {
   id: string;
@@ -18,6 +19,7 @@ type GradedItem = {
 };
 
 export default function QuizPage() {
+  const { isAuthenticated, saveScore, user } = useAuth();
   const [phase, setPhase] = useState<"setup" | "loading" | "active" | "result" | "error">("loading");
   
   // Setup state
@@ -130,6 +132,31 @@ export default function QuizPage() {
       setScore(data.score);
       setGradedResults(data.gradedItems);
       setPhase("result");
+      
+      // Save score to user history if logged in
+      if (isAuthenticated && user) {
+        const wrongQuestions: WrongQuestion[] = data.gradedItems
+          .filter((item: GradedItem) => !item.isCorrect)
+          .map((item: GradedItem) => ({
+            id: item.id,
+            question: item.question,
+            userAnswer: item.userAnswer,
+            correctAnswer: item.correctAnswer,
+            explanation: item.explanation,
+          }));
+        
+        const examScore: ExamScore = {
+          id: Date.now().toString(),
+          date: new Date().toISOString(),
+          score: data.score,
+          totalQuestions: items.length,
+          correctAnswers: items.length - wrongQuestions.length,
+          wrongAnswers: wrongQuestions.length,
+          wrongQuestions,
+        };
+        
+        saveScore(examScore);
+      }
     } catch (e) {
       console.error(e);
       setPhase("error");
