@@ -1,0 +1,462 @@
+[
+  {
+    "id": "q001",
+    "question": "My mother _____ breakfast every morning.",
+    "options": ["makes", "make", "making", "to make"],
+    "correctAnswer": "makes",
+    "explanation": "第三人稱單數 (my mother = she)，動詞加 s/es。make → makes。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q002",
+    "question": "They _____ to school by bus.",
+    "options": ["go", "goes", "going", "to go"],
+    "correctAnswer": "go",
+    "explanation": "第三人稱複數 (they)，動詞保持原形。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q003",
+    "question": "She _____ English every day.",
+    "options": ["studies", "study", "studys", "studying"],
+    "correctAnswer": "studies",
+    "explanation": "study 是子音 + y 結尾，第三人稱單數要把 y 改成 ies → studies。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q004",
+    "question": "Water _____ at 100 degrees Celsius.",
+    "options": ["boils", "boil", "boiling", "is boiling"],
+    "correctAnswer": "boils",
+    "explanation": "表示科學事實、自然法則，用現在簡單式。Water = it（第三人稱單數）→ boils。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q005",
+    "question": "He _____ not like spicy food.",
+    "options": ["does", "do", "is", "has"],
+    "correctAnswer": "does",
+    "explanation": "第三人稱單數否定句：He does not (doesn't) + 原形動詞。",
+    "category": "negative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q006",
+    "question": "We _____ not eat lunch at school.",
+    "options": ["do", "does", "are", "is"],
+    "correctAnswer": "do",
+    "explanation": "第一人稱複數否定句：We do not (don't) + 原形動詞。",
+    "category": "negative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q007",
+    "question": "_____ she play the piano?",
+    "options": ["Does", "Do", "Is", "Has"],
+    "correctAnswer": "Does",
+    "explanation": "第三人稱單數疑問句用 Does 開頭，後接原形動詞。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q008",
+    "question": "_____ they live in Taipei?",
+    "options": ["Do", "Does", "Are", "Is"],
+    "correctAnswer": "Do",
+    "explanation": "第三人稱複數疑問句用 Do 開頭。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q009",
+    "question": "The sun _____ in the east.",
+    "options": ["rises", "rise", "rising", "is rising"],
+    "correctAnswer": "rises",
+    "explanation": "自然現象用現在簡單式。The sun = it → rises。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q010",
+    "question": "I always _____ my homework after dinner.",
+    "options": ["do", "does", "doing", "am doing"],
+    "explanation": "always 是頻率副詞，搭配現在簡單式。I + 原形動詞。",
+    "correctAnswer": "do",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q011",
+    "question": "She sometimes _____ TV before bed.",
+    "options": ["watches", "watch", "watchs", "watching"],
+    "correctAnswer": "watches",
+    "explanation": "watch 以 ch 結尾，第三人稱單數加 es → watches。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q012",
+    "question": "He never _____ late for school.",
+    "options": ["arrives", "arrive", "arriving", "is arriving"],
+    "correctAnswer": "arrives",
+    "explanation": "never 是頻率副詞，用現在簡單式。He + arrives。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q013",
+    "question": "_____ your father drive a car?",
+    "options": ["Does", "Do", "Is", "Can"],
+    "correctAnswer": "Does",
+    "explanation": "your father = he（第三人稱單數），疑問句用 Does。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q014",
+    "question": "What time _____ you usually get up?",
+    "options": ["do", "does", "are", "is"],
+    "correctAnswer": "do",
+    "explanation": "you 搭配 do 形成疑問句。usually 表示習慣，用現在簡單式。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q015",
+    "question": "The baby _____ a lot every night.",
+    "options": ["cries", "cry", "crys", "criing"],
+    "correctAnswer": "cries",
+    "explanation": "cry 是子音 + y 結尾，第三人稱單數 y → ies = cries。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q016",
+    "question": "She _____ a letter to her friend every week.",
+    "options": ["writes", "write", "writs", "writing"],
+    "correctAnswer": "writes",
+    "explanation": "write 加 s → writes（第三人稱單數）。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q017",
+    "question": "_____ your sister speak Japanese?",
+    "options": ["Does", "Do", "Is", "Has"],
+    "correctAnswer": "Does",
+    "explanation": "your sister = she（第三人稱單數），疑問句用 Does。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q018",
+    "question": "I _____ understand this question.",
+    "options": ["do not", "does not", "am not", "is not"],
+    "correctAnswer": "do not",
+    "explanation": "第一人稱否定句用 do not (don't)。",
+    "category": "negative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q019",
+    "question": "My dog _____ very fast.",
+    "options": ["runs", "run", "running", "is run"],
+    "correctAnswer": "runs",
+    "explanation": "my dog = it（第三人稱單數），run + s = runs。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q020",
+    "question": "He _____ his teeth twice a day.",
+    "options": ["brushes", "brush", "brushs", "brushing"],
+    "correctAnswer": "brushes",
+    "explanation": "brush 以 sh 結尾，加 es → brushes。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q021",
+    "question": "They always _____ fun at the party.",
+    "options": ["have", "has", "having", "are have"],
+    "correctAnswer": "have",
+    "explanation": "they 搭配原形動詞 have。always + 現在簡單式。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q022",
+    "question": "She _____ a big family.",
+    "options": ["has", "have", "haves", "having"],
+    "correctAnswer": "has",
+    "explanation": "have 的第三人稱單數是不規則變化 → has（不是 haves）。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q023",
+    "question": "_____ he go to the library every Saturday?",
+    "options": ["Does", "Do", "Is", "Will"],
+    "correctAnswer": "Does",
+    "explanation": "he 是第三人稱單數，疑問句用 Does。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q024",
+    "question": "Where _____ she live?",
+    "options": ["does", "do", "is", "are"],
+    "correctAnswer": "does",
+    "explanation": "she 是第三人稱單數，疑問詞後用 does。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q025",
+    "question": "The train _____ at 8 o'clock.",
+    "options": ["leaves", "leave", "leaving", "is leave"],
+    "correctAnswer": "leaves",
+    "explanation": "時刻表用現在簡單式。the train = it → leaves。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q026",
+    "question": "We _____ not go to school on Sundays.",
+    "options": ["do", "does", "are", "is"],
+    "correctAnswer": "do",
+    "explanation": "we 否定句用 do not (don't)。",
+    "category": "negative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q027",
+    "question": "She _____ English and French.",
+    "options": ["speaks", "speak", "speaking", "is speak"],
+    "correctAnswer": "speaks",
+    "explanation": "she（第三人稱單數），speak + s = speaks。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q028",
+    "question": "It often _____ in the afternoon here.",
+    "options": ["rains", "rain", "raining", "is rain"],
+    "correctAnswer": "rains",
+    "explanation": "often 表示頻率，用現在簡單式。it + rains。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q029",
+    "question": "I _____ breakfast at 7 every morning.",
+    "options": ["have", "has", "having", "am have"],
+    "correctAnswer": "have",
+    "explanation": "I 搭配原形 have。every morning 表示習慣，用現在簡單式。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q030",
+    "question": "He _____ a new car.",
+    "options": ["has", "have", "haves", "is have"],
+    "correctAnswer": "has",
+    "explanation": "have 的第三人稱單數是 has。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q031",
+    "question": "_____ Tom and Mary like pizza?",
+    "options": ["Do", "Does", "Are", "Is"],
+    "correctAnswer": "Do",
+    "explanation": "Tom and Mary = they（複數），用 Do。",
+    "category": "interrogative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q032",
+    "question": "He _____ not have any brothers.",
+    "options": ["does", "do", "is", "has"],
+    "correctAnswer": "does",
+    "explanation": "第三人稱單數否定句用 does not (doesn't)。",
+    "category": "negative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q033",
+    "question": "The Earth _____ around the Sun.",
+    "options": ["goes", "go", "going", "is go"],
+    "correctAnswer": "goes",
+    "explanation": "科學事實用現在簡單式。the Earth = it → goes。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q034",
+    "question": "How often _____ you exercise?",
+    "options": ["do", "does", "are", "is"],
+    "correctAnswer": "do",
+    "explanation": "you 搭配 do。how often 問頻率，用現在簡單式。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q035",
+    "question": "She usually _____ a sandwich for lunch.",
+    "options": ["has", "have", "haves", "is having"],
+    "correctAnswer": "has",
+    "explanation": "usually + 現在簡單式。she + has。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q036",
+    "question": "_____ your parents work in a hospital?",
+    "options": ["Do", "Does", "Are", "Is"],
+    "correctAnswer": "Do",
+    "explanation": "your parents = they（複數），用 Do。",
+    "category": "interrogative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q037",
+    "question": "The class _____ at 9 a.m.",
+    "options": ["begins", "begin", "beginning", "is begin"],
+    "correctAnswer": "begins",
+    "explanation": "時刻表/固定行程用現在簡單式。the class = it → begins。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q038",
+    "question": "Everyone _____ happy at the party.",
+    "options": ["is", "are", "be", "does"],
+    "correctAnswer": "is",
+    "explanation": "everyone 是單數概念，搭配 is。",
+    "category": "affirmative",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q039",
+    "question": "Neither Tom nor Mary _____ to school today.",
+    "options": ["goes", "go", "going", "are going"],
+    "correctAnswer": "goes",
+    "explanation": "neither...nor... 靠近動詞的主詞是 Mary（單數），所以用 goes。",
+    "category": "affirmative",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q040",
+    "question": "The news _____ very good today.",
+    "options": ["is", "are", "be", "does"],
+    "correctAnswer": "is",
+    "explanation": "news 雖然有 s，但是不可數名詞，視為單數，搭配 is。",
+    "category": "affirmative",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q041",
+    "question": "Mathematics _____ my favorite subject.",
+    "options": ["is", "are", "be", "do"],
+    "correctAnswer": "is",
+    "explanation": "Mathematics 雖然有 s，但是學科名稱，視為單數。",
+    "category": "affirmative",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q042",
+    "question": "He usually _____ his room on weekends.",
+    "options": ["cleans", "clean", "cleaning", "is cleaning"],
+    "correctAnswer": "cleans",
+    "explanation": "usually + 現在簡單式。He + cleans。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q043",
+    "question": "She _____ not want to go home.",
+    "options": ["does", "do", "is", "can"],
+    "correctAnswer": "does",
+    "explanation": "第三人稱單數否定句用 does not (doesn't)。",
+    "category": "negative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q044",
+    "question": "_____ there any milk in the fridge?",
+    "options": ["Is", "Are", "Do", "Does"],
+    "correctAnswer": "Is",
+    "explanation": "milk 是不可數名詞，用 Is there...?",
+    "category": "interrogative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q045",
+    "question": "There _____ three books on the desk.",
+    "options": ["are", "is", "have", "has"],
+    "correctAnswer": "are",
+    "explanation": "three books 是複數，用 There are。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q046",
+    "question": "He _____ to be a doctor when he grows up.",
+    "options": ["wants", "want", "wanting", "is wanting"],
+    "correctAnswer": "wants",
+    "explanation": "表示未來的志向可用現在簡單式。He + wants。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q047",
+    "question": "Which sentence is correct?",
+    "options": [
+      "She go to school every day.",
+      "She goes to school every day.",
+      "She going to school every day.",
+      "She is goes to school every day."
+    ],
+    "correctAnswer": "She goes to school every day.",
+    "explanation": "第三人稱單數 she，動詞加 s。every day 表示習慣，用現在簡單式。",
+    "category": "error_correction",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q048",
+    "question": "Which sentence is correct?",
+    "options": [
+      "Do he like coffee?",
+      "Does he likes coffee?",
+      "Does he like coffee?",
+      "Does he liking coffee?"
+    ],
+    "correctAnswer": "Does he like coffee?",
+    "explanation": "Does 後面接原形動詞（不加 s）。Does he like... 是正確的。",
+    "category": "error_correction",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q049",
+    "question": "She can _____ very well.",
+    "options": ["swim", "swims", "swimming", "to swim"],
+    "correctAnswer": "swim",
+    "explanation": "can 是情態助動詞，後面接原形動詞。",
+    "category": "affirmative",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q050",
+    "question": "He must _____ his homework before playing.",
+    "options": ["finish", "finishes", "finishing", "to finish"],
+    "correctAnswer": "finish",
+    "explanation": "must 是情態助動詞，後面接原形動詞。",
+    "category": "affirmative",
+    "difficulty": "medium"
+  }
+]

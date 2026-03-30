@@ -33,8 +33,9 @@ interface AuthContextType {
   login: (username: string, password: string) => Promise<boolean>;
   register: (username: string, password: string) => Promise<boolean>;
   logout: () => void;
-  saveScore: (score: ExamScore) => void;
+  saveScore: (score: ExamScore, questionResults?: { id: string; isCorrect: boolean }[]) => void;
   exportWrongQuestions: () => string;
+  questionStatus: Record<string, 'success' | 'fail'>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -42,16 +43,20 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [scores, setScores] = useState<ExamScore[]>([]);
+  const [questionStatus, setQuestionStatus] = useState<Record<string, 'success' | 'fail'>>({});
 
   useEffect(() => {
     const session = sessionStorage.getItem("english_app_session");
     if (session) {
       const userData = JSON.parse(session);
       setUser(userData);
-      fetch(`${API}?action=scores&username=${encodeURIComponent(userData.username)}`)
-        .then(r => r.json())
-        .then(data => setScores(data))
-        .catch(() => setScores([]));
+      Promise.all([
+        fetch(`${API}?action=scores&username=${encodeURIComponent(userData.username)}`).then(r => r.json()),
+        fetch(`${API}?action=question-status&username=${encodeURIComponent(userData.username)}`).then(r => r.json()),
+      ]).then(([scoresData, statusData]) => {
+        setScores(scoresData);
+        setQuestionStatus(statusData);
+      }).catch(() => {});
     }
   }, []);
 
@@ -87,8 +92,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (data.success) {
         const userData: User = { username, createdAt: data.createdAt };
         setUser(userData);
-        const scoresRes = await fetch(`${API}?action=scores&username=${encodeURIComponent(username)}`);
+        const [scoresRes, statusRes] = await Promise.all([
+          fetch(`${API}?action=scores&username=${encodeURIComponent(username)}`),
+          fetch(`${API}?action=question-status&username=${encodeURIComponent(username)}`),
+        ]);
         setScores(await scoresRes.json());
+        setQuestionStatus(await statusRes.json());
         sessionStorage.setItem("english_app_session", JSON.stringify(userData));
         return true;
       }
@@ -102,14 +111,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     sessionStorage.removeItem("english_app_session");
   };
 
-  const saveScore = (score: ExamScore) => {
+  const saveScore = (score: ExamScore, questionResults?: { id: string; isCorrect: boolean }[]) => {
     if (!user) return;
     const newScores = [score, ...scores];
     setScores(newScores);
+    // Update local question status
+    if (questionResults) {
+      setQuestionStatus(prev => {
+        const next = { ...prev };
+        for (const qr of questionResults) {
+          next[qr.id] = qr.isCorrect ? 'success' : 'fail';
+        }
+        return next;
+      });
+    }
     fetch(`${API}?action=save-score`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: user.username, score }),
+      body: JSON.stringify({ username: user.username, score, questionResults }),
     }).catch(() => {});
   };
 
@@ -124,7 +143,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return (
     <AuthContext.Provider value={{
       user, scores, isAuthenticated: !!user,
-      login, register, logout, saveScore, exportWrongQuestions,
+      login, register, logout, saveScore, exportWrongQuestions, questionStatus,
     }}>
       {children}
     </AuthContext.Provider>

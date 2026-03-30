@@ -86,15 +86,32 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.json(db.data.scores[username] || []);
     }
 
-    // Save score
+    // Save score (with question status tracking)
     if (action === 'save-score' && req.method === 'POST') {
-      const { username, score } = req.body;
+      const { username, score, questionResults } = req.body;
       if (!username || !score) return res.status(400).json({ error: 'missing data' });
       const db = await readDB();
+      if (!db.data.scores) db.data.scores = {};
       if (!db.data.scores[username]) db.data.scores[username] = [];
       db.data.scores[username] = [score, ...db.data.scores[username]];
+      // Track which questions were answered correctly/incorrectly
+      if (!db.data.questionStatus) db.data.questionStatus = {};
+      if (!db.data.questionStatus[username]) db.data.questionStatus[username] = {};
+      if (questionResults && Array.isArray(questionResults)) {
+        for (const qr of questionResults) {
+          db.data.questionStatus[username][qr.id] = qr.isCorrect ? 'success' : 'fail';
+        }
+      }
       await writeDB(db.data, db.sha);
       return res.json({ success: true });
+    }
+
+    // Get question status for a user
+    if (action === 'question-status' && req.method === 'GET') {
+      const { username } = req.query;
+      if (!username) return res.status(400).json({ error: 'missing username' });
+      const db = await readDB();
+      return res.json(db.data.questionStatus?.[username] || {});
     }
 
     return res.status(404).json({ error: 'unknown action' });
