@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card } from "../components/ui/shared";
 import { useAuth, ExamScore, WrongQuestion } from "../contexts/AuthContext";
+import quizDataRaw from "../data/simple_sentence/quiz_data.json";
 
 type QuizItemScrubbed = {
   id: string;
@@ -36,51 +37,45 @@ export default function QuizPage() {
   const [score, setScore] = useState(0);
   const [gradedResults, setGradedResults] = useState<GradedItem[]>([]);
 
-  const fetchQuestions = async () => {
-    setPhase("loading");
-    try {
-      const res = await fetch("/api/quiz");
-      if (!res.ok) throw new Error("Failed to fetch");
-      const data: QuizItemScrubbed[] = await res.json();
-      setAllQuestions(data);
-      setPhase("setup");
-    } catch (e) {
-      console.error(e);
-      setPhase("error");
-    }
+  // Load quiz data from bundled JSON
+  const loadQuestions = () => {
+    const data: QuizItemScrubbed[] = (quizDataRaw as any[]).map(item => ({
+      id: item.id,
+      question: item.question,
+      options: item.options,
+      status: item.status || "untest",
+    }));
+    setAllQuestions(data);
+    setPhase("setup");
   };
 
-  useEffect(() => {
-    fetchQuestions();
-  }, []);
+  // Initial load
+  if (phase === "loading") {
+    // Use setTimeout to set state after first render
+    setTimeout(() => loadQuestions(), 0);
+  }
 
   const handleImport = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    
-    // Reset file input so same file can be imported again if needed
     e.target.value = "";
     
     const reader = new FileReader();
     reader.onload = async (event) => {
       try {
         const content = event.target?.result as string;
-        JSON.parse(content); // Basic validation check
-        
-        setPhase("loading");
-        const res = await fetch("/api/quiz/import", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: content
-        });
-        
-        if (!res.ok) throw new Error("Import request failed");
-        
-        await fetchQuestions();
+        const imported = JSON.parse(content);
+        // Validate and load imported data
+        const data: QuizItemScrubbed[] = imported.map((item: any) => ({
+          id: item.id,
+          question: item.question,
+          options: item.options,
+          status: item.status || "untest",
+        }));
+        setAllQuestions(data);
         alert("Quiz data imported successfully!");
       } catch (err) {
         console.error(err);
-        setPhase("setup");
         alert("Failed to import. Ensure the file is a valid JSON quiz data file.");
       }
     };
@@ -118,48 +113,50 @@ export default function QuizPage() {
     setAnswers({ ...answers, [items[currentIndex].id]: option });
   };
 
-  const submitQuiz = async () => {
-    setPhase("loading");
-    try {
-      const res = await fetch("/api/quiz/grade", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ answers })
-      });
-      if (!res.ok) throw new Error("Failed to grade");
-      const data = await res.json();
-      
-      setScore(data.score);
-      setGradedResults(data.gradedItems);
-      setPhase("result");
-      
-      // Save score to user history if logged in
-      if (isAuthenticated && user) {
-        const wrongQuestions: WrongQuestion[] = data.gradedItems
-          .filter((item: GradedItem) => !item.isCorrect)
-          .map((item: GradedItem) => ({
-            id: item.id,
-            question: item.question,
-            userAnswer: item.userAnswer,
-            correctAnswer: item.correctAnswer,
-            explanation: item.explanation,
-          }));
-        
-        const examScore: ExamScore = {
-          id: Date.now().toString(),
-          date: new Date().toISOString(),
-          score: data.score,
-          totalQuestions: items.length,
-          correctAnswers: items.length - wrongQuestions.length,
-          wrongAnswers: wrongQuestions.length,
-          wrongQuestions,
-        };
-        
-        saveScore(examScore);
-      }
-    } catch (e) {
-      console.error(e);
-      setPhase("error");
+  const submitQuiz = () => {
+    // Grade locally using quiz data
+    const graded: GradedItem[] = items.map(item => {
+      const rawItem = (quizDataRaw as any[]).find(q => q.id === item.id);
+      const correctAnswer = rawItem?.correctAnswer || "";
+      const userAnswer = answers[item.id] || "";
+      return {
+        id: item.id,
+        question: item.question,
+        userAnswer,
+        correctAnswer,
+        explanation: rawItem?.explanation || "",
+        isCorrect: userAnswer === correctAnswer,
+      };
+    });
+
+    const correctCount = graded.filter(g => g.isCorrect).length;
+    const scorePct = Math.round((correctCount / graded.length) * 100);
+    setScore(scorePct);
+    setGradedResults(graded);
+    setPhase("result");
+
+    // Save score to user history if logged in
+    if (isAuthenticated && user) {
+      const wrongQuestions: WrongQuestion[] = graded
+        .filter(item => !item.isCorrect)
+        .map(item => ({
+          id: item.id,
+          question: item.question,
+          userAnswer: item.userAnswer,
+          correctAnswer: item.correctAnswer,
+          explanation: item.explanation,
+        }));
+
+      const examScore: ExamScore = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        score: scorePct,
+        totalQuestions: items.length,
+        correctAnswers: correctCount,
+        wrongAnswers: wrongQuestions.length,
+        wrongQuestions,
+      };
+      saveScore(examScore);
     }
   };
 
@@ -183,7 +180,7 @@ export default function QuizPage() {
   };
 
   const handleReturnToSetup = () => {
-    fetchQuestions(); // Refetch to get updated global stats from server
+    loadQuestions(); // Reload quiz data
   };
 
   if (phase === "loading") {
@@ -198,7 +195,7 @@ export default function QuizPage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] text-red-500 w-full max-w-5xl mx-auto">
         <h2 className="text-2xl font-bold">Error loading quiz data.</h2>
-        <button onClick={fetchQuestions} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Retry</button>
+        <button onClick={loadQuestions} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Retry</button>
       </div>
     );
   }
@@ -213,14 +210,21 @@ export default function QuizPage() {
         <div className="flex items-center justify-between border-b pb-4 border-zinc-200">
             <h1 className="text-3xl font-bold text-stone-900">Quiz Dashboard</h1>
             <div className="flex items-center gap-3">
-              <a 
-                href="/api/quiz/export" 
-                download="quiz_data.json" 
+              <button 
+                onClick={() => {
+                  const blob = new Blob([JSON.stringify(quizDataRaw, null, 2)], { type: 'application/json' });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = 'quiz_data.json';
+                  a.click();
+                  URL.revokeObjectURL(url);
+                }}
                 className="px-4 py-2 bg-stone-100 text-stone-700 font-bold rounded-lg border border-stone-200 shadow-sm hover:bg-stone-200 transition-colors flex items-center gap-2 text-sm"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
                 Export JSON
-              </a>
+              </button>
               <div className="relative">
                 <input type="file" accept=".json" id="file-import" className="hidden" onChange={handleImport} />
                 <label 
