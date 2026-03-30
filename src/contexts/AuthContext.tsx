@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-const API_URL = "http://localhost:3001/api";
+const API = "/api/auth";
 
 export interface User {
   username: string;
@@ -43,15 +43,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [scores, setScores] = useState<ExamScore[]>([]);
 
-  // On mount, check session
   useEffect(() => {
     const session = sessionStorage.getItem("english_app_session");
     if (session) {
       const userData = JSON.parse(session);
       setUser(userData);
-      // Load scores from API
-      fetch(`${API_URL}/scores/${userData.username}`)
-        .then(res => res.json())
+      fetch(`${API}?action=scores&username=${encodeURIComponent(userData.username)}`)
+        .then(r => r.json())
         .then(data => setScores(data))
         .catch(() => setScores([]));
     }
@@ -59,9 +57,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const register = async (username: string, password: string): Promise<boolean> => {
     if (!username || !password || username.length < 3 || password.length < 3) return false;
-
     try {
-      const res = await fetch(`${API_URL}/register`, {
+      const res = await fetch(`${API}?action=register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -75,16 +72,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return true;
       }
       return false;
-    } catch {
-      return false;
-    }
+    } catch { return false; }
   };
 
   const login = async (username: string, password: string): Promise<boolean> => {
     if (!username || !password) return false;
-
     try {
-      const res = await fetch(`${API_URL}/login`, {
+      const res = await fetch(`${API}?action=login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -93,17 +87,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (data.success) {
         const userData: User = { username, createdAt: data.createdAt };
         setUser(userData);
-        // Load scores
-        const scoresRes = await fetch(`${API_URL}/scores/${username}`);
-        const scoresData = await scoresRes.json();
-        setScores(scoresData);
+        const scoresRes = await fetch(`${API}?action=scores&username=${encodeURIComponent(username)}`);
+        setScores(await scoresRes.json());
         sessionStorage.setItem("english_app_session", JSON.stringify(userData));
         return true;
       }
       return false;
-    } catch {
-      return false;
-    }
+    } catch { return false; }
   };
 
   const logout = () => {
@@ -116,11 +106,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!user) return;
     const newScores = [score, ...scores];
     setScores(newScores);
-    // Save to API
-    fetch(`${API_URL}/scores/${user.username}`, {
+    fetch(`${API}?action=save-score`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(score),
+      body: JSON.stringify({ username: user.username, score }),
     }).catch(() => {});
   };
 
