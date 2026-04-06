@@ -6,6 +6,7 @@ import ScoreHistoryPage from "./pages/ScoreHistoryPage";
 import LinearEquations from "./pages/LinearEquations";
 import QuadrantPage from "./pages/QuadrantPage";
 import PrepositionalPhrases from "./pages/PrepositionalPhrases";
+import PrepositionalPhrasesQuiz from "./pages/PrepositionalPhrasesQuiz";
 import PresentContinuous from "./pages/PresentContinuous";
 import PresentContinuousQuiz from "./pages/PresentContinuousQuiz";
 import DixonPhrasalVerbs from "./pages/DixonPhrasalVerbs";
@@ -56,6 +57,7 @@ function AppContent() {
     if (id === "quiz.present-simple") return "測驗: 現在簡單式";
     if (id === "quiz.prep-phrases") return "測驗: 介系詞片語";
     if (id === "quiz.present-continuous") return "測驗: 現在進行式";
+    if (id === "quiz.dixon-verbs") return "測驗: 狄克森動詞片語";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
@@ -72,6 +74,7 @@ function AppContent() {
       case "linear-equations": return <LinearEquations />;
       case "quadrant": return <QuadrantPage />;
       case "prep-phrases": return <PrepositionalPhrases openApp={openApp} />;
+      case "quiz.prep-phrases": return <PrepositionalPhrasesQuiz />;
       case "present-continuous": return <PresentContinuous openApp={openApp} />;
       case "quiz.present-continuous": return <PresentContinuousQuiz />;
       case "dixon-verbs": return <DixonPhrasalVerbs openApp={openApp} />;
