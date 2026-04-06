@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import PresentSimple from "./pages/PresentSimple";
 import QuizPage from "./pages/QuizPage";
-import VocabCards from "./pages/VocabCards";
 import AuthPage from "./pages/AuthPage";
 import ScoreHistoryPage from "./pages/ScoreHistoryPage";
 import LinearEquations from "./pages/LinearEquations";
 import QuadrantPage from "./pages/QuadrantPage";
 import PrepositionalPhrases from "./pages/PrepositionalPhrases";
 import PresentContinuous from "./pages/PresentContinuous";
+import PresentContinuousQuiz from "./pages/PresentContinuousQuiz";
+import DixonPhrasalVerbs from "./pages/DixonPhrasalVerbs";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -34,11 +35,13 @@ function AppContent() {
   };
 
   const nav: Record<string, { id: string; title: string }[]> = {
-    "📚 英文 English": [
+    "⏰ 時態 Tense": [
       { id: "present-simple", title: "現在簡單式" },
-      { id: "vocab-cards", title: "英文單字卡" },
-      { id: "prep-phrases", title: "介系詞片語測驗" },
-      { id: "present-continuous", title: "現在進行式測驗" },
+      { id: "present-continuous", title: "現在進行式" },
+    ],
+    "📝 片語 Phrases": [
+      { id: "prep-phrases", title: "介系詞片語" },
+      { id: "dixon-verbs", title: "狄克森動詞片語" },
     ],
     "🔢 數學 Math": [
       { id: "linear-equations", title: "二元一次方程式" },
@@ -53,6 +56,7 @@ function AppContent() {
     if (id === "quiz.present-simple") return "測驗: 現在簡單式";
     if (id === "quiz.prep-phrases") return "測驗: 介系詞片語";
     if (id === "quiz.present-continuous") return "測驗: 現在進行式";
+    if (id === "dixon-verbs") return "狄克森動詞片語";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
       if (item) return item.title;
@@ -63,13 +67,14 @@ function AppContent() {
   const renderContent = () => {
     switch (activeAppId) {
       case "present-simple": return <PresentSimple openApp={openApp} />;
-      case "vocab-cards": return <VocabCards />;
       case "quiz.present-simple": return <QuizPage />;
       case "score-history": return <ScoreHistoryPage />;
       case "linear-equations": return <LinearEquations />;
       case "quadrant": return <QuadrantPage />;
       case "prep-phrases": return <PrepositionalPhrases openApp={openApp} />;
       case "present-continuous": return <PresentContinuous openApp={openApp} />;
+      case "quiz.present-continuous": return <PresentContinuousQuiz />;
+      case "dixon-verbs": return <DixonPhrasalVerbs openApp={openApp} />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
   };
