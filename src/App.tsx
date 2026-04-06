@@ -7,6 +7,7 @@ import ScoreHistoryPage from "./pages/ScoreHistoryPage";
 import LinearEquations from "./pages/LinearEquations";
 import QuadrantPage from "./pages/QuadrantPage";
 import PrepositionalPhrases from "./pages/PrepositionalPhrases";
+import PresentContinuous from "./pages/PresentContinuous";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -37,6 +38,7 @@ function AppContent() {
       { id: "present-simple", title: "現在簡單式" },
       { id: "vocab-cards", title: "英文單字卡" },
       { id: "prep-phrases", title: "介系詞片語測驗" },
+      { id: "present-continuous", title: "現在進行式測驗" },
     ],
     "🔢 數學 Math": [
       { id: "linear-equations", title: "二元一次方程式" },
@@ -50,6 +52,7 @@ function AppContent() {
   const labelFor = (id: string) => {
     if (id === "quiz.present-simple") return "測驗: 現在簡單式";
     if (id === "quiz.prep-phrases") return "測驗: 介系詞片語";
+    if (id === "quiz.present-continuous") return "測驗: 現在進行式";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
       if (item) return item.title;
@@ -66,6 +69,7 @@ function AppContent() {
       case "linear-equations": return <LinearEquations />;
       case "quadrant": return <QuadrantPage />;
       case "prep-phrases": return <PrepositionalPhrases openApp={openApp} />;
+      case "present-continuous": return <PresentContinuous openApp={openApp} />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
   };
