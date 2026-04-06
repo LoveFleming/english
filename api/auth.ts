@@ -88,8 +88,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Save score (with question status tracking)
     if (action === 'save-score' && req.method === 'POST') {
-      const { username, score, questionResults } = req.body;
-      if (!username || !score) return res.status(400).json({ error: 'missing data' });
+      const { username, score, questionResults, examDetail } = req.body;
+      if (!username || score === undefined) return res.status(400).json({ error: 'missing data' });
       const db = await readDB();
       if (!db.data.scores) db.data.scores = {};
       if (!db.data.scores[username]) db.data.scores[username] = [];
@@ -102,6 +102,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           db.data.questionStatus[username][qr.id] = qr.isCorrect ? 'success' : 'fail';
         }
       }
+      // Save full exam detail for weakness analysis
+      if (!db.data.examHistory) db.data.examHistory = {};
+      if (!db.data.examHistory[username]) db.data.examHistory[username] = [];
+      if (examDetail) {
+        db.data.examHistory[username].unshift(examDetail);
+        // Keep last 50 exams per user
+        if (db.data.examHistory[username].length > 50) {
+          db.data.examHistory[username] = db.data.examHistory[username].slice(0, 50);
+        }
+      }
       await writeDB(db.data, db.sha);
       return res.json({ success: true });
     }
@@ -112,6 +122,55 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       if (!username) return res.status(400).json({ error: 'missing username' });
       const db = await readDB();
       return res.json(db.data.questionStatus?.[username] || {});
+    }
+
+    // Get exam history for a user (with detail)
+    if (action === 'exam-history' && req.method === 'GET') {
+      const { username } = req.query;
+      if (!username) return res.status(400).json({ error: 'missing username' });
+      const db = await readDB();
+      return res.json(db.data.examHistory?.[username] || []);
+    }
+
+    // Analyze weaknesses for a user
+    if (action === 'analyze-weakness' && req.method === 'GET') {
+      const { username } = req.query;
+      if (!username) return res.status(400).json({ error: 'missing username' });
+      const db = await readDB();
+      const history = db.data.examHistory?.[username] || [];
+      if (history.length === 0) return res.json({ error: '尚無考試記錄' });
+      
+      // Aggregate wrong questions
+      const wrongQuestions: Record<string, { count: number; question: string; explanation: string; category: string }> = {};
+      const categoryStats: Record<string, { total: number; wrong: number }> = {};
+      
+      for (const exam of history) {
+        if (!exam.questions) continue;
+        for (const q of exam.questions) {
+          if (!q.isCorrect) {
+            if (!wrongQuestions[q.questionId]) {
+              wrongQuestions[q.questionId] = { count: 0, question: q.question, explanation: q.explanation, category: q.category || 'unknown' };
+            }
+            wrongQuestions[q.questionId].count++;
+          }
+          const cat = q.category || 'unknown';
+          if (!categoryStats[cat]) categoryStats[cat] = { total: 0, wrong: 0 };
+          categoryStats[cat].total++;
+          if (!q.isCorrect) categoryStats[cat].wrong++;
+        }
+      }
+      
+      // Sort by frequency
+      const weakPoints = Object.entries(wrongQuestions)
+        .sort((a, b) => b[1].count - a[1].count)
+        .slice(0, 20)
+        .map(([id, data]) => ({ id, ...data }));
+      
+      const categoryAnalysis = Object.entries(categoryStats)
+        .map(([cat, stats]) => ({ category: cat, accuracy: Math.round(((stats.total - stats.wrong) / stats.total) * 100), total: stats.total, wrong: stats.wrong }))
+        .sort((a, b) => a.accuracy - b.accuracy);
+      
+      return res.json({ totalExams: history.length, weakPoints, categoryAnalysis });
     }
 
     return res.status(404).json({ error: 'unknown action' });

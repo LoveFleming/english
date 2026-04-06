@@ -145,7 +145,7 @@ export default function PrepositionalPhrases({ openApp }: { openApp: (id: string
     setShowResult(true);
   };
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (currentQ + 1 < questions.length) {
       setCurrentQ(currentQ + 1);
       setSelected(null);
@@ -156,6 +156,44 @@ export default function PrepositionalPhrases({ openApp }: { openApp: (id: string
       const saved = JSON.parse(localStorage.getItem("ppScores") || "[]");
       saved.push({ score: finalScore, total: questions.length, date: new Date().toISOString() });
       localStorage.setItem("ppScores", JSON.stringify(saved));
+
+      // Save detailed exam results to API
+      const username = localStorage.getItem("username");
+      if (username) {
+        try {
+          const questionResults = questions.map((q, i) => ({
+            id: `pp-${i}`,
+            question: q.question,
+            correctAnswer: q.options[q.correct],
+            userAnswer: answers[i] !== null ? q.options[answers[i]!] : '(未作答)',
+            isCorrect: answers[i] === q.correct,
+            explanation: q.explanation,
+            category: i < 10 ? 'Time' : i < 18 ? 'Place' : i < 35 ? 'Work' : i < 46 ? 'Communication' : i < 58 ? 'Cause' : i < 68 ? 'Action' : 'Other',
+          }));
+
+          const examDetail = {
+            date: new Date().toISOString(),
+            type: 'prepositional-phrases',
+            totalQuestions: questions.length,
+            correctCount: finalScore,
+            percentage: Math.round((finalScore / questions.length) * 100),
+            questions: questionResults,
+          };
+
+          await fetch('/api/auth?action=save-score', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              username,
+              score: { correct: finalScore, total: questions.length, percentage: Math.round((finalScore / questions.length) * 100) },
+              questionResults: questionResults.map(qr => ({ id: qr.id, isCorrect: qr.isCorrect })),
+              examDetail,
+            }),
+          });
+        } catch (e) {
+          console.error('Failed to save exam detail:', e);
+        }
+      }
     }
   };
 
