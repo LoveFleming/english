@@ -10,6 +10,8 @@ import PrepositionalPhrasesQuiz from "./pages/PrepositionalPhrasesQuiz";
 import PresentContinuous from "./pages/PresentContinuous";
 import PresentContinuousQuiz from "./pages/PresentContinuousQuiz";
 import DixonPhrasalVerbs from "./pages/DixonPhrasalVerbs";
+import Lesson3 from "./pages/Lesson3";
+import Lesson3Quiz from "./pages/Lesson3Quiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -48,6 +50,9 @@ function AppContent() {
       { id: "linear-equations", title: "二元一次方程式" },
       { id: "quadrant", title: "象限座標挑戰" },
     ],
+    "📚 課程 Lessons": [
+      { id: "lesson3", title: "7下 Lesson 3" },
+    ],
     "👤 會員": [
       { id: "score-history", title: "📊 考試成績" },
     ],
@@ -58,6 +63,7 @@ function AppContent() {
     if (id === "quiz.prep-phrases") return "測驗: 介系詞片語";
     if (id === "quiz.present-continuous") return "測驗: 現在進行式";
     if (id === "quiz.dixon-verbs") return "測驗: 狄克森動詞片語";
+    if (id === "quiz.lesson3") return "測驗: 7下 Lesson 3";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
@@ -78,6 +84,8 @@ function AppContent() {
       case "present-continuous": return <PresentContinuous openApp={openApp} />;
       case "quiz.present-continuous": return <PresentContinuousQuiz />;
       case "dixon-verbs": return <DixonPhrasalVerbs openApp={openApp} />;
+      case "lesson3": return <Lesson3 openApp={openApp} />;
+      case "quiz.lesson3": return <Lesson3Quiz />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
   };
