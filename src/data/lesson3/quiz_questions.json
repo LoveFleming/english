@@ -1,52 +1,2942 @@
 [
-  {"id":"l3-001","question":"How many books ___ you have?","options":["do","does","is","are"],"correctAnswer":"do","explanation":"you 用 do 來問句","category":"cardinal","difficulty":"easy"},
-  {"id":"l3-002","question":"How many dogs ___ she have?","options":["do","does","is","are"],"correctAnswer":"does","explanation":"第三人稱單數 she 用 does","category":"cardinal","difficulty":"easy"},
-  {"id":"l3-003","question":"I ___ three pencils.","options":["has","have","having","haves"],"correctAnswer":"have","explanation":"I 用 have","category":"cardinal","difficulty":"easy"},
-  {"id":"l3-004","question":"She ___ two cats.","options":["have","has","having","haves"],"correctAnswer":"has","explanation":"第三人稱單數 she 用 has","category":"cardinal","difficulty":"easy"},
-  {"id":"l3-005","question":"How many brothers ___ they have?","options":["do","does","is","are"],"correctAnswer":"do","explanation":"they 用 do","category":"cardinal","difficulty":"easy"},
-  {"id":"l3-006","question":"He ___ five stickers.","options":["have","has","having","haves"],"correctAnswer":"has","explanation":"第三人稱單數 he 用 has","category":"cardinal","difficulty":"easy"},
-  {"id":"l3-007","question":"How many ___ do you have? (書)","options":["book","books","bookes","bookies"],"correctAnswer":"books","explanation":"How many 後面接複數名詞","category":"cardinal","difficulty":"easy"},
-  {"id":"l3-008","question":"The ordinal form of 1 is ___.","options":["oneth","first","onest","firth"],"correctAnswer":"first","explanation":"1st = first（不規則）","category":"ordinal","difficulty":"easy"},
-  {"id":"l3-009","question":"The ordinal form of 2 is ___.","options":["twoth","twond","second","secend"],"correctAnswer":"second","explanation":"2nd = second（不規則）","category":"ordinal","difficulty":"easy"},
-  {"id":"l3-010","question":"The ordinal form of 3 is ___.","options":["threeth","thirth","third","thrid"],"correctAnswer":"third","explanation":"3rd = third（不規則）","category":"ordinal","difficulty":"easy"},
-  {"id":"l3-011","question":"The ordinal form of 5 is ___.","options":["fiveth","fivth","fifth","fifeth"],"correctAnswer":"fifth","explanation":"five → fifth（ve 變 f，加 th）","category":"ordinal","difficulty":"medium"},
-  {"id":"l3-012","question":"The ordinal form of 8 is ___.","options":["eightth","eighth","eightieth","eighthth"],"correctAnswer":"eighth","explanation":"eight → eighth（只加 h）","category":"ordinal","difficulty":"medium"},
-  {"id":"l3-013","question":"The ordinal form of 9 is ___.","options":["nineth","ninth","nineeth","ninith"],"correctAnswer":"ninth","explanation":"nine → ninth（去 e，加 th）","category":"ordinal","difficulty":"medium"},
-  {"id":"l3-014","question":"The ordinal form of 12 is ___.","options":["twelveth","twelvth","twelfth","twelth"],"correctAnswer":"twelfth","explanation":"twelve → twelfth（ve 變 f，加 th）","category":"ordinal","difficulty":"hard"},
-  {"id":"l3-015","question":"The ordinal form of 20 is ___.","options":["twentyth","twentieth","twentith","twentiethh"],"correctAnswer":"twentieth","explanation":"twenty → twentieth（y 變 ie，加 th）","category":"ordinal","difficulty":"medium"},
-  {"id":"l3-016","question":"The ordinal form of 30 is ___.","options":["thirtyth","thirtith","thirtieth","thirteth"],"correctAnswer":"thirtieth","explanation":"thirty → thirtieth（y 變 ie，加 th）","category":"ordinal","difficulty":"medium"},
-  {"id":"l3-017","question":"The ordinal form of 21 is ___.","options":["twenty-oneth","twenty-first","twentyfirst","twenty-onest"],"correctAnswer":"twenty-first","explanation":"21st = twenty-first（組合：整十+序數個位）","category":"ordinal","difficulty":"hard"},
-  {"id":"l3-018","question":"What's the date today? It's ___ 15th.","options":["March","march","MARCH","the March"],"correctAnswer":"March","explanation":"月份首字母大寫，直接寫 月+日序數","category":"date","difficulty":"easy"},
-  {"id":"l3-019","question":"It's the 25th ___ December.","options":["in","on","of","at"],"correctAnswer":"of","explanation":"It's the + 序數 + of + 月","category":"date","difficulty":"easy"},
-  {"id":"l3-020","question":"What's the date? It's January ___.","options":["one","first","the one","oneth"],"correctAnswer":"first","explanation":"日期用序數：January first","category":"date","difficulty":"easy"},
-  {"id":"l3-021","question":"It's ___ 31st of October.","options":["a","an","the","--"],"correctAnswer":"the","explanation":"固定用法：the + 序數 + of + 月","category":"date","difficulty":"medium"},
-  {"id":"l3-022","question":"Christmas is ___ December 25th.","options":["in","on","at","by"],"correctAnswer":"on","explanation":"特定日期用 on","category":"when","difficulty":"easy"},
-  {"id":"l3-023","question":"My birthday is ___ July.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"月份用 in","category":"when","difficulty":"easy"},
-  {"id":"l3-024","question":"The class starts ___ 8 o'clock.","options":["in","on","at","by"],"correctAnswer":"at","explanation":"時間點用 at","category":"when","difficulty":"easy"},
-  {"id":"l3-025","question":"We have a test ___ Monday.","options":["in","on","at","to"],"correctAnswer":"on","explanation":"星期用 on","category":"when","difficulty":"easy"},
-  {"id":"l3-026","question":"I was born ___ 2013.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"年份用 in","category":"when","difficulty":"easy"},
-  {"id":"l3-027","question":"She goes jogging ___ the morning.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in the morning 是固定用法","category":"when","difficulty":"easy"},
-  {"id":"l3-028","question":"He studies ___ night.","options":["in","on","at","by"],"correctAnswer":"at","explanation":"at night 是固定用法","category":"when","difficulty":"medium"},
-  {"id":"l3-029","question":"We swim ___ summer.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"季節用 in","category":"when","difficulty":"easy"},
-  {"id":"l3-030","question":"The party is ___ today. (需要介系詞嗎？)","options":["in","on","不需要介系詞","at"],"correctAnswer":"不需要介系詞","explanation":"today 前面不加介系詞","category":"when","difficulty":"medium"},
-  {"id":"l3-031","question":"I play basketball ___ every Sunday. (需要介系詞嗎？)","options":["on","in","at","不需要介系詞"],"correctAnswer":"不需要介系詞","explanation":"every 前面不加介系詞","category":"when","difficulty":"medium"},
-  {"id":"l3-032","question":"This is ___ book. (I 的所有格)","options":["mine","my","me","I"],"correctAnswer":"my","explanation":"所有格 my + 名詞","category":"possessive","difficulty":"easy"},
-  {"id":"l3-033","question":"This book is ___. (I 的所有格代名詞)","options":["my","me","mine","I"],"correctAnswer":"mine","explanation":"所有格代名詞 mine 獨立使用，不接名詞","category":"possessive","difficulty":"easy"},
-  {"id":"l3-034","question":"That is ___ pen. (she 的所有格)","options":["hers","she","her","she's"],"correctAnswer":"her","explanation":"所有格 her + 名詞","category":"possessive","difficulty":"easy"},
-  {"id":"l3-035","question":"That pen is ___. (she 的所有格代名詞)","options":["her","she","hers","she's"],"correctAnswer":"hers","explanation":"所有格代名詞 hers 獨立使用","category":"possessive","difficulty":"easy"},
-  {"id":"l3-036","question":"These seats are ___. (we 的所有格代名詞)","options":["our","we","us","ours"],"correctAnswer":"ours","explanation":"所有格代名詞 ours 獨立使用","category":"possessive","difficulty":"easy"},
-  {"id":"l3-037","question":"___ car is that? (they 的所有格)","options":["They","Them","Their","Theirs"],"correctAnswer":"Their","explanation":"所有格 their + 名詞","category":"possessive","difficulty":"easy"},
-  {"id":"l3-038","question":"The car is ___. (they 的所有格代名詞)","options":["their","them","they","theirs"],"correctAnswer":"theirs","explanation":"所有格代名詞 theirs 獨立使用","category":"possessive","difficulty":"easy"},
-  {"id":"l3-039","question":"Is this ___ jacket? (you 的所有格)","options":["yours","you","your","you's"],"correctAnswer":"your","explanation":"所有格 your + 名詞","category":"possessive","difficulty":"easy"},
-  {"id":"l3-040","question":"Is this jacket ___? (you 的所有格代名詞)","options":["your","you","yours","you's"],"correctAnswer":"yours","explanation":"所有格代名詞 yours 獨立使用","category":"possessive","difficulty":"easy"},
-  {"id":"l3-041","question":"___ bag is this? — It's mine.","options":["Who","Whose","Who's","Whom"],"correctAnswer":"Whose","explanation":"Whose 問「誰的」","category":"whose","difficulty":"easy"},
-  {"id":"l3-042","question":"Whose shoes are those? — They're ___.","options":["him","he","he's","his"],"correctAnswer":"his","explanation":"回答用所有格代名詞 his","category":"whose","difficulty":"easy"},
-  {"id":"l3-043","question":"Whose umbrella is this? — It's ___.","options":["her","she","hers","she's"],"correctAnswer":"hers","explanation":"回答用所有格代名詞 hers","category":"whose","difficulty":"easy"},
-  {"id":"l3-044","question":"___ is this pencil case? — It's ours.","options":["Who","Whose","Who's","What"],"correctAnswer":"Whose","explanation":"Whose 問「誰的」","category":"whose","difficulty":"easy"},
-  {"id":"l3-045","question":"Whose books are these? — They're ___.","options":["their","them","they","theirs"],"correctAnswer":"theirs","explanation":"回答用所有格代名詞 theirs","category":"whose","difficulty":"medium"},
-  {"id":"l3-046","question":"He is a friend of ___.","options":["me","my","mine","I"],"correctAnswer":"mine","explanation":"雙重所有格：a friend of mine","category":"double_genitive","difficulty":"medium"},
-  {"id":"l3-047","question":"That is a book of ___.","options":["her","she","hers","she's"],"correctAnswer":"hers","explanation":"雙重所有格：a book of hers","category":"double_genitive","difficulty":"medium"},
-  {"id":"l3-048","question":"She is a classmate of ___. (we)","options":["us","our","ours","we"],"correctAnswer":"ours","explanation":"雙重所有格：a classmate of ours","category":"double_genitive","difficulty":"medium"},
-  {"id":"l3-049","question":"Those are some toys of ___. (they)","options":["them","their","theirs","they"],"correctAnswer":"theirs","explanation":"雙重所有格：toys of theirs","category":"double_genitive","difficulty":"hard"},
-  {"id":"l3-050","question":"He is a friend of ___. (Tom)","options":["Tom","Toms","Tom's","Toms'"],"correctAnswer":"Tom's","explanation":"雙重所有格也可用名詞所有格：a friend of Tom's","category":"double_genitive","difficulty":"hard"}
+  {
+    "id": "l3-001",
+    "question": "How many books ___ you have?",
+    "options": [
+      "do",
+      "does",
+      "is",
+      "are"
+    ],
+    "correctAnswer": "do",
+    "explanation": "you 用 do 來問句",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-002",
+    "question": "How many dogs ___ she have?",
+    "options": [
+      "do",
+      "does",
+      "is",
+      "are"
+    ],
+    "correctAnswer": "does",
+    "explanation": "第三人稱單數 she 用 does",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-003",
+    "question": "I ___ three pencils.",
+    "options": [
+      "has",
+      "have",
+      "having",
+      "haves"
+    ],
+    "correctAnswer": "have",
+    "explanation": "I 用 have",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-004",
+    "question": "She ___ two cats.",
+    "options": [
+      "have",
+      "has",
+      "having",
+      "haves"
+    ],
+    "correctAnswer": "has",
+    "explanation": "第三人稱單數 she 用 has",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-005",
+    "question": "How many brothers ___ they have?",
+    "options": [
+      "do",
+      "does",
+      "is",
+      "are"
+    ],
+    "correctAnswer": "do",
+    "explanation": "they 用 do",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-006",
+    "question": "He ___ five stickers.",
+    "options": [
+      "have",
+      "has",
+      "having",
+      "haves"
+    ],
+    "correctAnswer": "has",
+    "explanation": "第三人稱單數 he 用 has",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-007",
+    "question": "How many ___ do you have? (書)",
+    "options": [
+      "book",
+      "books",
+      "bookes",
+      "bookies"
+    ],
+    "correctAnswer": "books",
+    "explanation": "How many 後面接複數名詞",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-008",
+    "question": "The ordinal form of 1 is ___.",
+    "options": [
+      "oneth",
+      "first",
+      "onest",
+      "firth"
+    ],
+    "correctAnswer": "first",
+    "explanation": "1st = first（不規則）",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-009",
+    "question": "The ordinal form of 2 is ___.",
+    "options": [
+      "twoth",
+      "twond",
+      "second",
+      "secend"
+    ],
+    "correctAnswer": "second",
+    "explanation": "2nd = second（不規則）",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-010",
+    "question": "The ordinal form of 3 is ___.",
+    "options": [
+      "threeth",
+      "thirth",
+      "third",
+      "thrid"
+    ],
+    "correctAnswer": "third",
+    "explanation": "3rd = third（不規則）",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-011",
+    "question": "The ordinal form of 5 is ___.",
+    "options": [
+      "fiveth",
+      "fivth",
+      "fifth",
+      "fifeth"
+    ],
+    "correctAnswer": "fifth",
+    "explanation": "five → fifth（ve 變 f，加 th）",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-012",
+    "question": "The ordinal form of 8 is ___.",
+    "options": [
+      "eightth",
+      "eighth",
+      "eightieth",
+      "eighthth"
+    ],
+    "correctAnswer": "eighth",
+    "explanation": "eight → eighth（只加 h）",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-013",
+    "question": "The ordinal form of 9 is ___.",
+    "options": [
+      "nineth",
+      "ninth",
+      "nineeth",
+      "ninith"
+    ],
+    "correctAnswer": "ninth",
+    "explanation": "nine → ninth（去 e，加 th）",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-014",
+    "question": "The ordinal form of 12 is ___.",
+    "options": [
+      "twelveth",
+      "twelvth",
+      "twelfth",
+      "twelth"
+    ],
+    "correctAnswer": "twelfth",
+    "explanation": "twelve → twelfth（ve 變 f，加 th）",
+    "category": "ordinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-015",
+    "question": "The ordinal form of 20 is ___.",
+    "options": [
+      "twentyth",
+      "twentieth",
+      "twentith",
+      "twentiethh"
+    ],
+    "correctAnswer": "twentieth",
+    "explanation": "twenty → twentieth（y 變 ie，加 th）",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-016",
+    "question": "The ordinal form of 30 is ___.",
+    "options": [
+      "thirtyth",
+      "thirtith",
+      "thirtieth",
+      "thirteth"
+    ],
+    "correctAnswer": "thirtieth",
+    "explanation": "thirty → thirtieth（y 變 ie，加 th）",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-017",
+    "question": "The ordinal form of 21 is ___.",
+    "options": [
+      "twenty-oneth",
+      "twenty-first",
+      "twentyfirst",
+      "twenty-onest"
+    ],
+    "correctAnswer": "twenty-first",
+    "explanation": "21st = twenty-first（組合：整十+序數個位）",
+    "category": "ordinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-018",
+    "question": "What's the date today? It's ___ 15th.",
+    "options": [
+      "March",
+      "march",
+      "MARCH",
+      "the March"
+    ],
+    "correctAnswer": "March",
+    "explanation": "月份首字母大寫，直接寫 月+日序數",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-019",
+    "question": "It's the 25th ___ December.",
+    "options": [
+      "in",
+      "on",
+      "of",
+      "at"
+    ],
+    "correctAnswer": "of",
+    "explanation": "It's the + 序數 + of + 月",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-020",
+    "question": "What's the date? It's January ___.",
+    "options": [
+      "one",
+      "first",
+      "the one",
+      "oneth"
+    ],
+    "correctAnswer": "first",
+    "explanation": "日期用序數：January first",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-021",
+    "question": "It's ___ 31st of October.",
+    "options": [
+      "a",
+      "an",
+      "the",
+      "--"
+    ],
+    "correctAnswer": "the",
+    "explanation": "固定用法：the + 序數 + of + 月",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-022",
+    "question": "Christmas is ___ December 25th.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "特定日期用 on",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-023",
+    "question": "My birthday is ___ July.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "月份用 in",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-024",
+    "question": "The class starts ___ 8 o'clock.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "時間點用 at",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-025",
+    "question": "We have a test ___ Monday.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "to"
+    ],
+    "correctAnswer": "on",
+    "explanation": "星期用 on",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-026",
+    "question": "I was born ___ 2013.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "年份用 in",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-027",
+    "question": "She goes jogging ___ the morning.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in the morning 是固定用法",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-028",
+    "question": "He studies ___ night.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "at night 是固定用法",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-029",
+    "question": "We swim ___ summer.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "季節用 in",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-030",
+    "question": "The party is ___ today. (需要介系詞嗎？)",
+    "options": [
+      "in",
+      "on",
+      "不需要介系詞",
+      "at"
+    ],
+    "correctAnswer": "不需要介系詞",
+    "explanation": "today 前面不加介系詞",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-031",
+    "question": "I play basketball ___ every Sunday. (需要介系詞嗎？)",
+    "options": [
+      "on",
+      "in",
+      "at",
+      "不需要介系詞"
+    ],
+    "correctAnswer": "不需要介系詞",
+    "explanation": "every 前面不加介系詞",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-032",
+    "question": "This is ___ book. (I 的所有格)",
+    "options": [
+      "mine",
+      "my",
+      "me",
+      "I"
+    ],
+    "correctAnswer": "my",
+    "explanation": "所有格 my + 名詞",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-033",
+    "question": "This book is ___. (I 的所有格代名詞)",
+    "options": [
+      "my",
+      "me",
+      "mine",
+      "I"
+    ],
+    "correctAnswer": "mine",
+    "explanation": "所有格代名詞 mine 獨立使用，不接名詞",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-034",
+    "question": "That is ___ pen. (she 的所有格)",
+    "options": [
+      "hers",
+      "she",
+      "her",
+      "she's"
+    ],
+    "correctAnswer": "her",
+    "explanation": "所有格 her + 名詞",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-035",
+    "question": "That pen is ___. (she 的所有格代名詞)",
+    "options": [
+      "her",
+      "she",
+      "hers",
+      "she's"
+    ],
+    "correctAnswer": "hers",
+    "explanation": "所有格代名詞 hers 獨立使用",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-036",
+    "question": "These seats are ___. (we 的所有格代名詞)",
+    "options": [
+      "our",
+      "we",
+      "us",
+      "ours"
+    ],
+    "correctAnswer": "ours",
+    "explanation": "所有格代名詞 ours 獨立使用",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-037",
+    "question": "___ car is that? (they 的所有格)",
+    "options": [
+      "They",
+      "Them",
+      "Their",
+      "Theirs"
+    ],
+    "correctAnswer": "Their",
+    "explanation": "所有格 their + 名詞",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-038",
+    "question": "The car is ___. (they 的所有格代名詞)",
+    "options": [
+      "their",
+      "them",
+      "they",
+      "theirs"
+    ],
+    "correctAnswer": "theirs",
+    "explanation": "所有格代名詞 theirs 獨立使用",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-039",
+    "question": "Is this ___ jacket? (you 的所有格)",
+    "options": [
+      "yours",
+      "you",
+      "your",
+      "you's"
+    ],
+    "correctAnswer": "your",
+    "explanation": "所有格 your + 名詞",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-040",
+    "question": "Is this jacket ___? (you 的所有格代名詞)",
+    "options": [
+      "your",
+      "you",
+      "yours",
+      "you's"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "所有格代名詞 yours 獨立使用",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-041",
+    "question": "___ bag is this? — It's mine.",
+    "options": [
+      "Who",
+      "Whose",
+      "Who's",
+      "Whom"
+    ],
+    "correctAnswer": "Whose",
+    "explanation": "Whose 問「誰的」",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-042",
+    "question": "Whose shoes are those? — They're ___.",
+    "options": [
+      "him",
+      "he",
+      "he's",
+      "his"
+    ],
+    "correctAnswer": "his",
+    "explanation": "回答用所有格代名詞 his",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-043",
+    "question": "Whose umbrella is this? — It's ___.",
+    "options": [
+      "her",
+      "she",
+      "hers",
+      "she's"
+    ],
+    "correctAnswer": "hers",
+    "explanation": "回答用所有格代名詞 hers",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-044",
+    "question": "___ is this pencil case? — It's ours.",
+    "options": [
+      "Who",
+      "Whose",
+      "Who's",
+      "What"
+    ],
+    "correctAnswer": "Whose",
+    "explanation": "Whose 問「誰的」",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-045",
+    "question": "Whose books are these? — They're ___.",
+    "options": [
+      "their",
+      "them",
+      "they",
+      "theirs"
+    ],
+    "correctAnswer": "theirs",
+    "explanation": "回答用所有格代名詞 theirs",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-046",
+    "question": "He is a friend of ___.",
+    "options": [
+      "me",
+      "my",
+      "mine",
+      "I"
+    ],
+    "correctAnswer": "mine",
+    "explanation": "雙重所有格：a friend of mine",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-047",
+    "question": "That is a book of ___.",
+    "options": [
+      "her",
+      "she",
+      "hers",
+      "she's"
+    ],
+    "correctAnswer": "hers",
+    "explanation": "雙重所有格：a book of hers",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-048",
+    "question": "She is a classmate of ___. (we)",
+    "options": [
+      "us",
+      "our",
+      "ours",
+      "we"
+    ],
+    "correctAnswer": "ours",
+    "explanation": "雙重所有格：a classmate of ours",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-049",
+    "question": "Those are some toys of ___. (they)",
+    "options": [
+      "them",
+      "their",
+      "theirs",
+      "they"
+    ],
+    "correctAnswer": "theirs",
+    "explanation": "雙重所有格：toys of theirs",
+    "category": "double_genitive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-050",
+    "question": "He is a friend of ___. (Tom)",
+    "options": [
+      "Tom",
+      "Toms",
+      "Tom's",
+      "Toms'"
+    ],
+    "correctAnswer": "Tom's",
+    "explanation": "雙重所有格也可用名詞所有格：a friend of Tom's",
+    "category": "double_genitive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-051",
+    "question": "A: How many ___ does your mother have? B: She has three handbags.",
+    "options": [
+      "handbag",
+      "handbags",
+      "handbages",
+      "handbagies"
+    ],
+    "correctAnswer": "handbags",
+    "explanation": "How many 後接複數名詞",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-052",
+    "question": "My sister ___ twenty stickers.",
+    "options": [
+      "have",
+      "has",
+      "having",
+      "haves"
+    ],
+    "correctAnswer": "has",
+    "explanation": "第三人稱單數 my sister 用 has",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-053",
+    "question": "A: How many students ___ in the classroom? B: There are thirty.",
+    "options": [
+      "is there",
+      "are there",
+      "do there",
+      "does there"
+    ],
+    "correctAnswer": "are there",
+    "explanation": "問「有多少學生」用 How many students are there?",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-054",
+    "question": "I don't have ___ money in my wallet.",
+    "options": [
+      "some",
+      "many",
+      "much",
+      "a"
+    ],
+    "correctAnswer": "much",
+    "explanation": "money 是不可數名詞，否定句用 much",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-055",
+    "question": "How many ___ can you see in the picture?",
+    "options": [
+      "bird",
+      "birds",
+      "birdes",
+      "birdies"
+    ],
+    "correctAnswer": "birds",
+    "explanation": "How many 後接複數名詞 birds",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-056",
+    "question": "___ any milk in the fridge?",
+    "options": [
+      "Is there",
+      "Are there",
+      "Do there",
+      "Does there"
+    ],
+    "correctAnswer": "Is there",
+    "explanation": "milk 不可數，用 Is there",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-057",
+    "question": "There ___ a pen and two erasers on the desk.",
+    "options": [
+      "is",
+      "are",
+      "has",
+      "have"
+    ],
+    "correctAnswer": "is",
+    "explanation": "There be 句型採就近原則，a pen 最近用 is",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-058",
+    "question": "A: How many apples do we have? B: We have ___.",
+    "options": [
+      "no",
+      "not",
+      "none",
+      "nothing"
+    ],
+    "correctAnswer": "none",
+    "explanation": "用 none 回答 How many，表示一個都沒有",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-059",
+    "question": "He has ___ DVDs than I do.",
+    "options": [
+      "more",
+      "much",
+      "many",
+      "most"
+    ],
+    "correctAnswer": "more",
+    "explanation": "than 表示比較級用 more",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-060",
+    "question": "___ of the students in my class like English.",
+    "options": [
+      "All",
+      "Both",
+      "Every",
+      "Each"
+    ],
+    "correctAnswer": "All",
+    "explanation": "全班學生（三個以上）用 All",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-061",
+    "question": "There are ___ months in a year. December is the ___ month.",
+    "options": [
+      "twelve...twelve",
+      "twelfth...twelfth",
+      "twelve...twelfth",
+      "twelfth...twelve"
+    ],
+    "correctAnswer": "twelve...twelfth",
+    "explanation": "12個月用基數 twelve，第12個月用序數 twelfth",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-062",
+    "question": "I have two brothers. One is a doctor, and ___ is a teacher.",
+    "options": [
+      "other",
+      "the other",
+      "another",
+      "others"
+    ],
+    "correctAnswer": "the other",
+    "explanation": "兩個中另一個用 the other",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-063",
+    "question": "How many ___ does he ___?",
+    "options": [
+      "child...has",
+      "children...have",
+      "children...has",
+      "childs...have"
+    ],
+    "correctAnswer": "children...has",
+    "explanation": "children 是複數名詞，但 he 用 has",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-064",
+    "question": "A: ___? B: I have five.",
+    "options": [
+      "How many pens do you have",
+      "How much pens do you have",
+      "How many pen do you have",
+      "What pens do you have"
+    ],
+    "correctAnswer": "How many pens do you have",
+    "explanation": "問數量用 How many + 複數名詞",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-065",
+    "question": "We have ___ homework today.",
+    "options": [
+      "too many",
+      "too much",
+      "much too",
+      "many too"
+    ],
+    "correctAnswer": "too much",
+    "explanation": "homework 不可數用 too much",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-066",
+    "question": "___ two cups of tea on the table.",
+    "options": [
+      "There has",
+      "There have",
+      "There are",
+      "There is"
+    ],
+    "correctAnswer": "There are",
+    "explanation": "two cups 是複數用 There are",
+    "category": "cardinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-067",
+    "question": "Both of ___ are good at math.",
+    "options": [
+      "they",
+      "them",
+      "their",
+      "theirs"
+    ],
+    "correctAnswer": "them",
+    "explanation": "of 後面接代名詞受格 them",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-068",
+    "question": "I have ___ friends here. I feel lonely.",
+    "options": [
+      "a few",
+      "few",
+      "a little",
+      "little"
+    ],
+    "correctAnswer": "few",
+    "explanation": "few 修飾可數名詞，表示幾乎沒有",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-069",
+    "question": "She ___ not ___ any sisters.",
+    "options": [
+      "do...have",
+      "does...have",
+      "does...has",
+      "do...has"
+    ],
+    "correctAnswer": "does...have",
+    "explanation": "第三人稱否定句：does not + 原形 have",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-070",
+    "question": "How many ___ can you eat?",
+    "options": [
+      "slice of pizza",
+      "slices of pizza",
+      "slice of pizzas",
+      "slices of pizzas"
+    ],
+    "correctAnswer": "slices of pizza",
+    "explanation": "複數 slices + 物質名詞 pizza（保持單數）",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-071",
+    "question": "The ___ month of the year is March.",
+    "options": [
+      "three",
+      "third",
+      "threeth",
+      "thirdth"
+    ],
+    "correctAnswer": "third",
+    "explanation": "第3個月用序數 third",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-072",
+    "question": "Which is correct?",
+    "options": [
+      "The one floor",
+      "The first floor",
+      "The fiveth floor",
+      "The nineth floor"
+    ],
+    "correctAnswer": "The first floor",
+    "explanation": "first 是正確序數，fiveth/nineth 拼字錯",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-073",
+    "question": "My birthday is on the ___ of June.",
+    "options": [
+      "twenty-one",
+      "twenty-first",
+      "twenty-firsth",
+      "twentieth-one"
+    ],
+    "correctAnswer": "twenty-first",
+    "explanation": "21st = twenty-first",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-074",
+    "question": "He is the ___ person to arrive. (第15個)",
+    "options": [
+      "fifteenth",
+      "fiveteenth",
+      "fifteentth",
+      "fifteenth"
+    ],
+    "correctAnswer": "fifteenth",
+    "explanation": "15th = fifteenth",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-075",
+    "question": "Christmas is on the ___ day of December.",
+    "options": [
+      "twenty-five",
+      "twenty-fifth",
+      "twenty-fiveth",
+      "twentieth-fifth"
+    ],
+    "correctAnswer": "twenty-fifth",
+    "explanation": "25th = twenty-fifth",
+    "category": "ordinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-076",
+    "question": "Which sentence is correct?",
+    "options": [
+      "She lives on five floor.",
+      "She lives on the five floor.",
+      "She lives on the fifth floor.",
+      "She lives on fifth floor."
+    ],
+    "correctAnswer": "She lives on the fifth floor.",
+    "explanation": "樓層用序數加 the：on the fifth floor",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-077",
+    "question": "The ___ runner won a gold medal. (第40個)",
+    "options": [
+      "fortyth",
+      "fortieth",
+      "fortith",
+      "fortietth"
+    ],
+    "correctAnswer": "fortieth",
+    "explanation": "40th = fortieth (y→ie+th)",
+    "category": "ordinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-078",
+    "question": "This is my ___ time visiting Japan. (第3次)",
+    "options": [
+      "three",
+      "third",
+      "threeth",
+      "thirdth"
+    ],
+    "correctAnswer": "third",
+    "explanation": "第3次用序數 third",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-079",
+    "question": "November is the ___ month of the year.",
+    "options": [
+      "eleven",
+      "eleventh",
+      "eleventeen",
+      "eleventieth"
+    ],
+    "correctAnswer": "eleventh",
+    "explanation": "11月是第11個月用 eleventh",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-080",
+    "question": "The ___ Olympic Games were held in Tokyo.",
+    "options": [
+      "thirty-two",
+      "thirty-second",
+      "thirtieth-second",
+      "thirty-secondth"
+    ],
+    "correctAnswer": "thirty-second",
+    "explanation": "32nd = thirty-second",
+    "category": "ordinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-081",
+    "question": "Which ordinal number is spelled incorrectly?",
+    "options": [
+      "fourth",
+      "sixth",
+      "seventh",
+      "nineth"
+    ],
+    "correctAnswer": "nineth",
+    "explanation": "正確拼法是 ninth 不是 nineth",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-082",
+    "question": "She got ___ place in the singing competition.",
+    "options": [
+      "one",
+      "first",
+      "a first",
+      "the first"
+    ],
+    "correctAnswer": "first",
+    "explanation": "第幾名用序數 first，不加冠詞",
+    "category": "ordinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-083",
+    "question": "The ___ day of the week is Monday.",
+    "options": [
+      "one",
+      "first",
+      "second",
+      "two"
+    ],
+    "correctAnswer": "second",
+    "explanation": "星期日是一週第一天，Monday是第二天",
+    "category": "ordinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-084",
+    "question": "Write the ordinal: 100 → ___",
+    "options": [
+      "hundredth",
+      "one hundredth",
+      "a hundredth",
+      "hundreds"
+    ],
+    "correctAnswer": "one hundredth",
+    "explanation": "100th = one hundredth",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-085",
+    "question": "Which is the correct ordinal form of 12?",
+    "options": [
+      "twelveth",
+      "twelfth",
+      "twelfeth",
+      "twelvth"
+    ],
+    "correctAnswer": "twelfth",
+    "explanation": "12th = twelfth (ve→f+th)",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-086",
+    "question": "My seat is in the ___ row. (第7排)",
+    "options": [
+      "seven",
+      "seventh",
+      "seventhh",
+      "sevenst"
+    ],
+    "correctAnswer": "seventh",
+    "explanation": "第7排用序數 seventh",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-087",
+    "question": "He was the ___ to finish the test.",
+    "options": [
+      "six",
+      "sixth",
+      "sixst",
+      "sixeth"
+    ],
+    "correctAnswer": "sixth",
+    "explanation": "第6個完成用序數 sixth",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-088",
+    "question": "Teachers' Day is on the ___ of September.",
+    "options": [
+      "twenty-eight",
+      "twenty-eighth",
+      "twenty-eightth",
+      "twenty-eighths"
+    ],
+    "correctAnswer": "twenty-eighth",
+    "explanation": "28th = twenty-eighth",
+    "category": "ordinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-089",
+    "question": "The ___ letter of the alphabet is C.",
+    "options": [
+      "three",
+      "third",
+      "three's",
+      "thirds"
+    ],
+    "correctAnswer": "third",
+    "explanation": "第3個字母用序數 third",
+    "category": "ordinal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-090",
+    "question": "Which ordinal form is correct?",
+    "options": [
+      "eightth",
+      "eightieth",
+      "eighth",
+      "eightst"
+    ],
+    "correctAnswer": "eighth",
+    "explanation": "8th = eighth（只加 h）",
+    "category": "ordinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-091",
+    "question": "What's the date today? It's ___.",
+    "options": [
+      "January one",
+      "January first",
+      "January the one",
+      "the January first"
+    ],
+    "correctAnswer": "January first",
+    "explanation": "日期用序數 January first",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-092",
+    "question": "Which is correct?",
+    "options": [
+      "It's the third of April.",
+      "It's April of third.",
+      "It's third of April.",
+      "It's the April third."
+    ],
+    "correctAnswer": "It's the third of April.",
+    "explanation": "英式：It's the + 序數 + of + 月",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-093",
+    "question": "___ is your birthday? It's on October 5th.",
+    "options": [
+      "What date",
+      "What day",
+      "When date",
+      "How date"
+    ],
+    "correctAnswer": "What date",
+    "explanation": "問日期用 What date",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-094",
+    "question": "New Year's Day is on January ___.",
+    "options": [
+      "one",
+      "first",
+      "the one",
+      "a first"
+    ],
+    "correctAnswer": "first",
+    "explanation": "元旦是1月1日用序數 first",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-095",
+    "question": "It's the twentieth ___ November.",
+    "options": [
+      "in",
+      "on",
+      "of",
+      "at"
+    ],
+    "correctAnswer": "of",
+    "explanation": "英式日期：the + 序數 + of + 月",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-096",
+    "question": "What's today's date? It's March ___, 2025.",
+    "options": [
+      "three",
+      "third",
+      "the three",
+      "threeth"
+    ],
+    "correctAnswer": "third",
+    "explanation": "3月3日用序數 third",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-097",
+    "question": "The correct way to write December 25 in words is ___.",
+    "options": [
+      "December twenty-five",
+      "December twenty-fifth",
+      "December the twenty-five",
+      "the December twenty-fifth"
+    ],
+    "correctAnswer": "December twenty-fifth",
+    "explanation": "25日用序數 twenty-fifth",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-098",
+    "question": "Which sentence about the date is WRONG?",
+    "options": [
+      "It's April 10th.",
+      "It's the tenth of April.",
+      "It's April of tenth.",
+      "It's April 10."
+    ],
+    "correctAnswer": "It's April of tenth.",
+    "explanation": "April of tenth 是不正確的日期表達",
+    "category": "date",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-099",
+    "question": "A: What's the date? B: ___.",
+    "options": [
+      "It's Monday.",
+      "It's sunny.",
+      "It's February 14th.",
+      "It's 3 o'clock."
+    ],
+    "correctAnswer": "It's February 14th.",
+    "explanation": "問日期要回答具體日期",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-100",
+    "question": "How do you read 4/7 in American English?",
+    "options": [
+      "April seventh",
+      "July fourth",
+      "the fourth of July",
+      "seven of April"
+    ],
+    "correctAnswer": "April seventh",
+    "explanation": "美式 4/7 = April seventh（月/日）",
+    "category": "date",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-101",
+    "question": "Which month has the fewest days?",
+    "options": [
+      "January",
+      "March",
+      "February",
+      "November"
+    ],
+    "correctAnswer": "February",
+    "explanation": "二月天數最少（28或29天）",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-102",
+    "question": "Halloween is on ___.",
+    "options": [
+      "October 31",
+      "October 31st",
+      "the October 31",
+      "October thirty-one"
+    ],
+    "correctAnswer": "October 31st",
+    "explanation": "萬聖節10月31日用序數 31st",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-103",
+    "question": "What's the date a week after March 20th?",
+    "options": [
+      "March 27th",
+      "March 26th",
+      "March 13th",
+      "March 21st"
+    ],
+    "correctAnswer": "March 27th",
+    "explanation": "20 + 7 = 27",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-104",
+    "question": "5/4/2025 in British English means ___.",
+    "options": [
+      "May fourth, 2025",
+      "the fifth of April, 2025",
+      "April the fifth, 2025",
+      "the fourth of May, 2025"
+    ],
+    "correctAnswer": "the fifth of April, 2025",
+    "explanation": "英式 日/月：5th of April",
+    "category": "date",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-105",
+    "question": "Valentine's Day is on the ___ of February.",
+    "options": [
+      "fourteen",
+      "fourteenth",
+      "fourty",
+      "fourtieth"
+    ],
+    "correctAnswer": "fourteenth",
+    "explanation": "情人節2月14日 = fourteenth",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-106",
+    "question": "A: Is today the 15th? B: No, today is the 16th. So yesterday was the ___.",
+    "options": [
+      "fourteen",
+      "fourteenth",
+      "thirteenth",
+      "fifteenth"
+    ],
+    "correctAnswer": "fifteenth",
+    "explanation": "16號的前一天是15號 = the fifteenth",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-107",
+    "question": "___ today's date?",
+    "options": [
+      "What",
+      "What's",
+      "When",
+      "How's"
+    ],
+    "correctAnswer": "What's",
+    "explanation": "問今天日期：What's today's date?",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-108",
+    "question": "Christmas Day is on ___.",
+    "options": [
+      "December 25",
+      "the December 25",
+      "December 25th",
+      "25th December"
+    ],
+    "correctAnswer": "December 25th",
+    "explanation": "聖誕節12月25日用序數 25th",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-109",
+    "question": "The date 'the second of August' is the same as ___.",
+    "options": [
+      "August 2nd",
+      "August 2th",
+      "August 2st",
+      "2 August"
+    ],
+    "correctAnswer": "August 2nd",
+    "explanation": "the second of August = August 2nd",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-110",
+    "question": "Which is correct about writing dates?",
+    "options": [
+      "july 4th",
+      "July 4th",
+      "july Fourth",
+      "JULY 4th"
+    ],
+    "correctAnswer": "July 4th",
+    "explanation": "月份首字母必須大寫",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-111",
+    "question": "My father's birthday is ___ August 15th.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "特定日期用 on",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-112",
+    "question": "We usually go camping ___ summer.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "季節用 in",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-113",
+    "question": "The movie starts ___ 7:30 p.m.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "時間點用 at",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-114",
+    "question": "I have a piano lesson ___ every Saturday.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "(不用介系詞)"
+    ],
+    "correctAnswer": "(不用介系詞)",
+    "explanation": "every + 時間不加介系詞",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-115",
+    "question": "She was born ___ the morning of March 3rd.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "特定日期的早上用 on the morning of...",
+    "category": "when",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-116",
+    "question": "We don't have school ___ this weekend.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "(不用介系詞)"
+    ],
+    "correctAnswer": "(不用介系詞)",
+    "explanation": "this weekend 前不加介系詞",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-117",
+    "question": "The exam is ___ next Monday.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "(不用介系詞)"
+    ],
+    "correctAnswer": "(不用介系詞)",
+    "explanation": "next Monday 前不加介系詞",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-118",
+    "question": "___ is the school trip? It's next Friday.",
+    "options": [
+      "When...on",
+      "What...in",
+      "When...(不用介系詞)",
+      "Where...at"
+    ],
+    "correctAnswer": "When...(不用介系詞)",
+    "explanation": "next Friday 不加介系詞",
+    "category": "when",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-119",
+    "question": "People celebrate Moon Festival ___ autumn.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "季節用 in",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-120",
+    "question": "The store is closed ___ Sunday mornings.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "星期早上用 on Sunday mornings",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-121",
+    "question": "I'll see you ___ tonight.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "(不用介系詞)"
+    ],
+    "correctAnswer": "(不用介系詞)",
+    "explanation": "tonight 前不加介系詞",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-122",
+    "question": "We have a long holiday ___ January.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "月份用 in",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-123",
+    "question": "The train leaves ___ 9:15 ___ Saturday.",
+    "options": [
+      "at...on",
+      "on...at",
+      "in...on",
+      "at...in"
+    ],
+    "correctAnswer": "at...on",
+    "explanation": "時間點用 at，星期用 on",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-124",
+    "question": "He practices guitar ___ every day.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "(不用介系詞)"
+    ],
+    "correctAnswer": "(不用介系詞)",
+    "explanation": "every day 前不加介系詞",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-125",
+    "question": "My birthday is ___ May.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "月份用 in",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-126",
+    "question": "Children get red envelopes ___ Chinese New Year.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "節慶用 at Chinese New Year",
+    "category": "when",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-127",
+    "question": "She was born ___ 2012 ___ Kaohsiung.",
+    "options": [
+      "in...in",
+      "on...in",
+      "in...on",
+      "at...in"
+    ],
+    "correctAnswer": "in...in",
+    "explanation": "年份用 in，城市用 in",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-128",
+    "question": "We have lunch ___ noon.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "noon 用 at noon",
+    "category": "when",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-129",
+    "question": "School starts ___ 8:00 ___ the morning.",
+    "options": [
+      "at...in",
+      "in...at",
+      "on...in",
+      "at...on"
+    ],
+    "correctAnswer": "at...in",
+    "explanation": "時間點用 at，in the morning 固定用法",
+    "category": "when",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-130",
+    "question": "Which uses the wrong preposition?",
+    "options": [
+      "on Monday",
+      "in July",
+      "at six o'clock",
+      "in Friday night"
+    ],
+    "correctAnswer": "in Friday night",
+    "explanation": "星期幾的晚上用 on Friday night",
+    "category": "when",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-131",
+    "question": "This pen isn't yours. It's ___.",
+    "options": [
+      "my",
+      "me",
+      "mine",
+      "I"
+    ],
+    "correctAnswer": "mine",
+    "explanation": "mine = my pen，獨立使用不加名詞",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-132",
+    "question": "Is this your book? No, it's not ___. It's ___.",
+    "options": [
+      "my...her",
+      "mine...hers",
+      "mine...her",
+      "my...hers"
+    ],
+    "correctAnswer": "mine...hers",
+    "explanation": "空格後沒名詞用獨立所有格 mine/hers",
+    "category": "possessive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-133",
+    "question": "Their house is bigger than ___.",
+    "options": [
+      "we",
+      "us",
+      "our",
+      "ours"
+    ],
+    "correctAnswer": "ours",
+    "explanation": "ours = our house",
+    "category": "possessive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-134",
+    "question": "Which is correct?",
+    "options": [
+      "This is his.",
+      "This is he's.",
+      "This is him.",
+      "This is he."
+    ],
+    "correctAnswer": "This is his.",
+    "explanation": "his 同時是所有格和所有格代名詞",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-135",
+    "question": "The blue bike is ___, and the red one is ___.",
+    "options": [
+      "yours...mine",
+      "your...my",
+      "you...me",
+      "your...mine"
+    ],
+    "correctAnswer": "yours...mine",
+    "explanation": "空格後沒名詞用所有格代名詞",
+    "category": "possessive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-136",
+    "question": "___ dog is very cute. We love ___ dog.",
+    "options": [
+      "Our...our",
+      "Ours...our",
+      "Our...ours",
+      "Ours...ours"
+    ],
+    "correctAnswer": "Our...our",
+    "explanation": "後面有名詞 dog 用所有格 our",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-137",
+    "question": "The cat washed ___ paws.",
+    "options": [
+      "it",
+      "its",
+      "it's",
+      "its'"
+    ],
+    "correctAnswer": "its",
+    "explanation": "its = 牠的，it's = it is",
+    "category": "possessive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-138",
+    "question": "Are these shoes ___?",
+    "options": [
+      "your",
+      "yours",
+      "you",
+      "you're"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "空格後沒名詞用所有格代名詞 yours",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-139",
+    "question": "This isn't ___ bag. ___ is over there.",
+    "options": [
+      "her...Her",
+      "her...Hers",
+      "hers...Her",
+      "hers...Hers"
+    ],
+    "correctAnswer": "her...Hers",
+    "explanation": "her bag 有名詞用所有格，Hers 獨立用代名詞",
+    "category": "possessive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-140",
+    "question": "My grades are better than ___.",
+    "options": [
+      "their",
+      "theirs",
+      "them",
+      "they"
+    ],
+    "correctAnswer": "theirs",
+    "explanation": "theirs = their grades",
+    "category": "possessive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-141",
+    "question": "Which sentence is WRONG?",
+    "options": [
+      "This book is my.",
+      "This book is mine.",
+      "This is my book.",
+      "This book belongs to me."
+    ],
+    "correctAnswer": "This book is my.",
+    "explanation": "my 後面必須有名詞不能單獨使用",
+    "category": "possessive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-142",
+    "question": "A: Whose umbrella is this? B: It's ___.",
+    "options": [
+      "my",
+      "your",
+      "his",
+      "they"
+    ],
+    "correctAnswer": "his",
+    "explanation": "his = his umbrella 可獨立使用",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-143",
+    "question": "___ car is the white one.",
+    "options": [
+      "They",
+      "Their",
+      "Theirs",
+      "There"
+    ],
+    "correctAnswer": "Their",
+    "explanation": "car 是名詞前面用所有格 Their",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-144",
+    "question": "I forgot my dictionary. Can I borrow ___?",
+    "options": [
+      "your",
+      "yours",
+      "you",
+      "you're"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "yours = your dictionary",
+    "category": "possessive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-145",
+    "question": "___ are planning a trip to Japan.",
+    "options": [
+      "Us",
+      "We",
+      "Our",
+      "Ours"
+    ],
+    "correctAnswer": "We",
+    "explanation": "主詞用主格 We",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-146",
+    "question": "The big room is ___, and the small one is ___.",
+    "options": [
+      "theirs...ours",
+      "their...our",
+      "they...we",
+      "them...us"
+    ],
+    "correctAnswer": "theirs...ours",
+    "explanation": "空格後沒名詞用所有格代名詞",
+    "category": "possessive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-147",
+    "question": "Is this ___ phone or ___?",
+    "options": [
+      "your...her",
+      "yours...hers",
+      "your...hers",
+      "yours...her"
+    ],
+    "correctAnswer": "your...hers",
+    "explanation": "your phone 有名詞，hers = her phone 獨立",
+    "category": "possessive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-148",
+    "question": "My mother and ___ friends went shopping.",
+    "options": [
+      "her",
+      "hers",
+      "she",
+      "hers'"
+    ],
+    "correctAnswer": "her",
+    "explanation": "her friends 有名詞用所有格",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-149",
+    "question": "Which CANNOT be used alone (without a noun)?",
+    "options": [
+      "mine",
+      "yours",
+      "my",
+      "his"
+    ],
+    "correctAnswer": "my",
+    "explanation": "my 必須接名詞不能單獨說 This is my",
+    "category": "possessive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-150",
+    "question": "The choice is ___.",
+    "options": [
+      "your",
+      "yours",
+      "you",
+      "you're"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "yours = your choice 獨立使用",
+    "category": "possessive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-151",
+    "question": "___ jacket is this? It's mine.",
+    "options": [
+      "Who",
+      "Whose",
+      "Who's",
+      "Whom"
+    ],
+    "correctAnswer": "Whose",
+    "explanation": "問誰的用 Whose",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-152",
+    "question": "___ are these gloves? They're ___.",
+    "options": [
+      "Whose...her",
+      "Who's...hers",
+      "Whose...hers",
+      "Who...her"
+    ],
+    "correctAnswer": "Whose...hers",
+    "explanation": "Whose 問誰的，hers = her gloves",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-153",
+    "question": "___ dog is that? It's ___.",
+    "options": [
+      "Who...Tom",
+      "Whose...Tom's",
+      "Whose...Tom",
+      "Who's...Tom's"
+    ],
+    "correctAnswer": "Whose...Tom's",
+    "explanation": "回答 Tom's = Tom's dog",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-154",
+    "question": "A: Whose is this? B: ___.",
+    "options": [
+      "It's my",
+      "It's mine",
+      "It's me",
+      "It's I"
+    ],
+    "correctAnswer": "It's mine",
+    "explanation": "單獨回答用所有格代名詞 mine",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-155",
+    "question": "___ books are these? They're ___.",
+    "options": [
+      "Whose...our",
+      "Who's...ours",
+      "Whose...ours",
+      "Who...our"
+    ],
+    "correctAnswer": "Whose...ours",
+    "explanation": "Whose 問誰的，ours = our books",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-156",
+    "question": "Whose car ___?",
+    "options": [
+      "is this",
+      "this is",
+      "are this",
+      "this are"
+    ],
+    "correctAnswer": "is this",
+    "explanation": "單數用 is this",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-157",
+    "question": "Whose shoes ___?",
+    "options": [
+      "is this",
+      "are these",
+      "is these",
+      "are this"
+    ],
+    "correctAnswer": "are these",
+    "explanation": "shoes 複數用 are these",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-158",
+    "question": "A: ___ B: They are hers.",
+    "options": [
+      "Whose are these?",
+      "Whose is these?",
+      "Who are these?",
+      "Who's are these?"
+    ],
+    "correctAnswer": "Whose are these?",
+    "explanation": "複數用 Whose are these?",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-159",
+    "question": "Whose bag is that? It's ___.",
+    "options": [
+      "Lily",
+      "Lily's",
+      "Lilys",
+      "Lilys'"
+    ],
+    "correctAnswer": "Lily's",
+    "explanation": "Lily's = Lily's bag（所有格加's）",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-160",
+    "question": "___ umbrella did you borrow?",
+    "options": [
+      "Who",
+      "Whose",
+      "Who's",
+      "Whom"
+    ],
+    "correctAnswer": "Whose",
+    "explanation": "問你借了誰的雨傘用 Whose",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-161",
+    "question": "Whose is this calculator? It's ___.",
+    "options": [
+      "he",
+      "his",
+      "him",
+      "he's"
+    ],
+    "correctAnswer": "his",
+    "explanation": "his = his calculator",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-162",
+    "question": "Which question is correct?",
+    "options": [
+      "Whose is this pen?",
+      "Whose pen is this?",
+      "Who's pen is this?",
+      "Who pen is this?"
+    ],
+    "correctAnswer": "Whose pen is this?",
+    "explanation": "Whose + N + is this? 正確句型",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-163",
+    "question": "The students argued about ___ book this is.",
+    "options": [
+      "who",
+      "whose",
+      "who's",
+      "whom"
+    ],
+    "correctAnswer": "whose",
+    "explanation": "子句中用 whose 修飾 book",
+    "category": "whose",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-164",
+    "question": "I don't know ___ car is parked outside.",
+    "options": [
+      "who",
+      "whose",
+      "who's",
+      "whom"
+    ],
+    "correctAnswer": "whose",
+    "explanation": "whose 修飾 car",
+    "category": "whose",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-165",
+    "question": "___ turn is it to clean the board?",
+    "options": [
+      "Who",
+      "Whose",
+      "Who's",
+      "Whom"
+    ],
+    "correctAnswer": "Whose",
+    "explanation": "Whose turn = 輪到誰",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-166",
+    "question": "Whose pens ___? They're theirs.",
+    "options": [
+      "is this",
+      "are these",
+      "is these",
+      "are those"
+    ],
+    "correctAnswer": "are these",
+    "explanation": "複數 pens 用 are these/those",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-167",
+    "question": "A: Is this ___ wallet? B: No, it's not mine.",
+    "options": [
+      "your",
+      "yours",
+      "you",
+      "you're"
+    ],
+    "correctAnswer": "your",
+    "explanation": "your wallet 有名詞用所有格",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-168",
+    "question": "___ homework is on the desk?",
+    "options": [
+      "Who",
+      "Whose",
+      "Who's",
+      "Whom"
+    ],
+    "correctAnswer": "Whose",
+    "explanation": "Whose + homework 問誰的作業",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-169",
+    "question": "I found a watch. Do you know ___ it is?",
+    "options": [
+      "who",
+      "whose",
+      "who's",
+      "whom"
+    ],
+    "correctAnswer": "whose",
+    "explanation": "問是誰的用 whose",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-170",
+    "question": "Whose ___ these?",
+    "options": [
+      "is",
+      "are",
+      "was",
+      "does"
+    ],
+    "correctAnswer": "are",
+    "explanation": "these 複數用 are",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-171",
+    "question": "She is a friend of ___.",
+    "options": [
+      "my",
+      "me",
+      "mine",
+      "I"
+    ],
+    "correctAnswer": "mine",
+    "explanation": "雙重所有格：a friend of mine",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-172",
+    "question": "Which is correct?",
+    "options": [
+      "a my friend",
+      "a friend of my",
+      "a friend of mine",
+      "mine friend"
+    ],
+    "correctAnswer": "a friend of mine",
+    "explanation": "雙重所有格用 of + 所有格代名詞",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-173",
+    "question": "That dog of ___ is very cute.",
+    "options": [
+      "your",
+      "yours",
+      "you",
+      "you're"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "of + 所有格代名詞 yours",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-174",
+    "question": "Some classmates of ___ are coming to the party.",
+    "options": [
+      "our",
+      "ours",
+      "we",
+      "us"
+    ],
+    "correctAnswer": "ours",
+    "explanation": "of + 所有格代名詞 ours",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-175",
+    "question": "I borrowed a book of ___ from the library.",
+    "options": [
+      "her",
+      "hers",
+      "she",
+      "him"
+    ],
+    "correctAnswer": "hers",
+    "explanation": "a book of hers（of + 所有格代名詞）",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-176",
+    "question": "Which sentence is WRONG?",
+    "options": [
+      "a friend of his",
+      "some books of hers",
+      "a my book",
+      "two cousins of theirs"
+    ],
+    "correctAnswer": "a my book",
+    "explanation": "不可同時用冠詞 a + 所有格 my",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-177",
+    "question": "He is ___ old classmate of ___.",
+    "options": [
+      "a...my",
+      "an...mine",
+      "a...mine",
+      "an...my"
+    ],
+    "correctAnswer": "an...mine",
+    "explanation": "old 母音開頭用 an，of + mine",
+    "category": "double_genitive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-178",
+    "question": "This is no business of ___.",
+    "options": [
+      "your",
+      "yours",
+      "you",
+      "you're"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "of + 所有格代名詞 yours",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-179",
+    "question": "That habit of ___ really annoys me.",
+    "options": [
+      "his",
+      "he",
+      "him",
+      "he's"
+    ],
+    "correctAnswer": "his",
+    "explanation": "of + 所有格代名詞 his",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-180",
+    "question": "A: Do you know those kids? B: Yes, they are students of ___.",
+    "options": [
+      "our",
+      "us",
+      "ours",
+      "we"
+    ],
+    "correctAnswer": "ours",
+    "explanation": "of + 所有格代名詞 ours",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-181",
+    "question": "Which is the correct double genitive?",
+    "options": [
+      "a friend of me",
+      "a friend of my",
+      "a friend of mine",
+      "a mine friend"
+    ],
+    "correctAnswer": "a friend of mine",
+    "explanation": "of + 所有格代名詞 mine",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-182",
+    "question": "Those opinions of ___ are always interesting.",
+    "options": [
+      "their",
+      "them",
+      "theirs",
+      "they"
+    ],
+    "correctAnswer": "theirs",
+    "explanation": "of + 所有格代名詞 theirs",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-183",
+    "question": "I saw a picture of ___ on the wall.",
+    "options": [
+      "your",
+      "you",
+      "yours",
+      "you're"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "of + 所有格代名詞 yours",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-184",
+    "question": "Which is WRONG?",
+    "options": [
+      "a book of hers",
+      "a pen of his",
+      "a their car",
+      "a bag of ours"
+    ],
+    "correctAnswer": "a their car",
+    "explanation": "不可 a + their + N，應 a car of theirs",
+    "category": "double_genitive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-185",
+    "question": "This lovely cat of ___ is sleeping on the sofa.",
+    "options": [
+      "my",
+      "me",
+      "mine",
+      "I"
+    ],
+    "correctAnswer": "mine",
+    "explanation": "of + 所有格代名詞 mine",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-186",
+    "question": "A relative of ___ is visiting next week.",
+    "options": [
+      "his",
+      "he",
+      "him",
+      "he's"
+    ],
+    "correctAnswer": "his",
+    "explanation": "of + 所有格代名詞 his",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-187",
+    "question": "That great idea of ___ saved the project.",
+    "options": [
+      "her",
+      "she",
+      "hers",
+      "him"
+    ],
+    "correctAnswer": "hers",
+    "explanation": "of + 所有格代名詞 hers",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-188",
+    "question": "I met a cousin of ___ at the mall.",
+    "options": [
+      "they",
+      "their",
+      "them",
+      "theirs"
+    ],
+    "correctAnswer": "theirs",
+    "explanation": "of + 所有格代名詞 theirs",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-189",
+    "question": "Which is correct?",
+    "options": [
+      "some books of her",
+      "some books of hers",
+      "some hers books",
+      "some her's books"
+    ],
+    "correctAnswer": "some books of hers",
+    "explanation": "of + 所有格代名詞 hers",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-190",
+    "question": "A: Is he ___? B: Yes, he's a good friend of ___.",
+    "options": [
+      "your...my",
+      "yours...mine",
+      "your...mine",
+      "yours...my"
+    ],
+    "correctAnswer": "your...mine",
+    "explanation": "your friend 有名詞，of + mine 雙重所有格",
+    "category": "double_genitive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-191",
+    "question": "A: How many people ___ at the party? B: About twenty.",
+    "options": [
+      "was",
+      "were",
+      "is",
+      "does"
+    ],
+    "correctAnswer": "were",
+    "explanation": "people 是複數用 were",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-192",
+    "question": "There ___ a lot of water in the bottle.",
+    "options": [
+      "is",
+      "are",
+      "has",
+      "have"
+    ],
+    "correctAnswer": "is",
+    "explanation": "water 不可數用 is",
+    "category": "cardinal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-193",
+    "question": "I have ___ time to finish the test. Don't worry.",
+    "options": [
+      "a few",
+      "few",
+      "a little",
+      "little"
+    ],
+    "correctAnswer": "a little",
+    "explanation": "time 不可數，a little 表示有一些（肯定）",
+    "category": "cardinal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-194",
+    "question": "Mother's Day is on the ___ Sunday of May.",
+    "options": [
+      "one",
+      "first",
+      "second",
+      "two"
+    ],
+    "correctAnswer": "second",
+    "explanation": "母親節是5月第二個星期日",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-195",
+    "question": "A: When is your birthday? B: It's ___ August eighth.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "特定日期 August eighth 用 on",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-196",
+    "question": "Which is NOT a correct date format?",
+    "options": [
+      "July 4",
+      "July 4th",
+      "4th of July",
+      "July of 4th"
+    ],
+    "correctAnswer": "July of 4th",
+    "explanation": "July of 4th 是錯誤格式",
+    "category": "date",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-197",
+    "question": "A: What day is today? B: ___.",
+    "options": [
+      "It's March 1st.",
+      "It's Wednesday.",
+      "It's 3 o'clock.",
+      "It's sunny."
+    ],
+    "correctAnswer": "It's Wednesday.",
+    "explanation": "問星期幾回答星期",
+    "category": "date",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-198",
+    "question": "The ___ of April is April Fools' Day.",
+    "options": [
+      "one",
+      "first",
+      "oneth",
+      "firsth"
+    ],
+    "correctAnswer": "first",
+    "explanation": "愚人節4月1日 = the first of April",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-199",
+    "question": "Which month has thirty-one days?",
+    "options": [
+      "February",
+      "April",
+      "June",
+      "January"
+    ],
+    "correctAnswer": "January",
+    "explanation": "January 有 31 天",
+    "category": "date",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-200",
+    "question": "The winner is __! Congratulations!",
+    "options": [
+      "your",
+      "yours",
+      "you",
+      "you're"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "The winner is yours! 獨立用代名詞",
+    "category": "possessive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-201",
+    "question": "___ bike is the red one?",
+    "options": [
+      "Who",
+      "Whose",
+      "Who's",
+      "Whom"
+    ],
+    "correctAnswer": "Whose",
+    "explanation": "Whose + bike 問誰的腳踏車",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-202",
+    "question": "I wonder ___ this belongs to.",
+    "options": [
+      "who",
+      "whose",
+      "who's",
+      "whom"
+    ],
+    "correctAnswer": "whose",
+    "explanation": "whose this belongs to 問這是誰的",
+    "category": "whose",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-203",
+    "question": "Whose ___ that?",
+    "options": [
+      "is",
+      "are",
+      "was",
+      "were"
+    ],
+    "correctAnswer": "is",
+    "explanation": "that 單數用 is",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-204",
+    "question": "A: Whose are those? B: They are ___.",
+    "options": [
+      "my",
+      "me",
+      "mine",
+      "I"
+    ],
+    "correctAnswer": "mine",
+    "explanation": "mine = my things 獨立使用",
+    "category": "whose",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-205",
+    "question": "___ keys are these? They look like ___ keys.",
+    "options": [
+      "Who's...Tom",
+      "Whose...Tom's",
+      "Whose...Tom",
+      "Who...Tom's"
+    ],
+    "correctAnswer": "Whose...Tom's",
+    "explanation": "Whose 問誰的，Tom's keys 用所有格",
+    "category": "whose",
+    "difficulty": "medium"
+  },
+  {
+    "id": "l3-206",
+    "question": "That bike of ___ needs repair.",
+    "options": [
+      "my",
+      "me",
+      "mine",
+      "I"
+    ],
+    "correctAnswer": "mine",
+    "explanation": "of + 所有格代名詞 mine",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-207",
+    "question": "This is a painting of ___, not ___.",
+    "options": [
+      "his...her",
+      "his...hers",
+      "him...her",
+      "he...hers"
+    ],
+    "correctAnswer": "his...hers",
+    "explanation": "of + his/hers 所有格代名詞",
+    "category": "double_genitive",
+    "difficulty": "hard"
+  },
+  {
+    "id": "l3-208",
+    "question": "A: Whose is this? B: It's a gift of ___.",
+    "options": [
+      "my",
+      "me",
+      "mine",
+      "I"
+    ],
+    "correctAnswer": "mine",
+    "explanation": "of + 所有格代名詞 mine",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-209",
+    "question": "Which is correct?",
+    "options": [
+      "This is a book of my.",
+      "This is a book of mine.",
+      "This is my's book.",
+      "This is a mine book."
+    ],
+    "correctAnswer": "This is a book of mine.",
+    "explanation": "雙重所有格 of + mine",
+    "category": "double_genitive",
+    "difficulty": "easy"
+  },
+  {
+    "id": "l3-210",
+    "question": "Those shoes of ___ are really cool.",
+    "options": [
+      "your",
+      "yours",
+      "you",
+      "you're"
+    ],
+    "correctAnswer": "yours",
+    "explanation": "of + 所有格代名詞 yours",
+    "category": "double_genitive",
+    "difficulty": "medium"
+  }
 ]
