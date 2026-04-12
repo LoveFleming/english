@@ -1,102 +1,1402 @@
 [
-  {"id":"pp001","question":"We arrived just ___ time for the meeting.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in time = 及時（差點來不及）","category":"time","difficulty":"easy"},
-  {"id":"pp002","question":"The train arrived ___ time.","options":["in","on","at","by"],"correctAnswer":"on","explanation":"on time = 準時","category":"time","difficulty":"easy"},
-  {"id":"pp003","question":"I'm busy ___ the moment.","options":["in","on","at","by"],"correctAnswer":"at","explanation":"at the moment = 目前","category":"time","difficulty":"easy"},
-  {"id":"pp004","question":"Please book the tickets ___ advance.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in advance = 事先","category":"time","difficulty":"easy"},
-  {"id":"pp005","question":"The project is ___ schedule.","options":["in","on","at","by"],"correctAnswer":"on","explanation":"on schedule = 按照進度","category":"time","difficulty":"easy"},
-  {"id":"pp006","question":"We'll finish ___ the end of this week.","options":["by","in","on","at"],"correctAnswer":"by","explanation":"by the end of = 在...結束前","category":"time","difficulty":"medium"},
-  {"id":"pp007","question":"___ the beginning of the sprint, we plan our tasks.","options":["At","In","On","By"],"correctAnswer":"At","explanation":"at the beginning of = 在...開始時","category":"time","difficulty":"medium"},
-  {"id":"pp008","question":"He has been working here ___ 2010.","options":["since","for","from","during"],"correctAnswer":"since","explanation":"since + 年份 = 自從","category":"time","difficulty":"medium"},
-  {"id":"pp009","question":"I'll be there ___ 10 minutes.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in + 時間 = 在...之後（未來）","category":"time","difficulty":"easy"},
-  {"id":"pp010","question":"She works ___ the evening.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in the evening = 在晚上","category":"time","difficulty":"easy"},
-  {"id":"pp011","question":"The car is parked ___ front of the office.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in front of = 在...前面","category":"place","difficulty":"easy"},
-  {"id":"pp012","question":"Sit ___ to me in the meeting.","options":["next","near","close","beside"],"correctAnswer":"next","explanation":"next to = 在...旁邊","category":"place","difficulty":"easy"},
-  {"id":"pp013","question":"I'll grab coffee ___ the way to work.","options":["in","on","at","by"],"correctAnswer":"on","explanation":"on the way = 在路上","category":"place","difficulty":"easy"},
-  {"id":"pp014","question":"The store is ___ the corner of Main St.","options":["in","on","at","by"],"correctAnswer":"at","explanation":"at the corner of = 在...轉角","category":"place","difficulty":"medium"},
-  {"id":"pp015","question":"I was ___ the middle of a code review.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in the middle of = 在...中間","category":"place","difficulty":"easy"},
-  {"id":"pp016","question":"The cat is hiding ___ the table.","options":["under","below","beneath","down"],"correctAnswer":"under","explanation":"under = 在...下面","category":"place","difficulty":"easy"},
-  {"id":"pp017","question":"She lives ___ the third floor.","options":["in","on","at","by"],"correctAnswer":"on","explanation":"on the floor = 在...樓","category":"place","difficulty":"easy"},
-  {"id":"pp018","question":"We met ___ the entrance of the park.","options":["in","on","at","by"],"correctAnswer":"at","explanation":"at the entrance = 在入口處","category":"place","difficulty":"easy"},
-  {"id":"pp019","question":"She is ___ charge of the deployment.","options":["on","at","in","for"],"correctAnswer":"in","explanation":"in charge of = 負責","category":"work","difficulty":"easy"},
-  {"id":"pp020","question":"I'm calling ___ behalf of my team.","options":["on","in","at","for"],"correctAnswer":"on","explanation":"on behalf of = 代表","category":"work","difficulty":"medium"},
-  {"id":"pp021","question":"___ to the spec, this should work.","options":["According","Due","Thanks","In response"],"correctAnswer":"According","explanation":"according to = 根據","category":"work","difficulty":"medium"},
-  {"id":"pp022","question":"___ response to your email, here are the details.","options":["In","On","At","By"],"correctAnswer":"In","explanation":"in response to = 回應","category":"work","difficulty":"medium"},
-  {"id":"pp023","question":"I deleted the file ___ mistake.","options":["by","in","on","at"],"correctAnswer":"by","explanation":"by mistake = 不小心","category":"work","difficulty":"easy"},
-  {"id":"pp024","question":"___ example, we can use a cache here.","options":["For","In","On","By"],"correctAnswer":"For","explanation":"for example = 例如","category":"work","difficulty":"easy"},
-  {"id":"pp025","question":"Let me explain the issue ___ detail.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in detail = 詳細地","category":"work","difficulty":"easy"},
-  {"id":"pp026","question":"The deployment is ___ progress.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in progress = 進行中","category":"work","difficulty":"easy"},
-  {"id":"pp027","question":"He is ___ duty this weekend.","options":["in","on","at","by"],"correctAnswer":"on","explanation":"on duty = 值班","category":"work","difficulty":"easy"},
-  {"id":"pp028","question":"The release is ___ risk of being delayed.","options":["in","on","at","under"],"correctAnswer":"at","explanation":"at risk = 有風險","category":"work","difficulty":"medium"},
-  {"id":"pp029","question":"These two modules have a lot ___ common.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in common = 共同點","category":"work","difficulty":"easy"},
-  {"id":"pp030","question":"This library is ___ of date.","options":["out","in","on","by"],"correctAnswer":"out","explanation":"out of date = 過時的","category":"work","difficulty":"easy"},
-  {"id":"pp031","question":"Make sure your dependencies are ___ to date.","options":["up","in","on","by"],"correctAnswer":"up","explanation":"up to date = 最新的","category":"work","difficulty":"easy"},
-  {"id":"pp032","question":"Don't worry, the issue is ___ control.","options":["in","on","at","under"],"correctAnswer":"under","explanation":"under control = 在控制中","category":"work","difficulty":"medium"},
-  {"id":"pp033","question":"The server is ___ trouble again.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in trouble = 有麻煩","category":"work","difficulty":"easy"},
-  {"id":"pp034","question":"She took care ___ the deployment.","options":["of","for","about","with"],"correctAnswer":"of","explanation":"take care of = 照顧/處理","category":"work","difficulty":"easy"},
-  {"id":"pp035","question":"We need to keep track ___ all bugs.","options":["of","for","about","with"],"correctAnswer":"of","explanation":"keep track of = 追蹤","category":"work","difficulty":"easy"},
-  {"id":"pp036","question":"___ other words, we need to refactor this.","options":["By","In","On","At"],"correctAnswer":"In","explanation":"in other words = 換句話說","category":"communication","difficulty":"easy"},
-  {"id":"pp037","question":"___ the way, did you see the new PR?","options":["By","In","On","At"],"correctAnswer":"By","explanation":"by the way = 順便一提","category":"communication","difficulty":"easy"},
-  {"id":"pp038","question":"Let's discuss this ___ person.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in person = 親自","category":"communication","difficulty":"easy"},
-  {"id":"pp039","question":"Nobody breaks the build ___ purpose.","options":["in","on","at","by"],"correctAnswer":"on","explanation":"on purpose = 故意的","category":"communication","difficulty":"easy"},
-  {"id":"pp040","question":"___ general, our tests are reliable.","options":["In","On","At","By"],"correctAnswer":"In","explanation":"in general = 一般來說","category":"communication","difficulty":"easy"},
-  {"id":"pp041","question":"___ be honest, I'm not sure about this approach.","options":["By","In","To","On"],"correctAnswer":"To","explanation":"to be honest = 老實說","category":"communication","difficulty":"medium"},
-  {"id":"pp042","question":"___ a matter of fact, I just fixed that bug.","options":["As","In","On","By"],"correctAnswer":"As","explanation":"as a matter of fact = 事實上","category":"communication","difficulty":"hard"},
-  {"id":"pp043","question":"He is good ___ explaining complex ideas.","options":["at","in","on","by"],"correctAnswer":"at","explanation":"good at = 擅長","category":"communication","difficulty":"easy"},
-  {"id":"pp044","question":"She is interested ___ learning new technologies.","options":["at","in","on","by"],"correctAnswer":"in","explanation":"interested in = 對...有興趣","category":"communication","difficulty":"easy"},
-  {"id":"pp045","question":"I agree ___ you on this issue.","options":["at","in","on","with"],"correctAnswer":"with","explanation":"agree with = 同意（某人）","category":"communication","difficulty":"easy"},
-  {"id":"pp046","question":"We need to focus ___ the main problem.","options":["at","in","on","with"],"correctAnswer":"on","explanation":"focus on = 專注於","category":"communication","difficulty":"easy"},
-  {"id":"pp047","question":"The build failed ___ of a syntax error.","options":["because","due","as a result","since"],"correctAnswer":"because","explanation":"because of = 因為","category":"cause","difficulty":"easy"},
-  {"id":"pp048","question":"The outage was ___ to a network issue.","options":["because","due","as a result","since"],"correctAnswer":"due","explanation":"due to = 由於（後接名詞）","category":"cause","difficulty":"medium"},
-  {"id":"pp049","question":"___ a result, we missed the deadline.","options":["As","In","On","By"],"correctAnswer":"As","explanation":"as a result = 結果","category":"cause","difficulty":"easy"},
-  {"id":"pp050","question":"___ order to fix this, we need more logs.","options":["In","On","At","By"],"correctAnswer":"In","explanation":"in order to = 為了","category":"cause","difficulty":"easy"},
-  {"id":"pp051","question":"Use async/await ___ of callbacks.","options":["because","instead","in addition","thanks"],"correctAnswer":"instead","explanation":"instead of = 而不是","category":"cause","difficulty":"medium"},
-  {"id":"pp052","question":"___ to the new tool, we're 2x faster.","options":["Because","Instead","In addition","Thanks"],"correctAnswer":"Thanks","explanation":"thanks to = 多虧","category":"cause","difficulty":"medium"},
-  {"id":"pp053","question":"He was late ___ of the traffic.","options":["because","due","instead","regardless"],"correctAnswer":"because","explanation":"because of = 因為","category":"cause","difficulty":"easy"},
-  {"id":"pp054","question":"We succeeded ___ spite of the difficulties.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in spite of = 儘管","category":"cause","difficulty":"medium"},
-  {"id":"pp055","question":"___ of quitting, she kept trying.","options":["Instead","Because","In front","By means"],"correctAnswer":"Instead","explanation":"instead of = 而不是","category":"cause","difficulty":"medium"},
-  {"id":"pp056","question":"The event was cancelled due ___ the storm.","options":["because","to","for","of"],"correctAnswer":"to","explanation":"due to = 由於","category":"cause","difficulty":"easy"},
-  {"id":"pp057","question":"___ a consequence, the system went down.","options":["As","In","On","By"],"correctAnswer":"As","explanation":"as a consequence = 作為結果","category":"cause","difficulty":"hard"},
-  {"id":"pp058","question":"She smiled ___ response to the good news.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in response to = 回應","category":"cause","difficulty":"medium"},
-  {"id":"pp059","question":"We need to fix this ___ once.","options":["in","on","at","by"],"correctAnswer":"at","explanation":"at once = 立刻","category":"action","difficulty":"easy"},
-  {"id":"pp060","question":"I know the API endpoints ___ heart.","options":["in","on","at","by"],"correctAnswer":"by","explanation":"by heart = 背起來","category":"action","difficulty":"easy"},
-  {"id":"pp061","question":"Don't push code ___ a hurry.","options":["in","on","at","by"],"correctAnswer":"in","explanation":"in a hurry = 匆忙","category":"action","difficulty":"easy"},
-  {"id":"pp062","question":"Let's debug this step ___ step.","options":["in","on","by","at"],"correctAnswer":"by","explanation":"step by step = 一步一步","category":"action","difficulty":"easy"},
-  {"id":"pp063","question":"___ the other hand, this approach is simpler.","options":["By","In","On","At"],"correctAnswer":"On","explanation":"on the other hand = 另一方面","category":"action","difficulty":"medium"},
-  {"id":"pp064","question":"He ran ___ of ideas during the meeting.","options":["in","on","at","out"],"correctAnswer":"out","explanation":"run out of = 用完","category":"action","difficulty":"easy"},
-  {"id":"pp065","question":"The team came up ___ a great solution.","options":["in","on","at","with"],"correctAnswer":"with","explanation":"come up with = 想出","category":"action","difficulty":"medium"},
-  {"id":"pp066","question":"She got rid ___ the old code.","options":["in","on","at","of"],"correctAnswer":"of","explanation":"get rid of = 刪除/擺脫","category":"action","difficulty":"easy"},
-  {"id":"pp067","question":"Look ___ the error in the log file.","options":["at","in","on","for"],"correctAnswer":"for","explanation":"look for = 尋找","category":"action","difficulty":"easy"},
-  {"id":"pp068","question":"The manager put ___ the meeting until next week.","options":["in","on","off","by"],"correctAnswer":"off","explanation":"put off = 延遲","category":"action","difficulty":"medium"},
-  {"id":"pp069","question":"___ instance, you could use a different algorithm.","options":["For","In","On","By"],"correctAnswer":"For","explanation":"for instance = 例如","category":"other","difficulty":"easy"},
-  {"id":"pp070","question":"___ fact, this bug has been there for months.","options":["By","In","On","At"],"correctAnswer":"In","explanation":"in fact = 事實上","category":"other","difficulty":"easy"},
-  {"id":"pp071","question":"___ course, we should add tests first.","options":["By","In","Of","At"],"correctAnswer":"Of","explanation":"of course = 當然","category":"other","difficulty":"easy"},
-  {"id":"pp072","question":"At ___ we caught the bug before release.","options":["most","least","best","last"],"correctAnswer":"least","explanation":"at least = 至少","category":"other","difficulty":"easy"},
-  {"id":"pp073","question":"___ addition to code review, we need E2E tests.","options":["By","In","On","At"],"correctAnswer":"In","explanation":"in addition to = 此外","category":"other","difficulty":"medium"},
-  {"id":"pp074","question":"She is responsible ___ the project delivery.","options":["at","in","on","for"],"correctAnswer":"for","explanation":"responsible for = 對...負責","category":"other","difficulty":"easy"},
-  {"id":"pp075","question":"He depends ___ his team for support.","options":["at","in","on","for"],"correctAnswer":"on","explanation":"depend on = 依賴","category":"other","difficulty":"easy"},
-  {"id":"pp076","question":"We are looking forward ___ the new release.","options":["at","in","on","to"],"correctAnswer":"to","explanation":"look forward to = 期待","category":"other","difficulty":"medium"},
-  {"id":"pp077","question":"The app consists ___ three main modules.","options":["at","in","on","of"],"correctAnswer":"of","explanation":"consist of = 由...組成","category":"other","difficulty":"medium"},
-  {"id":"pp078","question":"She apologized ___ the delay.","options":["at","in","on","for"],"correctAnswer":"for","explanation":"apologize for = 為...道歉","category":"other","difficulty":"easy"},
-  {"id":"pp079","question":"He insisted ___ doing it his way.","options":["at","in","on","for"],"correctAnswer":"on","explanation":"insist on = 堅持","category":"other","difficulty":"medium"},
-  {"id":"pp080","question":"I'm proud ___ my team's work.","options":["at","in","on","of"],"correctAnswer":"of","explanation":"proud of = 驕傲","category":"other","difficulty":"easy"},
-  {"id":"pp081","question":"She complained ___ the slow performance.","options":["at","in","on","about"],"correctAnswer":"about","explanation":"complain about = 抱怨","category":"other","difficulty":"easy"},
-  {"id":"pp082","question":"We need to deal ___ this issue immediately.","options":["at","in","on","with"],"correctAnswer":"with","explanation":"deal with = 處理","category":"other","difficulty":"easy"},
-  {"id":"pp083","question":"The result depends ___ the input quality.","options":["at","in","on","for"],"correctAnswer":"on","explanation":"depend on = 取決於","category":"other","difficulty":"easy"},
-  {"id":"pp084","question":"I'm tired ___ fixing the same bug.","options":["at","in","on","of"],"correctAnswer":"of","explanation":"tired of = 厭倦","category":"other","difficulty":"easy"},
-  {"id":"pp085","question":"She reminded me ___ the deadline.","options":["at","in","on","about"],"correctAnswer":"about","explanation":"remind about = 提醒","category":"other","difficulty":"easy"},
-  {"id":"pp086","question":"He succeeded ___ passing the certification.","options":["at","in","on","by"],"correctAnswer":"in","explanation":"succeed in = 成功做某事","category":"other","difficulty":"medium"},
-  {"id":"pp087","question":"We participated ___ the hackathon.","options":["at","in","on","by"],"correctAnswer":"in","explanation":"participate in = 參加","category":"other","difficulty":"easy"},
-  {"id":"pp088","question":"She applied ___ the senior position.","options":["at","in","on","for"],"correctAnswer":"for","explanation":"apply for = 申請","category":"other","difficulty":"easy"},
-  {"id":"pp089","question":"The company provided us ___ new equipment.","options":["at","in","on","with"],"correctAnswer":"with","explanation":"provide with = 提供","category":"other","difficulty":"medium"},
-  {"id":"pp090","question":"He's been waiting ___ a response for days.","options":["at","in","on","for"],"correctAnswer":"for","explanation":"wait for = 等待","category":"other","difficulty":"easy"},
-  {"id":"pp091","question":"I'm worried ___ the deadline.","options":["at","in","on","about"],"correctAnswer":"about","explanation":"worried about = 擔心","category":"other","difficulty":"easy"},
-  {"id":"pp092","question":"She's excited ___ the new project.","options":["at","in","on","about"],"correctAnswer":"about","explanation":"excited about = 興奮","category":"other","difficulty":"easy"},
-  {"id":"pp093","question":"He was surprised ___ the test results.","options":["at","in","on","by"],"correctAnswer":"by","explanation":"surprised by = 驚訝","category":"other","difficulty":"easy"},
-  {"id":"pp094","question":"The app belongs ___ the engineering team.","options":["at","in","on","to"],"correctAnswer":"to","explanation":"belong to = 屬於","category":"other","difficulty":"easy"},
-  {"id":"pp095","question":"We need to adapt ___ the new requirements.","options":["at","in","on","to"],"correctAnswer":"to","explanation":"adapt to = 適應","category":"other","difficulty":"medium"},
-  {"id":"pp096","question":"She contributed ___ the open source project.","options":["at","in","on","to"],"correctAnswer":"to","explanation":"contribute to = 貢獻","category":"other","difficulty":"medium"},
-  {"id":"pp097","question":"The error resulted ___ a system crash.","options":["at","in","on","to"],"correctAnswer":"in","explanation":"result in = 導致","category":"other","difficulty":"hard"},
-  {"id":"pp098","question":"I'm familiar ___ this codebase.","options":["at","in","on","with"],"correctAnswer":"with","explanation":"familiar with = 熟悉","category":"other","difficulty":"easy"},
-  {"id":"pp099","question":"She's capable ___ solving complex problems.","options":["at","in","on","of"],"correctAnswer":"of","explanation":"capable of = 有能力","category":"other","difficulty":"medium"},
-  {"id":"pp100","question":"We need to come up ___ a better plan.","options":["at","in","on","with"],"correctAnswer":"with","explanation":"come up with = 想出","category":"other","difficulty":"easy"}
+  {
+    "id": "pp001",
+    "question": "We arrived just ___ time for the meeting.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in time = 及時（差點來不及）",
+    "category": "time",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp002",
+    "question": "The train arrived ___ time.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "on time = 準時",
+    "category": "time",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp003",
+    "question": "I'm busy ___ the moment.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "at the moment = 目前",
+    "category": "time",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp004",
+    "question": "Please book the tickets ___ advance.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in advance = 事先",
+    "category": "time",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp005",
+    "question": "The bus is ___ schedule today.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "on schedule = 準時",
+    "category": "time",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp006",
+    "question": "We'll finish ___ the end of this week.",
+    "options": [
+      "by",
+      "in",
+      "on",
+      "at"
+    ],
+    "correctAnswer": "by",
+    "explanation": "by the end of = 在...結束前",
+    "category": "time",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp007",
+    "question": "___ the beginning of the class, the teacher said hello.",
+    "options": [
+      "At",
+      "In",
+      "On",
+      "By"
+    ],
+    "correctAnswer": "At",
+    "explanation": "at the beginning of = 在...開始時",
+    "category": "time",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp008",
+    "question": "He has been working here ___ 2010.",
+    "options": [
+      "since",
+      "for",
+      "from",
+      "during"
+    ],
+    "correctAnswer": "since",
+    "explanation": "since + 年份 = 自從",
+    "category": "time",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp009",
+    "question": "I'll be there ___ 10 minutes.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in + 時間 = 在...之後（未來）",
+    "category": "time",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp010",
+    "question": "She works ___ the evening.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in the evening = 在晚上",
+    "category": "time",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp011",
+    "question": "The car is parked ___ front of the school.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in front of = 在...前面",
+    "category": "place",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp012",
+    "question": "Sit ___ to me in the classroom.",
+    "options": [
+      "next",
+      "near",
+      "close",
+      "beside"
+    ],
+    "correctAnswer": "next",
+    "explanation": "next to = 在...旁邊",
+    "category": "place",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp013",
+    "question": "I bought some snacks ___ the way home.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "on the way = 在路上",
+    "category": "place",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp014",
+    "question": "The store is ___ the corner of the street.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "at the corner of = 在...轉角",
+    "category": "place",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp015",
+    "question": "I was ___ the middle of my homework.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in the middle of = 正在...中間",
+    "category": "place",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp016",
+    "question": "The cat is hiding ___ the table.",
+    "options": [
+      "under",
+      "below",
+      "beneath",
+      "down"
+    ],
+    "correctAnswer": "under",
+    "explanation": "under = 在...下面",
+    "category": "place",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp017",
+    "question": "She lives ___ the third floor.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "on the floor = 在...樓",
+    "category": "place",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp018",
+    "question": "We met ___ the entrance of the park.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "at the entrance = 在入口處",
+    "category": "place",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp019",
+    "question": "She is ___ charge of the class party.",
+    "options": [
+      "on",
+      "at",
+      "in",
+      "for"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in charge of = 負責",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp020",
+    "question": "I'm calling ___ behalf of my mom.",
+    "options": [
+      "on",
+      "in",
+      "at",
+      "for"
+    ],
+    "correctAnswer": "on",
+    "explanation": "on behalf of = 代表",
+    "category": "work",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp021",
+    "question": "___ to the weather report, it will rain tomorrow.",
+    "options": [
+      "According",
+      "Due",
+      "Thanks",
+      "In response"
+    ],
+    "correctAnswer": "According",
+    "explanation": "according to = 根據",
+    "category": "work",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp022",
+    "question": "___ response to your letter, I'm writing to say thank you.",
+    "options": [
+      "In",
+      "On",
+      "At",
+      "By"
+    ],
+    "correctAnswer": "In",
+    "explanation": "in response to = 回應",
+    "category": "work",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp023",
+    "question": "I deleted the file ___ mistake.",
+    "options": [
+      "by",
+      "in",
+      "on",
+      "at"
+    ],
+    "correctAnswer": "by",
+    "explanation": "by mistake = 不小心",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp024",
+    "question": "___ example, apples are good for your health.",
+    "options": [
+      "For",
+      "In",
+      "On",
+      "By"
+    ],
+    "correctAnswer": "For",
+    "explanation": "for example = 例如",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp025",
+    "question": "Let me tell you the story ___ detail.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in detail = 詳細地",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp026",
+    "question": "The test is ___ progress.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in progress = 進行中",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp027",
+    "question": "He is ___ duty this weekend.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "on duty = 值班",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp028",
+    "question": "The old building is ___ risk of falling down.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "under"
+    ],
+    "correctAnswer": "at",
+    "explanation": "at risk = 有風險",
+    "category": "work",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp029",
+    "question": "These two sisters have a lot ___ common.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in common = 共同點",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp030",
+    "question": "This map is ___ of date.",
+    "options": [
+      "out",
+      "in",
+      "on",
+      "by"
+    ],
+    "correctAnswer": "out",
+    "explanation": "out of date = 過時的",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp031",
+    "question": "Make sure your phone is ___ to date.",
+    "options": [
+      "up",
+      "in",
+      "on",
+      "by"
+    ],
+    "correctAnswer": "up",
+    "explanation": "up to date = 最新的",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp032",
+    "question": "Don't worry, the issue is ___ control.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "under"
+    ],
+    "correctAnswer": "under",
+    "explanation": "under control = 在控制中",
+    "category": "work",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp033",
+    "question": "The boy is ___ trouble for being late.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in trouble = 有麻煩",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp034",
+    "question": "She took care ___ her little brother.",
+    "options": [
+      "of",
+      "for",
+      "about",
+      "with"
+    ],
+    "correctAnswer": "of",
+    "explanation": "take care of = 照顧",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp035",
+    "question": "We need to keep track ___ our money.",
+    "options": [
+      "of",
+      "for",
+      "about",
+      "with"
+    ],
+    "correctAnswer": "of",
+    "explanation": "keep track of = 追蹤/記錄",
+    "category": "work",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp036",
+    "question": "___ other words, we should go home now.",
+    "options": [
+      "By",
+      "In",
+      "On",
+      "At"
+    ],
+    "correctAnswer": "In",
+    "explanation": "in other words = 換句話說",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp037",
+    "question": "___ the way, where is the bathroom?",
+    "options": [
+      "By",
+      "In",
+      "On",
+      "At"
+    ],
+    "correctAnswer": "By",
+    "explanation": "by the way = 順便一提",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp038",
+    "question": "Let's discuss this ___ person.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in person = 親自",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp039",
+    "question": "Nobody broke the window ___ purpose.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "on",
+    "explanation": "on purpose = 故意的",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp040",
+    "question": "___ general, the food here is delicious.",
+    "options": [
+      "In",
+      "On",
+      "At",
+      "By"
+    ],
+    "correctAnswer": "In",
+    "explanation": "in general = 一般來說",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp041",
+    "question": "___ be honest, I don't like pizza.",
+    "options": [
+      "By",
+      "In",
+      "To",
+      "On"
+    ],
+    "correctAnswer": "To",
+    "explanation": "to be honest = 老實說",
+    "category": "communication",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp042",
+    "question": "___ a matter of fact, I have been there before.",
+    "options": [
+      "As",
+      "In",
+      "On",
+      "By"
+    ],
+    "correctAnswer": "As",
+    "explanation": "as a matter of fact = 事實上",
+    "category": "communication",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pp043",
+    "question": "He is good ___ explaining complex ideas.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "good at = 擅長",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp044",
+    "question": "She is interested ___ learning English.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "interested in = 對...有興趣",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp045",
+    "question": "I agree ___ you on this issue.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "correctAnswer": "with",
+    "explanation": "agree with = 同意（某人）",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp046",
+    "question": "We need to focus ___ our studies.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "correctAnswer": "on",
+    "explanation": "focus on = 專注於",
+    "category": "communication",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp047",
+    "question": "He was late ___ of the heavy rain.",
+    "options": [
+      "because",
+      "due",
+      "as a result",
+      "since"
+    ],
+    "correctAnswer": "because",
+    "explanation": "because of = 因為",
+    "category": "cause",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp048",
+    "question": "The game was cancelled ___ to the rain.",
+    "options": [
+      "because",
+      "due",
+      "as a result",
+      "since"
+    ],
+    "correctAnswer": "due",
+    "explanation": "due to = 由於（後接名詞）",
+    "category": "cause",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp049",
+    "question": "___ a result, she didn't pass the test.",
+    "options": [
+      "As",
+      "In",
+      "On",
+      "By"
+    ],
+    "correctAnswer": "As",
+    "explanation": "as a result = 結果",
+    "category": "cause",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp050",
+    "question": "___ order to get good grades, you need to study hard.",
+    "options": [
+      "In",
+      "On",
+      "At",
+      "By"
+    ],
+    "correctAnswer": "In",
+    "explanation": "in order to = 為了",
+    "category": "cause",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp051",
+    "question": "Let's walk ___ of taking the bus.",
+    "options": [
+      "because",
+      "instead",
+      "in addition",
+      "thanks"
+    ],
+    "correctAnswer": "instead",
+    "explanation": "instead of = 而不是",
+    "category": "cause",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp052",
+    "question": "___ to my mom, I found my lost keys.",
+    "options": [
+      "Because",
+      "Instead",
+      "In addition",
+      "Thanks"
+    ],
+    "correctAnswer": "Thanks",
+    "explanation": "thanks to = 多虧",
+    "category": "cause",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp053",
+    "question": "He was late ___ of the traffic.",
+    "options": [
+      "because",
+      "due",
+      "instead",
+      "regardless"
+    ],
+    "correctAnswer": "because",
+    "explanation": "because of = 因為",
+    "category": "cause",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp054",
+    "question": "She smiled ___ spite of the bad weather.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in spite of = 儘管",
+    "category": "cause",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp055",
+    "question": "___ of crying, she tried again.",
+    "options": [
+      "Instead",
+      "Because",
+      "In front",
+      "By means"
+    ],
+    "correctAnswer": "Instead",
+    "explanation": "instead of = 而不是",
+    "category": "cause",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp056",
+    "question": "The event was cancelled due ___ the storm.",
+    "options": [
+      "because",
+      "to",
+      "for",
+      "of"
+    ],
+    "correctAnswer": "to",
+    "explanation": "due to = 由於",
+    "category": "cause",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp057",
+    "question": "___ a consequence, he had to stay after school.",
+    "options": [
+      "As",
+      "In",
+      "On",
+      "By"
+    ],
+    "correctAnswer": "As",
+    "explanation": "as a consequence = 作為結果",
+    "category": "cause",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pp058",
+    "question": "She waved ___ response to her friend.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in response to = 回應",
+    "category": "cause",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp059",
+    "question": "We need to fix this ___ once.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "at",
+    "explanation": "at once = 立刻",
+    "category": "action",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp060",
+    "question": "I know this song ___ heart.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "by",
+    "explanation": "by heart = 背起來",
+    "category": "action",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp061",
+    "question": "Don't eat ___ a hurry.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "in a hurry = 匆忙",
+    "category": "action",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp062",
+    "question": "Let's do this step ___ step.",
+    "options": [
+      "in",
+      "on",
+      "by",
+      "at"
+    ],
+    "correctAnswer": "by",
+    "explanation": "step by step = 一步一步",
+    "category": "action",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp063",
+    "question": "___ the other hand, the blue one looks nicer.",
+    "options": [
+      "By",
+      "In",
+      "On",
+      "At"
+    ],
+    "correctAnswer": "On",
+    "explanation": "on the other hand = 另一方面",
+    "category": "action",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp064",
+    "question": "I ran ___ of milk this morning.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "out"
+    ],
+    "correctAnswer": "out",
+    "explanation": "run out of = 用完",
+    "category": "action",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp065",
+    "question": "She came up ___ a great idea.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "with"
+    ],
+    "correctAnswer": "with",
+    "explanation": "come up with = 想出",
+    "category": "action",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp066",
+    "question": "We got rid ___ the old newspapers.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "of"
+    ],
+    "correctAnswer": "of",
+    "explanation": "get rid of = 丟掉/清除",
+    "category": "action",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp067",
+    "question": "I'm looking ___ my pencil. Have you seen it?",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correctAnswer": "for",
+    "explanation": "look for = 尋找",
+    "category": "action",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp068",
+    "question": "Mom put ___ the trip until next month.",
+    "options": [
+      "in",
+      "on",
+      "off",
+      "by"
+    ],
+    "correctAnswer": "off",
+    "explanation": "put off = 延遲",
+    "category": "action",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp069",
+    "question": "___ instance, you can drink water instead of juice.",
+    "options": [
+      "For",
+      "In",
+      "On",
+      "By"
+    ],
+    "correctAnswer": "For",
+    "explanation": "for instance = 例如",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp070",
+    "question": "___ fact, I have two cats at home.",
+    "options": [
+      "By",
+      "In",
+      "On",
+      "At"
+    ],
+    "correctAnswer": "In",
+    "explanation": "in fact = 事實上",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp071",
+    "question": "___ course, I'll help you!",
+    "options": [
+      "By",
+      "In",
+      "Of",
+      "At"
+    ],
+    "correctAnswer": "Of",
+    "explanation": "of course = 當然",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp072",
+    "question": "At ___ we caught the bug before release.",
+    "options": [
+      "most",
+      "least",
+      "best",
+      "last"
+    ],
+    "correctAnswer": "least",
+    "explanation": "at least = 至少",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp073",
+    "question": "___ addition to English, she also studies Japanese.",
+    "options": [
+      "By",
+      "In",
+      "On",
+      "At"
+    ],
+    "correctAnswer": "In",
+    "explanation": "in addition to = 此外",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp074",
+    "question": "She is responsible ___ feeding the dog.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correctAnswer": "for",
+    "explanation": "responsible for = 對...負責",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp075",
+    "question": "He depends ___ his team for support.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correctAnswer": "on",
+    "explanation": "depend on = 依賴",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp076",
+    "question": "We are looking forward ___ the summer vacation.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "to"
+    ],
+    "correctAnswer": "to",
+    "explanation": "look forward to = 期待",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp077",
+    "question": "Lunch consists ___ rice, vegetables, and meat.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "of"
+    ],
+    "correctAnswer": "of",
+    "explanation": "consist of = 由...組成",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp078",
+    "question": "She apologized ___ being late.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correctAnswer": "for",
+    "explanation": "apologize for = 為...道歉",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp079",
+    "question": "He insisted ___ doing it his way.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correctAnswer": "on",
+    "explanation": "insist on = 堅持",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp080",
+    "question": "I'm proud ___ my team's work.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "of"
+    ],
+    "correctAnswer": "of",
+    "explanation": "proud of = 驕傲",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp081",
+    "question": "He complained ___ the bad food.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "about"
+    ],
+    "correctAnswer": "about",
+    "explanation": "complain about = 抱怨",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp082",
+    "question": "We need to deal ___ this problem right now.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "correctAnswer": "with",
+    "explanation": "deal with = 處理",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp083",
+    "question": "Your grade depends ___ how hard you study.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correctAnswer": "on",
+    "explanation": "depend on = 取決於",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp084",
+    "question": "I'm tired ___ eating the same thing every day.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "of"
+    ],
+    "correctAnswer": "of",
+    "explanation": "tired of = 厭倦",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp085",
+    "question": "Mom reminded me ___ the doctor's appointment.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "about"
+    ],
+    "correctAnswer": "about",
+    "explanation": "remind about = 提醒",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp086",
+    "question": "He succeeded ___ winning first prize.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "succeed in = 成功做某事",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp087",
+    "question": "We participated ___ the school sports day.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "by"
+    ],
+    "correctAnswer": "in",
+    "explanation": "participate in = 參加",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp088",
+    "question": "She applied ___ a part-time job.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correctAnswer": "for",
+    "explanation": "apply for = 申請",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp089",
+    "question": "The school provided us ___ free lunches.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "correctAnswer": "with",
+    "explanation": "provide with = 提供",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp090",
+    "question": "He's been waiting ___ a response for days.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correctAnswer": "for",
+    "explanation": "wait for = 等待",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp091",
+    "question": "I'm worried ___ the math test tomorrow.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "about"
+    ],
+    "correctAnswer": "about",
+    "explanation": "worried about = 擔心",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp092",
+    "question": "She's excited ___ the school trip.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "about"
+    ],
+    "correctAnswer": "about",
+    "explanation": "excited about = 興奮",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp093",
+    "question": "He was surprised ___ the birthday party.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "by"
+    ],
+    "correctAnswer": "by",
+    "explanation": "surprised by = 驚訝",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp094",
+    "question": "This book belongs ___ the library.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "to"
+    ],
+    "correctAnswer": "to",
+    "explanation": "belong to = 屬於",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp095",
+    "question": "We need to adapt ___ the new school.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "to"
+    ],
+    "correctAnswer": "to",
+    "explanation": "adapt to = 適應",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp096",
+    "question": "She contributed ___ the school newspaper.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "to"
+    ],
+    "correctAnswer": "to",
+    "explanation": "contribute to = 貢獻",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp097",
+    "question": "Eating too much candy resulted ___ a stomachache.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "to"
+    ],
+    "correctAnswer": "in",
+    "explanation": "result in = 導致",
+    "category": "other",
+    "difficulty": "hard"
+  },
+  {
+    "id": "pp098",
+    "question": "I'm familiar ___ this neighborhood.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "correctAnswer": "with",
+    "explanation": "familiar with = 熟悉",
+    "category": "other",
+    "difficulty": "easy"
+  },
+  {
+    "id": "pp099",
+    "question": "She's capable ___ solving hard puzzles.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "of"
+    ],
+    "correctAnswer": "of",
+    "explanation": "capable of = 有能力",
+    "category": "other",
+    "difficulty": "medium"
+  },
+  {
+    "id": "pp100",
+    "question": "We need to come up ___ a better plan for the party.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "correctAnswer": "with",
+    "explanation": "come up with = 想出",
+    "category": "other",
+    "difficulty": "easy"
+  }
 ]

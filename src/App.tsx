@@ -9,6 +9,8 @@ import PrepositionalPhrases from "./pages/PrepositionalPhrases";
 import PrepositionalPhrasesQuiz from "./pages/PrepositionalPhrasesQuiz";
 import PresentContinuous from "./pages/PresentContinuous";
 import PresentContinuousQuiz from "./pages/PresentContinuousQuiz";
+import Pronouns from "./pages/Pronouns";
+import PronounsQuiz from "./pages/PronounsQuiz";
 import DixonPhrasalVerbs from "./pages/DixonPhrasalVerbs";
 import Lesson3 from "./pages/Lesson3";
 import Lesson3Quiz from "./pages/Lesson3Quiz";
@@ -46,6 +48,9 @@ function AppContent() {
       { id: "prep-phrases", title: "介系詞片語" },
       { id: "dixon-verbs", title: "狄克森動詞片語" },
     ],
+    "🔤 文法 Grammar": [
+      { id: "pronouns", title: "代名詞全攻略" },
+    ],
     "🔢 數學 Math": [
       { id: "linear-equations", title: "二元一次方程式" },
       { id: "quadrant", title: "象限座標挑戰" },
@@ -64,6 +69,7 @@ function AppContent() {
     if (id === "quiz.present-continuous") return "測驗: 現在進行式";
     if (id === "quiz.dixon-verbs") return "測驗: 狄克森動詞片語";
     if (id === "quiz.lesson3") return "測驗: 7下 Lesson 3";
+    if (id === "quiz.pronouns") return "測驗: 代名詞全攻略";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
@@ -86,6 +92,8 @@ function AppContent() {
       case "dixon-verbs": return <DixonPhrasalVerbs openApp={openApp} />;
       case "lesson3": return <Lesson3 openApp={openApp} />;
       case "quiz.lesson3": return <Lesson3Quiz />;
+      case "pronouns": return <Pronouns openApp={openApp} />;
+      case "quiz.pronouns": return <PronounsQuiz />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
   };

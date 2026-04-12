@@ -1,0 +1,962 @@
+[
+  {
+    "id": "p1-001",
+    "question": "___ am a student.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "I",
+    "explanation": "句首用主格 I"
+  },
+  {
+    "id": "p1-002",
+    "question": "The teacher called ___.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "動詞 called 後面用受格 me"
+  },
+  {
+    "id": "p1-003",
+    "question": "___ likes to play tennis.",
+    "options": [
+      "Her",
+      "She",
+      "Hers",
+      "His"
+    ],
+    "answer": "She",
+    "explanation": "句首、動詞前用主格 She"
+  },
+  {
+    "id": "p1-004",
+    "question": "Dad gave ___ a new bike.",
+    "options": [
+      "he",
+      "him",
+      "his",
+      "he's"
+    ],
+    "answer": "him",
+    "explanation": "動詞 gave 後面用受格 him"
+  },
+  {
+    "id": "p1-005",
+    "question": "___ are going to the movies tonight.",
+    "options": [
+      "Them",
+      "Their",
+      "They",
+      "Theirs"
+    ],
+    "answer": "They",
+    "explanation": "句首用主格 They"
+  },
+  {
+    "id": "p1-006",
+    "question": "Can you help ___ with homework?",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "動詞 help 後面用受格 me"
+  },
+  {
+    "id": "p1-007",
+    "question": "___ is my best friend.",
+    "options": [
+      "Him",
+      "He",
+      "His",
+      "He's"
+    ],
+    "answer": "He",
+    "explanation": "句首用主格 He"
+  },
+  {
+    "id": "p1-008",
+    "question": "The dog followed ___ home.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "her",
+    "explanation": "動詞 followed 後面用受格 her"
+  },
+  {
+    "id": "p1-009",
+    "question": "___ always eat breakfast together.",
+    "options": [
+      "Us",
+      "Our",
+      "We",
+      "Ours"
+    ],
+    "answer": "We",
+    "explanation": "句首用主格 We"
+  },
+  {
+    "id": "p1-010",
+    "question": "Please tell ___ the truth.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "動詞 tell 後面用受格 me"
+  },
+  {
+    "id": "p1-011",
+    "question": "The gift is for ___.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "her",
+    "explanation": "介系詞 for 後面用受格 her"
+  },
+  {
+    "id": "p1-012",
+    "question": "___ walked to school today.",
+    "options": [
+      "Them",
+      "Their",
+      "They",
+      "Theirs"
+    ],
+    "answer": "They",
+    "explanation": "句首用主格 They"
+  },
+  {
+    "id": "p1-013",
+    "question": "I saw ___ at the park.",
+    "options": [
+      "he",
+      "him",
+      "his",
+      "he's"
+    ],
+    "answer": "him",
+    "explanation": "動詞 saw 後面用受格 him"
+  },
+  {
+    "id": "p1-014",
+    "question": "___ are studying for the test.",
+    "options": [
+      "Us",
+      "Our",
+      "We",
+      "Ours"
+    ],
+    "answer": "We",
+    "explanation": "句首用主格 We"
+  },
+  {
+    "id": "p1-015",
+    "question": "The teacher asked ___ a question.",
+    "options": [
+      "they",
+      "them",
+      "their",
+      "theirs"
+    ],
+    "answer": "them",
+    "explanation": "動詞 asked 後面用受格 them"
+  },
+  {
+    "id": "p1-016",
+    "question": "___ plays the guitar very well.",
+    "options": [
+      "Him",
+      "His",
+      "He",
+      "He's"
+    ],
+    "answer": "He",
+    "explanation": "句首用主格 He"
+  },
+  {
+    "id": "p1-017",
+    "question": "Mom bought a gift for ___.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "介系詞 for 後面用受格 me"
+  },
+  {
+    "id": "p1-018",
+    "question": "___ want to be a doctor.",
+    "options": [
+      "Her",
+      "She",
+      "Hers",
+      "She's"
+    ],
+    "answer": "She",
+    "explanation": "句首用主格 She"
+  },
+  {
+    "id": "p1-019",
+    "question": "The cat ran to ___.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "介系詞 to 後面用受格 me"
+  },
+  {
+    "id": "p1-020",
+    "question": "___ need to finish this project.",
+    "options": [
+      "Us",
+      "Our",
+      "We",
+      "Ours"
+    ],
+    "answer": "We",
+    "explanation": "句首用主格 We"
+  },
+  {
+    "id": "p2-001",
+    "question": "This is ___ book.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "My",
+    "explanation": "後面有名詞 book → 用所有格 my"
+  },
+  {
+    "id": "p2-002",
+    "question": "This book is ___.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Mine",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 mine"
+  },
+  {
+    "id": "p2-003",
+    "question": "Is that ___ dog?",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "her",
+    "explanation": "後面有名詞 dog → 用所有格 her"
+  },
+  {
+    "id": "p2-004",
+    "question": "That dog is ___.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "hers",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 hers"
+  },
+  {
+    "id": "p2-005",
+    "question": "___ car is parked outside.",
+    "options": [
+      "They",
+      "Them",
+      "Their",
+      "Theirs"
+    ],
+    "answer": "Their",
+    "explanation": "後面有名詞 car → 用所有格 their"
+  },
+  {
+    "id": "p2-006",
+    "question": "The blue pen is ___.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Mine",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 mine"
+  },
+  {
+    "id": "p2-007",
+    "question": "We love ___ new school.",
+    "options": [
+      "us",
+      "our",
+      "ours",
+      "we"
+    ],
+    "answer": "our",
+    "explanation": "後面有名詞 school → 用所有格 our"
+  },
+  {
+    "id": "p2-008",
+    "question": "These shoes are not ___. They are yours.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Mine",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 mine"
+  },
+  {
+    "id": "p2-009",
+    "question": "___ brother is three years old.",
+    "options": [
+      "He",
+      "Him",
+      "His",
+      "He's"
+    ],
+    "answer": "His",
+    "explanation": "後面有名詞 brother → 用所有格 his"
+  },
+  {
+    "id": "p2-010",
+    "question": "The red one is ___.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "hers",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 hers"
+  },
+  {
+    "id": "p2-011",
+    "question": "Where is ___ phone?",
+    "options": [
+      "you",
+      "your",
+      "yours",
+      "you're"
+    ],
+    "answer": "your",
+    "explanation": "後面有名詞 phone → 用所有格 your"
+  },
+  {
+    "id": "p2-012",
+    "question": "This seat is ___.",
+    "options": [
+      "They",
+      "Them",
+      "Their",
+      "Theirs"
+    ],
+    "answer": "Theirs",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 theirs"
+  },
+  {
+    "id": "p2-013",
+    "question": "I forgot ___ umbrella.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "My",
+    "explanation": "後面有名詞 umbrella → 用所有格 my"
+  },
+  {
+    "id": "p2-014",
+    "question": "The idea was ___.",
+    "options": [
+      "he",
+      "him",
+      "his",
+      "he's"
+    ],
+    "answer": "his",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 his"
+  },
+  {
+    "id": "p2-015",
+    "question": "Is this ___ jacket?",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "her",
+    "explanation": "後面有名詞 jacket → 用所有格 her"
+  },
+  {
+    "id": "p2-016",
+    "question": "The yellow bag is ___.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Mine",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 mine"
+  },
+  {
+    "id": "p2-017",
+    "question": "___ team won the game!",
+    "options": [
+      "We",
+      "Us",
+      "Our",
+      "Ours"
+    ],
+    "answer": "Our",
+    "explanation": "後面有名詞 team → 用所有格 our"
+  },
+  {
+    "id": "p2-018",
+    "question": "The trophy is ___.",
+    "options": [
+      "They",
+      "Them",
+      "Their",
+      "Theirs"
+    ],
+    "answer": "Theirs",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 theirs"
+  },
+  {
+    "id": "p2-019",
+    "question": "She lost ___ wallet.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "her",
+    "explanation": "後面有名詞 wallet → 用所有格 her"
+  },
+  {
+    "id": "p2-020",
+    "question": "That computer is ___.",
+    "options": [
+      "he",
+      "him",
+      "his",
+      "he's"
+    ],
+    "answer": "his",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 his"
+  },
+  {
+    "id": "p3-001",
+    "question": "___ car is that? (they 的所有格)",
+    "options": [
+      "Them",
+      "Their",
+      "Theirs",
+      "They"
+    ],
+    "answer": "Their",
+    "explanation": "後面有名詞 car → 用所有格 their"
+  },
+  {
+    "id": "p3-002",
+    "question": "That bike of ___ needs repair.",
+    "options": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answer": "mine",
+    "explanation": "of + 所有格代名詞 mine"
+  },
+  {
+    "id": "p3-003",
+    "question": "Let ___ help you.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "Let + 受格 me（Let me help you）"
+  },
+  {
+    "id": "p3-004",
+    "question": "___ and I are classmates.",
+    "options": [
+      "Her",
+      "She",
+      "Hers",
+      "She's"
+    ],
+    "answer": "She",
+    "explanation": "和 I 並列主格 → 用 She"
+  },
+  {
+    "id": "p3-005",
+    "question": "The teacher told ___ to be quiet.",
+    "options": [
+      "they",
+      "them",
+      "their",
+      "theirs"
+    ],
+    "answer": "them",
+    "explanation": "動詞 told 後面用受格 them"
+  },
+  {
+    "id": "p3-006",
+    "question": "This is a friend of ___.",
+    "options": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answer": "mine",
+    "explanation": "of + 所有格代名詞 mine"
+  },
+  {
+    "id": "p3-007",
+    "question": "___ handwriting is very neat.",
+    "options": [
+      "She",
+      "Her",
+      "Hers",
+      "She's"
+    ],
+    "answer": "Her",
+    "explanation": "後面有名詞 handwriting → 用所有格 her"
+  },
+  {
+    "id": "p3-008",
+    "question": "I don't know ___ phone number.",
+    "options": [
+      "he",
+      "him",
+      "his",
+      "he's"
+    ],
+    "answer": "his",
+    "explanation": "後面有名詞 phone number → 用所有格 his"
+  },
+  {
+    "id": "p3-009",
+    "question": "Between you and ___, I think it's a bad idea.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "介系詞 between 後面用受格 me"
+  },
+  {
+    "id": "p3-010",
+    "question": "Whose bag is this? It's ___.",
+    "options": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answer": "mine",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 mine"
+  },
+  {
+    "id": "p3-011",
+    "question": "___ went to the mall after school.",
+    "options": [
+      "Us",
+      "Our",
+      "We",
+      "Ours"
+    ],
+    "answer": "We",
+    "explanation": "句首用主格 We"
+  },
+  {
+    "id": "p3-012",
+    "question": "The principal invited ___ to the ceremony.",
+    "options": [
+      "they",
+      "them",
+      "their",
+      "theirs"
+    ],
+    "answer": "them",
+    "explanation": "動詞 invited 後面用受格 them"
+  },
+  {
+    "id": "p3-013",
+    "question": "That idea of ___ is really smart.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "hers",
+    "explanation": "of + 所有格代名詞 hers"
+  },
+  {
+    "id": "p3-014",
+    "question": "___ dog is very friendly.",
+    "options": [
+      "They",
+      "Them",
+      "Their",
+      "Theirs"
+    ],
+    "answer": "Their",
+    "explanation": "後面有名詞 dog → 用所有格 their"
+  },
+  {
+    "id": "p3-015",
+    "question": "Are these tickets ___?",
+    "options": [
+      "they",
+      "them",
+      "their",
+      "theirs"
+    ],
+    "answer": "theirs",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 theirs"
+  },
+  {
+    "id": "p3-016",
+    "question": "The cat licked ___ paw.",
+    "options": [
+      "it",
+      "its",
+      "it's",
+      "itself"
+    ],
+    "answer": "its",
+    "explanation": "後面有名詞 paw → 用所有格 its（注意：不是 it's）"
+  },
+  {
+    "id": "p3-017",
+    "question": "My brother is taller than ___.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "口語中 than 後面常用受格 me"
+  },
+  {
+    "id": "p3-018",
+    "question": "Is this ___ seat or mine?",
+    "options": [
+      "you",
+      "your",
+      "yours",
+      "you're"
+    ],
+    "answer": "your",
+    "explanation": "後面有名詞 seat → 用所有格 your"
+  },
+  {
+    "id": "p3-019",
+    "question": "She invited Tom and ___ to the party.",
+    "options": [
+      "I",
+      "Me",
+      "My",
+      "Mine"
+    ],
+    "answer": "Me",
+    "explanation": "動詞 invited 後面，和 Tom 並列用受格 me"
+  },
+  {
+    "id": "p3-020",
+    "question": "The choice is ___.",
+    "options": [
+      "they",
+      "them",
+      "their",
+      "theirs"
+    ],
+    "answer": "theirs",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 theirs"
+  },
+  {
+    "id": "p4-001",
+    "question": "A friend of ___ is coming to visit.",
+    "options": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answer": "mine",
+    "explanation": "雙重所有格：of + 所有格代名詞 mine"
+  },
+  {
+    "id": "p4-002",
+    "question": "That dog of ___ is always barking.",
+    "options": [
+      "he",
+      "him",
+      "his",
+      "he's"
+    ],
+    "answer": "his",
+    "explanation": "雙重所有格：of + 所有格代名詞 his"
+  },
+  {
+    "id": "p4-003",
+    "question": "This old car of ___ still runs well.",
+    "options": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answer": "mine",
+    "explanation": "雙重所有格：of + 所有格代名詞 mine"
+  },
+  {
+    "id": "p4-004",
+    "question": "Some classmates of ___ joined the club.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "hers",
+    "explanation": "雙重所有格：of + 所有格代名詞 hers"
+  },
+  {
+    "id": "p4-005",
+    "question": "That beautiful voice of ___ is amazing.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "hers",
+    "explanation": "雙重所有格：of + 所有格代名詞 hers"
+  },
+  {
+    "id": "p4-006",
+    "question": "A cousin of ___ lives in Taipei.",
+    "options": [
+      "they",
+      "them",
+      "their",
+      "theirs"
+    ],
+    "answer": "theirs",
+    "explanation": "雙重所有格：of + 所有格代名詞 theirs"
+  },
+  {
+    "id": "p4-007",
+    "question": "This project of ___ won first prize.",
+    "options": [
+      "we",
+      "us",
+      "our",
+      "ours"
+    ],
+    "answer": "ours",
+    "explanation": "雙重所有格：of + 所有格代名詞 ours"
+  },
+  {
+    "id": "p4-008",
+    "question": "I met a friend of ___ at the store.",
+    "options": [
+      "you",
+      "your",
+      "yours",
+      "you're"
+    ],
+    "answer": "yours",
+    "explanation": "雙重所有格：of + 所有格代名詞 yours"
+  },
+  {
+    "id": "p4-009",
+    "question": "That habit of ___ is really annoying.",
+    "options": [
+      "he",
+      "him",
+      "his",
+      "he's"
+    ],
+    "answer": "his",
+    "explanation": "雙重所有格：of + 所有格代名詞 his"
+  },
+  {
+    "id": "p4-010",
+    "question": "Any friend of ___ is a friend of ___.",
+    "options": [
+      "my...me",
+      "mine...me",
+      "my...mine",
+      "mine...mine"
+    ],
+    "answer": "mine...mine",
+    "explanation": "兩個都是 of + 所有格代名詞：of mine...of mine"
+  },
+  {
+    "id": "p4-011",
+    "question": "This is not ___ fault. It's ___.",
+    "options": [
+      "my...me",
+      "my...mine",
+      "mine...my",
+      "me...mine"
+    ],
+    "answer": "my...mine",
+    "explanation": "第一格後有 fault → 所有格 my；第二格後沒名詞 → 所有格代名詞 mine"
+  },
+  {
+    "id": "p4-012",
+    "question": "She is a good friend of ___.",
+    "options": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answer": "mine",
+    "explanation": "雙重所有格：of + 所有格代名詞 mine"
+  },
+  {
+    "id": "p4-013",
+    "question": "That sister of ___ is a doctor.",
+    "options": [
+      "he",
+      "him",
+      "his",
+      "he's"
+    ],
+    "answer": "his",
+    "explanation": "雙重所有格：of + 所有格代名詞 his"
+  },
+  {
+    "id": "p4-014",
+    "question": "The decision is ___ to make.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "hers",
+    "explanation": "後面沒有名詞 → 用所有格代名詞 hers"
+  },
+  {
+    "id": "p4-015",
+    "question": "___ house is bigger than ___.",
+    "options": [
+      "Our...their",
+      "Our...theirs",
+      "Ours...their",
+      "Ours...theirs"
+    ],
+    "answer": "Our...theirs",
+    "explanation": "第一格後有 house → 所有格 Our；第二格後沒名詞 → 所有格代名詞 theirs"
+  },
+  {
+    "id": "p4-016",
+    "question": "I saw some pictures of ___ on the wall.",
+    "options": [
+      "she",
+      "her",
+      "hers",
+      "she's"
+    ],
+    "answer": "her",
+    "explanation": "pictures of her = 她的照片（of + 受格 = 照片裡是她）"
+  },
+  {
+    "id": "p4-017",
+    "question": "A picture of ___ hung on the wall. (it's a photo she owns)",
+    "options": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answer": "mine",
+    "explanation": "一張屬於我的照片 → of + 所有格代名詞 mine"
+  },
+  {
+    "id": "p4-018",
+    "question": "___ the two of ___ should work together.",
+    "options": [
+      "Me...us",
+      "I...we",
+      "I...us",
+      "Me...we"
+    ],
+    "answer": "I...us",
+    "explanation": "第一格句首主格 I；第二格介系詞 of 後面受格 us"
+  },
+  {
+    "id": "p4-019",
+    "question": "That lovely garden of ___ has many flowers.",
+    "options": [
+      "they",
+      "them",
+      "their",
+      "theirs"
+    ],
+    "answer": "theirs",
+    "explanation": "雙重所有格：of + 所有格代名詞 theirs"
+  },
+  {
+    "id": "p4-020",
+    "question": "This responsibility is ___, not ___.",
+    "options": [
+      "my...your",
+      "mine...yours",
+      "me...you",
+      "my...yours"
+    ],
+    "answer": "mine...yours",
+    "explanation": "兩格後面都沒有名詞 → 都用所有格代名詞 mine...yours"
+  }
+]
