@@ -8,6 +8,7 @@ type QuizItem = {
   question: string;
   options: string[];
   answer: string;
+  correctAnswer: string;
   explanation: string;
 };
 
@@ -61,7 +62,7 @@ export default function PronounsQuiz() {
       case "new":
         return allQuestions.filter(q => questionStatus[q.id] !== 'success');
       case "failed":
-        return allQuestions.filter(q => questionStatus[q.id] === 'failed');
+        return allQuestions.filter(q => questionStatus[q.id] === 'fail');
       case "all":
         return [...allQuestions];
       case "topic1":
@@ -145,6 +146,7 @@ export default function PronounsQuiz() {
               userAnswer: userAns,
               correctAnswer: q.correctAnswer,
               explanation: q.explanation,
+              isCorrect: false,
             }]
           ).map(r => ({
             id: r.id,
