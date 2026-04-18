@@ -3,6 +3,7 @@ import PresentSimple from "./pages/PresentSimple";
 import QuizPage from "./pages/QuizPage";
 import AuthPage from "./pages/AuthPage";
 import ScoreHistoryPage from "./pages/ScoreHistoryPage";
+import LearningReport from "./pages/LearningReport";
 import LinearEquations from "./pages/LinearEquations";
 import QuadrantPage from "./pages/QuadrantPage";
 import PrepositionalPhrases from "./pages/PrepositionalPhrases";
@@ -14,6 +15,7 @@ import PronounsQuiz from "./pages/PronounsQuiz";
 import DixonPhrasalVerbs from "./pages/DixonPhrasalVerbs";
 import Lesson3 from "./pages/Lesson3";
 import Lesson3Quiz from "./pages/Lesson3Quiz";
+import LinearEquationsGraph from "./pages/LinearEquationsGraph";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -53,6 +55,7 @@ function AppContent() {
     ],
     "🔢 數學 Math": [
       { id: "linear-equations", title: "二元一次方程式" },
+      { id: "linear-equations-graph", title: "方程式圖形解說" },
       { id: "quadrant", title: "象限座標挑戰" },
     ],
     "📚 課程 Lessons": [
@@ -60,6 +63,7 @@ function AppContent() {
     ],
     "👤 會員": [
       { id: "score-history", title: "📊 考試成績" },
+      { id: "learning-report", title: "🤖 AI 學習報告" },
     ],
   };
 
@@ -83,7 +87,9 @@ function AppContent() {
       case "present-simple": return <PresentSimple openApp={openApp} />;
       case "quiz.present-simple": return <QuizPage />;
       case "score-history": return <ScoreHistoryPage />;
+      case "learning-report": return <LearningReport />;
       case "linear-equations": return <LinearEquations />;
+      case "linear-equations-graph": return <LinearEquationsGraph />;
       case "quadrant": return <QuadrantPage />;
       case "prep-phrases": return <PrepositionalPhrases openApp={openApp} />;
       case "quiz.prep-phrases": return <PrepositionalPhrasesQuiz />;
