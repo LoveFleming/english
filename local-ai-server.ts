@@ -1,21 +1,60 @@
 // Local AI Report Server - runs on Mac mini
 // Receives exam data, calls AI, returns chart config
-// Start: node local-ai-server.js
+// Start: ZAI_API_KEY=xxx npx tsx local-ai-server.ts
 
 import express from 'express';
 import cors from 'cors';
+import { SignJWT } from 'jose';
 
 const ZAI_API_KEY = process.env.ZAI_API_KEY;
-const AI_API_URL = process.env.AI_API_URL || 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
-const AI_MODEL = process.env.AI_MODEL || 'glm-4-flash';
+const AI_API_URL = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
+const AI_MODEL = process.env.AI_MODEL || 'glm-5-turbo';
 const PORT = process.env.AI_PORT || 3456;
+
+async function generateToken(): Promise<string> {
+  const [id, secret] = ZAI_API_KEY!.split('.');
+  const now = Date.now();
+  const payload = {
+    api_key: id,
+    exp: now + 3600 * 1000,
+    timestamp: now,
+  };
+  const encoder = new TextEncoder();
+  const key = encoder.encode(secret);
+  const token = await new SignJWT(payload)
+    .setProtectedHeader({ alg: 'HS256', sign_type: 'SIGN' })
+    .sign(key);
+  return token;
+}
+
+async function callAI(prompt: string): Promise<string> {
+  const token = await generateToken();
+  const res = await fetch(AI_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      model: AI_MODEL,
+      messages: [{ role: 'user', content: prompt }],
+      temperature: 0.3,
+      max_tokens: 2000,
+    }),
+  });
+  const data = await res.json();
+  if (data.error) {
+    throw new Error(`AI API error: ${data.error.code} ${data.error.message}`);
+  }
+  return data.choices?.[0]?.message?.content || '';
+}
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', ai: ZAI_API_KEY ? 'configured' : 'missing key' });
+  res.json({ status: 'ok', ai: ZAI_API_KEY ? 'configured' : 'missing key', model: AI_MODEL });
 });
 
 app.post('/analyze', async (req, res) => {
@@ -85,35 +124,29 @@ ${JSON.stringify(summary, null, 2)}
 }
 
 注意：
-1. 錯題類型從 wrongQuestions 的 explanation 歸納（雙重所有格、主格受格混淆等）
+1. 錯題類型從 wrongQuestions 的 explanation 歸納
 2. 趨勢圖按時間正序
 3. 建議要具體
 4. 只輸出 JSON`;
 
   try {
-    const aiRes = await fetch(AI_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${ZAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: AI_MODEL,
-        messages: [{ role: 'user', content: prompt }],
-        temperature: 0.3,
-        max_tokens: 2000,
-      }),
-    });
+    const content = await callAI(prompt);
+    if (!content) {
+      return res.status(500).json({ error: 'AI 回應為空' });
+    }
 
-    const aiData = await aiRes.json();
-    const content = aiData.choices?.[0]?.message?.content || '';
-    
     let jsonStr = content.trim();
     if (jsonStr.startsWith('```')) {
       jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
     }
 
-    const report = JSON.parse(jsonStr);
+    let report;
+    try {
+      report = JSON.parse(jsonStr);
+    } catch {
+      console.error('JSON parse failed, raw:', jsonStr.slice(0, 300));
+      return res.status(500).json({ error: 'AI 回應格式錯誤', detail: jsonStr.slice(0, 200) });
+    }
     report._source = 'ai';
     res.json(report);
   } catch (err: any) {
@@ -124,5 +157,6 @@ ${JSON.stringify(summary, null, 2)}
 
 app.listen(PORT, () => {
   console.log(`🤖 AI Report Server running on http://localhost:${PORT}`);
-  console.log(`   AI: ${ZAI_API_KEY ? 'configured' : '⚠️  ZAI_API_KEY not set'}`);
+  console.log(`   AI: ${ZAI_API_KEY ? 'configured (key: ...' + ZAI_API_KEY.slice(-8) + ')' : '⚠️  ZAI_API_KEY not set'}`);
+  console.log(`   Model: ${AI_MODEL}`);
 });

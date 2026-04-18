@@ -46,38 +46,13 @@ export default function LearningReport() {
     setLoading(true);
     setError('');
     try {
-      // Step 1: Get scores from Vercel
-      const scoresRes = await fetch(`${API_BASE}?action=scores&username=${username}`);
-      const scores = await scoresRes.json();
-      if (!scores.length) throw new Error('尚無考試記錄');
-
-      // Step 2: Try local AI first
-      let report: ReportConfig | null = null;
-      try {
-        const localRes = await fetch(`${LOCAL_AI}/analyze`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, scores }),
-          signal: AbortSignal.timeout(30000),
-        });
-        if (localRes.ok) {
-          report = await localRes.json();
-        }
-      } catch {
-        // Local AI not available, fall through
+      const res = await fetch(`${AI_REPORT_API}?username=${username}`);
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || '生成失敗');
       }
-
-      // Step 3: Fallback to Vercel basic report
-      if (!report) {
-        const res = await fetch(`${AI_REPORT_API}?username=${username}`);
-        if (!res.ok) {
-          const data = await res.json();
-          throw new Error(data.error || '生成失敗');
-        }
-        report = await res.json();
-      }
-
-      setReport(report);
+      const data = await res.json();
+      setReport(data);
     } catch (err: any) {
       setError(err.message);
     } finally {
