@@ -16,6 +16,10 @@ import DixonPhrasalVerbs from "./pages/DixonPhrasalVerbs";
 import Lesson3 from "./pages/Lesson3";
 import Lesson3Quiz from "./pages/Lesson3Quiz";
 import LinearEquationsGraph from "./pages/LinearEquationsGraph";
+import RatioAndProportion from "./pages/RatioAndProportion";
+import RatioAndProportionQuiz from "./pages/RatioAndProportionQuiz";
+import DirectInverseProportion from "./pages/DirectInverseProportion";
+import DirectInverseProportionQuiz from "./pages/DirectInverseProportionQuiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -57,6 +61,8 @@ function AppContent() {
       { id: "linear-equations", title: "二元一次方程式" },
       { id: "linear-equations-graph", title: "方程式圖形解說" },
       { id: "quadrant", title: "象限座標挑戰" },
+      { id: "ratio-proportion", title: "3-1 比與比例式" },
+      { id: "direct-inverse-proportion", title: "3-2 正比與反比" },
     ],
     "📚 課程 Lessons": [
       { id: "lesson3", title: "7下 Lesson 3" },
@@ -100,6 +106,10 @@ function AppContent() {
       case "quiz.lesson3": return <Lesson3Quiz />;
       case "pronouns": return <Pronouns openApp={openApp} />;
       case "quiz.pronouns": return <PronounsQuiz />;
+      case "ratio-proportion": return <RatioAndProportion openApp={openApp} />;
+      case "quiz.ratio-proportion": return <RatioAndProportionQuiz />;
+      case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;
+      case "quiz.direct-inverse-proportion": return <DirectInverseProportionQuiz />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
   };
