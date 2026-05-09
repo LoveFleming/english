@@ -1,0 +1,317 @@
+[
+  {
+    "id": "q1-001",
+    "question": "Amy has _____ friends in her new school.",
+    "options": ["much", "many", "little", "a little"],
+    "answer": "many",
+    "explanation": "friends 是可數名詞，用 many"
+  },
+  {
+    "id": "q1-002",
+    "question": "There isn't _____ milk in the fridge.",
+    "options": ["many", "some", "much", "a few"],
+    "answer": "much",
+    "explanation": "milk 是不可數名詞，否定句用 much"
+  },
+  {
+    "id": "q1-003",
+    "question": "We have _____ time before the movie. Don't worry!",
+    "options": ["a little", "little", "few", "a few"],
+    "answer": "a little",
+    "explanation": "time 不可數，「有一點，夠用」用 a little（正面語氣）"
+  },
+  {
+    "id": "q1-004",
+    "question": "_____ students passed the test. It was too hard.",
+    "options": ["A few", "Few", "Much", "A little"],
+    "answer": "Few",
+    "explanation": "students 可數，「幾乎沒有」用 Few（負面語氣）"
+  },
+  {
+    "id": "q1-005",
+    "question": "Can I have _____ water, please?",
+    "options": ["few", "a few", "some", "many"],
+    "answer": "some",
+    "explanation": "請求/邀請的問句可以用 some（water 不可數）"
+  },
+  {
+    "id": "q1-006",
+    "question": "I don't have _____ homework today.",
+    "options": ["many", "much", "a few", "few"],
+    "answer": "much",
+    "explanation": "homework 不可數，否定句用 much"
+  },
+  {
+    "id": "q1-007",
+    "question": "There are _____ chairs in the room. We need more.",
+    "options": ["a few", "few", "little", "a little"],
+    "answer": "few",
+    "explanation": "chairs 可數，「很少、不夠」用 few（負面語氣）"
+  },
+  {
+    "id": "q1-008",
+    "question": "She has _____ money. She can buy that toy.",
+    "options": ["little", "a little", "few", "a few"],
+    "answer": "a little",
+    "explanation": "money 不可數，「有一點，夠買」用 a little（正面語氣）"
+  },
+  {
+    "id": "q1-009",
+    "question": "Are there _____ books on the shelf?",
+    "options": ["much", "a little", "any", "little"],
+    "answer": "any",
+    "explanation": "books 可數，疑問句用 any"
+  },
+  {
+    "id": "q1-010",
+    "question": "He eats _____ food every day. He's always hungry!",
+    "options": ["a lot of", "much", "little", "few"],
+    "answer": "a lot of",
+    "explanation": "food 不可數，肯定句中「很多」用 a lot of 比 much 更自然"
+  },
+  {
+    "id": "q2-001",
+    "question": "We don't have _____ water left. Please buy some.",
+    "options": ["many", "much", "a few", "few"],
+    "answer": "much",
+    "explanation": "water 不可數，否定句用 much"
+  },
+  {
+    "id": "q2-002",
+    "question": "There are _____ students in the classroom today. Almost everyone is here!",
+    "options": ["much", "many", "little", "a little"],
+    "answer": "many",
+    "explanation": "students 可數，「很多」用 many"
+  },
+  {
+    "id": "q2-003",
+    "question": "I have only _____ money. I can't buy that shirt.",
+    "options": ["a little", "little", "a few", "few"],
+    "answer": "little",
+    "explanation": "money 不可數，「幾乎沒有」用 little（負面語氣）"
+  },
+  {
+    "id": "q2-004",
+    "question": "Do you have _____ friends in this city?",
+    "options": ["much", "some", "any", "little"],
+    "answer": "any",
+    "explanation": "friends 可數，疑問句用 any"
+  },
+  {
+    "id": "q2-005",
+    "question": "There is _____ milk in the glass. That's enough for me.",
+    "options": ["a little", "little", "a few", "few"],
+    "answer": "a little",
+    "explanation": "milk 不可數，「有一點，夠用」用 a little（正面語氣）"
+  },
+  {
+    "id": "q2-006",
+    "question": "_____ of the food on the table is delicious.",
+    "options": ["Many", "Few", "Most", "A few"],
+    "answer": "Most",
+    "explanation": "food 不可數，「大多數」用 Most"
+  },
+  {
+    "id": "q2-007",
+    "question": "She has _____ books. She loves reading!",
+    "options": ["much", "many", "little", "a little"],
+    "answer": "many",
+    "explanation": "books 可數，「很多」用 many"
+  },
+  {
+    "id": "q2-008",
+    "question": "I have _____ time to finish this. I need help!",
+    "options": ["a little", "little", "a few", "few"],
+    "answer": "little",
+    "explanation": "time 不可數，「幾乎沒有」用 little（負面語氣）"
+  },
+  {
+    "id": "q2-009",
+    "question": "There are _____ chairs for everyone. We have just enough.",
+    "options": ["few", "a few", "little", "a little"],
+    "answer": "a few",
+    "explanation": "chairs 可數，「有幾個，夠用」用 a few（正面語氣）"
+  },
+  {
+    "id": "q2-010",
+    "question": "He doesn't drink _____ milk every day.",
+    "options": ["many", "much", "a few", "few"],
+    "answer": "much",
+    "explanation": "milk 不可數，否定句用 much"
+  },
+  {
+    "id": "q3-001",
+    "question": "\"many milk\" 的用法正確嗎？",
+    "options": ["正確", "錯誤"],
+    "answer": "錯誤",
+    "explanation": "milk 是不可數名詞，不能用 many，應改用 much"
+  },
+  {
+    "id": "q3-002",
+    "question": "\"a few books\" 的用法正確嗎？",
+    "options": ["正確", "錯誤"],
+    "answer": "正確",
+    "explanation": "books 是可數名詞，a few 用法正確"
+  },
+  {
+    "id": "q3-003",
+    "question": "\"much students\" 的用法正確嗎？",
+    "options": ["正確", "錯誤"],
+    "answer": "錯誤",
+    "explanation": "students 是可數名詞，不能用 much，應改用 many"
+  },
+  {
+    "id": "q3-004",
+    "question": "\"a little time\" 的用法正確嗎？",
+    "options": ["正確", "錯誤"],
+    "answer": "正確",
+    "explanation": "time 是不可數名詞，a little 用法正確"
+  },
+  {
+    "id": "q3-005",
+    "question": "\"few water\" 的用法正確嗎？",
+    "options": ["正確", "錯誤"],
+    "answer": "錯誤",
+    "explanation": "water 是不可數名詞，不能用 few，應改用 little"
+  },
+  {
+    "id": "q4-001",
+    "question": "There are much books on the desk.（請找出錯誤）",
+    "options": ["much → many", "much → a little", "much → some", "沒有錯誤"],
+    "answer": "much → many",
+    "explanation": "books 可數名詞，要用 many"
+  },
+  {
+    "id": "q4-002",
+    "question": "I have a few money in my wallet.（請找出錯誤）",
+    "options": ["a few → a little", "a few → few", "a few → many", "沒有錯誤"],
+    "answer": "a few → a little",
+    "explanation": "money 不可數名詞，要用 a little"
+  },
+  {
+    "id": "q4-003",
+    "question": "She doesn't have some friends here.（請找出錯誤）",
+    "options": ["some → any", "some → many", "some → much", "沒有錯誤"],
+    "answer": "some → any",
+    "explanation": "否定句要用 any，不能用 some"
+  },
+  {
+    "id": "q4-004",
+    "question": "There is many food on the table.（請找出錯誤）",
+    "options": ["many → much", "many → a lot of", "many → a few", "沒有錯誤"],
+    "answer": "many → much",
+    "explanation": "food 不可數名詞，要用 much 或 a lot of"
+  },
+  {
+    "id": "q4-005",
+    "question": "We have little chairs. We need more.（請找出錯誤）",
+    "options": ["little → few", "little → a little", "little → many", "沒有錯誤"],
+    "answer": "little → few",
+    "explanation": "chairs 可數名詞，要用 few"
+  },
+  {
+    "id": "q5-001",
+    "question": "There are _____ apples in the basket. You can take one.",
+    "options": ["a few", "a little", "much", "little"],
+    "answer": "a few",
+    "explanation": "apples 可數，「有幾個」用 a few"
+  },
+  {
+    "id": "q5-002",
+    "question": "How _____ water do you drink every day?",
+    "options": ["many", "much", "few", "a few"],
+    "answer": "much",
+    "explanation": "water 不可數，疑問句用 How much"
+  },
+  {
+    "id": "q5-003",
+    "question": "How _____ students are in your class?",
+    "options": ["much", "many", "little", "a little"],
+    "answer": "many",
+    "explanation": "students 可數，疑問句用 How many"
+  },
+  {
+    "id": "q5-004",
+    "question": "I need _____ sugar for the cake.",
+    "options": ["a few", "few", "some", "many"],
+    "answer": "some",
+    "explanation": "sugar 不可數，肯定句用 some"
+  },
+  {
+    "id": "q5-005",
+    "question": "There are _____ eggs in the fridge. We need to buy more.",
+    "options": ["few", "a few", "little", "a little"],
+    "answer": "few",
+    "explanation": "eggs 可數，「很少、不夠」用 few（負面語氣）"
+  },
+  {
+    "id": "q5-006",
+    "question": "She has _____ homework to do tonight.",
+    "options": ["many", "a lot of", "a few", "few"],
+    "answer": "a lot of",
+    "explanation": "homework 不可數，肯定句「很多」用 a lot of"
+  },
+  {
+    "id": "q5-007",
+    "question": "Would you like _____ tea?",
+    "options": ["any", "some", "much", "few"],
+    "answer": "some",
+    "explanation": "表示邀請/請求的問句可以用 some"
+  },
+  {
+    "id": "q5-008",
+    "question": "_____ people came to the party. It was fun!",
+    "options": ["A few", "Few", "A little", "Little"],
+    "answer": "A few",
+    "explanation": "people 可數，「來了幾個人，很好玩」用 A few（正面語氣）"
+  },
+  {
+    "id": "q5-009",
+    "question": "I drink _____ coffee every morning.",
+    "options": ["many", "a lot of", "a few", "few"],
+    "answer": "a lot of",
+    "explanation": "coffee 不可數，肯定句「很多」用 a lot of"
+  },
+  {
+    "id": "q5-010",
+    "question": "There is _____ rice in the bowl. Just enough for one person.",
+    "options": ["a little", "little", "a few", "few"],
+    "answer": "a little",
+    "explanation": "rice 不可數，「有一點，夠用」用 a little"
+  },
+  {
+    "id": "q6-001",
+    "question": "They don't have _____ time to finish the project.",
+    "options": ["many", "much", "a few", "some"],
+    "answer": "much",
+    "explanation": "time 不可數，否定句用 much"
+  },
+  {
+    "id": "q6-002",
+    "question": "There are _____ birds in the tree today. Where did they go?",
+    "options": ["a few", "few", "a little", "little"],
+    "answer": "few",
+    "explanation": "birds 可數，「很少、幾乎沒有」用 few（負面語氣）"
+  },
+  {
+    "id": "q6-003",
+    "question": "Can you give me _____ information about the trip?",
+    "options": ["a few", "few", "some", "many"],
+    "answer": "some",
+    "explanation": "information 不可數，請求句用 some"
+  },
+  {
+    "id": "q6-004",
+    "question": "He has _____ money. He can't even buy a bus ticket.",
+    "options": ["a little", "little", "a few", "few"],
+    "answer": "little",
+    "explanation": "money 不可數，「幾乎沒有」用 little（負面語氣，買不起票）"
+  },
+  {
+    "id": "q6-005",
+    "question": "We have _____ options. Let's choose the best one!",
+    "options": ["a few", "few", "a little", "little"],
+    "answer": "a few",
+    "explanation": "options 可數，「有幾個選擇」用 a few（正面語氣）"
+  }
+]
