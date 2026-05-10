@@ -1,0 +1,352 @@
+[
+  {
+    "id": "q1-001",
+    "question": "How many _____ are there in the classroom?",
+    "options": ["A) student", "B) students", "C) a student", "D) the student"],
+    "answer": "B",
+    "explanation": "How many 後面要接複數名詞。student 的複數是 students。所以是 How many students are there in the classroom?（教室裡有多少學生？）"
+  },
+  {
+    "id": "q1-002",
+    "question": "— How many dogs are there in the park?\n— _____",
+    "options": ["A) There is five dogs.", "B) There are five dog.", "C) There are five dogs.", "D) There has five dogs."],
+    "answer": "C",
+    "explanation": "五隻狗是複數，回答用 There are。完整的回答是 There are five dogs in the park.（公園裡有五隻狗。）"
+  },
+  {
+    "id": "q1-003",
+    "question": "How many _____ are there on the table?",
+    "options": ["A) book", "B) a book", "C) books", "D) the books"],
+    "answer": "C",
+    "explanation": "How many 後面一定要用複數名詞。book 的複數是 books。How many books are there on the table?（桌子上有幾本書？）"
+  },
+  {
+    "id": "q1-004",
+    "question": "— How many chairs are there in the room?\n— _____",
+    "options": ["A) There is one chair.", "B) There are one chair.", "C) There has one chair.", "D) There have one chair."],
+    "answer": "A",
+    "explanation": "只有一張椅子，所以用單數 There is。如果是兩張以上才用 There are。"
+  },
+  {
+    "id": "q1-005",
+    "question": "How many cooks _____ in the kitchen?",
+    "options": ["A) is there", "B) are there", "C) does there", "D) do there"],
+    "answer": "B",
+    "explanation": "cooks 是複數名詞，所以用 are there。完整句子：How many cooks are there in the kitchen?（廚房裡有幾個廚師？）"
+  },
+  {
+    "id": "q1-006",
+    "question": "_____ many students are there in your school?",
+    "options": ["A) What", "B) How", "C) Why", "D) Where"],
+    "answer": "B",
+    "explanation": "問「多少」要用 How many。How many students are there in your school?（你們學校有多少學生？）"
+  },
+  {
+    "id": "q1-007",
+    "question": "How many windows _____ in your classroom?",
+    "options": ["A) is there", "B) are there", "C) has there", "D) have there"],
+    "answer": "B",
+    "explanation": "windows 是複數名詞，用 are there。How many windows are there in your classroom?（你的教室有幾扇窗戶？）"
+  },
+  {
+    "id": "q1-008",
+    "question": "— How many teachers are there in the office?\n— _____",
+    "options": ["A) There are three teacher.", "B) There is three teachers.", "C) There are three teachers.", "D) There have three teachers."],
+    "answer": "C",
+    "explanation": "三位老師是複數，用 There are，而且 teacher 也要加 s 變成 teachers。"
+  },
+  {
+    "id": "q1-009",
+    "question": "How many _____ are there in the zoo?",
+    "options": ["A) monkey", "B) monkeies", "C) monkeys", "D) monkies"],
+    "answer": "C",
+    "explanation": "monkey 的複數是 monkeys（字尾是母音 + y，直接加 s）。How many monkeys are there in the zoo?（動物園裡有幾隻猴子？）"
+  },
+  {
+    "id": "q1-010",
+    "question": "How many apples are there _____ ?",
+    "options": ["A) in the bag", "B) on the bag", "C) under the bag", "D) at the bag"],
+    "answer": "A",
+    "explanation": "蘋果在袋子「裡面」，所以用 in the bag。How many apples are there in the bag?（袋子裡有幾顆蘋果？）"
+  },
+  {
+    "id": "q2-001",
+    "question": "How many pancakes _____ you eat?",
+    "options": ["A) does", "B) do", "C) are", "D) is"],
+    "answer": "B",
+    "explanation": "主詞是 you，助動詞用 do。How many pancakes do you eat?（你能吃幾個鬆餅？）"
+  },
+  {
+    "id": "q2-002",
+    "question": "How many cookies does she _____ ?",
+    "options": ["A) wants", "B) want", "C) wanting", "D) to want"],
+    "answer": "B",
+    "explanation": "助動詞 does 後面的動詞要用原形！所以是 want，不是 wants。How many cookies does she want?（她想要幾塊餅乾？）"
+  },
+  {
+    "id": "q2-003",
+    "question": "_____ books can she carry?",
+    "options": ["A) How much", "B) How many", "C) How long", "D) How often"],
+    "answer": "B",
+    "explanation": "books 是可數名詞（可以一本一本數），所以用 How many。How many books can she carry?（她能搬幾本書？）"
+  },
+  {
+    "id": "q2-004",
+    "question": "How many games _____ they play?",
+    "options": ["A) does", "B) do", "C) are", "D) is"],
+    "answer": "B",
+    "explanation": "主詞是 they，助動詞用 do。How many games do they play?（他們玩幾個遊戲？）"
+  },
+  {
+    "id": "q2-005",
+    "question": "How many eggs _____ we need?",
+    "options": ["A) do", "B) does", "C) are", "D) is"],
+    "answer": "A",
+    "explanation": "主詞是 we，助動詞用 do。How many eggs do we need?（我們需要幾顆蛋？）"
+  },
+  {
+    "id": "q2-006",
+    "question": "How many songs _____ he sing?",
+    "options": ["A) do", "B) does", "C) is", "D) are"],
+    "answer": "B",
+    "explanation": "主詞是 he，助動詞用 does。How many songs does he sing?（他唱幾首歌？）"
+  },
+  {
+    "id": "q2-007",
+    "question": "How many questions should we _____ ?",
+    "options": ["A) answer", "B) answers", "C) answering", "D) answered"],
+    "answer": "A",
+    "explanation": "助動詞 should 後面的動詞要用原形 answer。How many questions should we answer?（我們應該回答幾題？）"
+  },
+  {
+    "id": "q2-008",
+    "question": "How many pencils _____ you buy?",
+    "options": ["A) does", "B) do", "C) will", "D) is"],
+    "answer": "C",
+    "explanation": "「你將買幾支鉛筆？」問的是未來的意願，用 will 最合適。How many pencils will you buy?（你要買幾支鉛筆？）"
+  },
+  {
+    "id": "q2-009",
+    "question": "How many hours does he _____ every day?",
+    "options": ["A) study", "B) studies", "C) studying", "D) studied"],
+    "answer": "A",
+    "explanation": "助動詞 does 後面的動詞用原形 study，不是 studies。How many hours does he study every day?（他每天讀幾小時的書？）"
+  },
+  {
+    "id": "q2-010",
+    "question": "How many languages _____ your sister speak?",
+    "options": ["A) do", "B) does", "C) can", "D) are"],
+    "answer": "B",
+    "explanation": "my sister = she，第三人稱單數，助動詞用 does。How many languages does your sister speak?（你姐姐會說幾種語言？）"
+  },
+  {
+    "id": "q3-001",
+    "question": "How _____ sugar do you need?",
+    "options": ["A) many", "B) much", "C) more", "D) most"],
+    "answer": "B",
+    "explanation": "sugar（糖）是不可數名詞，不能一顆一顆數，所以用 How much。How much sugar do you need?（你需要多少糖？）"
+  },
+  {
+    "id": "q3-002",
+    "question": "How _____ water do you drink every day?",
+    "options": ["A) many", "B) much", "C) more", "D) long"],
+    "answer": "B",
+    "explanation": "water（水）是不可數名詞，不能說 one water、two waters，所以用 How much。How much water do you drink every day?（你每天喝多少水？）"
+  },
+  {
+    "id": "q3-003",
+    "question": "How much _____ does the baby want?",
+    "options": ["A) milks", "B) milk", "C) a milk", "D) the milks"],
+    "answer": "B",
+    "explanation": "milk（牛奶）是不可數名詞，不能加 s。How much milk does the baby want?（寶寶想要多少牛奶？）"
+  },
+  {
+    "id": "q3-004",
+    "question": "How _____ money do you have?",
+    "options": ["A) many", "B) much", "C) more", "D) long"],
+    "answer": "B",
+    "explanation": "money（錢）是不可數名詞，不能說 one money、two moneys，所以用 How much。How much money do you have?（你有多少錢？）"
+  },
+  {
+    "id": "q3-005",
+    "question": "How much homework _____ you have today?",
+    "options": ["A) do", "B) does", "C) are", "D) is"],
+    "answer": "A",
+    "explanation": "主詞是 you，助動詞用 do。How much homework do you have today?（你今天有多少功課？）"
+  },
+  {
+    "id": "q3-006",
+    "question": "How _____ rice is there in the bowl?",
+    "options": ["A) many", "B) much", "C) more", "D) long"],
+    "answer": "B",
+    "explanation": "rice（米飯）是不可數名詞，所以用 How much。How much rice is there in the bowl?（碗裡有多少飯？）"
+  },
+  {
+    "id": "q3-007",
+    "question": "How much time _____ we have?",
+    "options": ["A) do", "B) does", "C) are", "D) is"],
+    "answer": "A",
+    "explanation": "主詞是 we，助動詞用 do。time（時間）是不可數名詞，用 How much。How much time do we have?（我們還有多少時間？）"
+  },
+  {
+    "id": "q3-008",
+    "question": "How _____ bread does she want?",
+    "options": ["A) many", "B) much", "C) more", "D) long"],
+    "answer": "B",
+    "explanation": "bread（麵包）是不可數名詞，不能說 one bread、two breads，所以用 How much。How much bread does she want?（她想要多少麵包？）"
+  },
+  {
+    "id": "q3-009",
+    "question": "How much coffee _____ he drink?",
+    "options": ["A) do", "B) does", "C) are", "D) is"],
+    "answer": "B",
+    "explanation": "主詞是 he，助動詞用 does。coffee 是不可數名詞，用 How much。How much coffee does he drink?（他喝多少咖啡？）"
+  },
+  {
+    "id": "q3-010",
+    "question": "How much _____ is there in the bottle?",
+    "options": ["A) juices", "B) juice", "C) a juice", "D) the juices"],
+    "answer": "B",
+    "explanation": "juice（果汁）是不可數名詞，不能加 s。How much juice is there in the bottle?（瓶子裡有多少果汁？）"
+  },
+  {
+    "id": "q4-001",
+    "question": "_____ do you play, tennis or badminton?",
+    "options": ["A) What", "B) Which", "C) How", "D) Where"],
+    "answer": "B",
+    "explanation": "從兩個選項中選一個，用 Which。Which do you play, tennis or badminton?（你打哪一個，網球還是羽球？）"
+  },
+  {
+    "id": "q4-002",
+    "question": "Which do you like, tea _____ coffee?",
+    "options": ["A) and", "B) or", "C) but", "D) so"],
+    "answer": "B",
+    "explanation": "選擇題用 or（還是）連接兩個選項。Which do you like, tea or coffee?（你喜歡哪個，茶還是咖啡？）"
+  },
+  {
+    "id": "q4-003",
+    "question": "Which _____ she want, pizza or pasta?",
+    "options": ["A) do", "B) does", "C) is", "D) are"],
+    "answer": "B",
+    "explanation": "主詞是 she，第三人稱單數，助動詞用 does。Which does she want, pizza or pasta?（她想要哪個，披薩還是義大利麵？）"
+  },
+  {
+    "id": "q4-004",
+    "question": "Which do they prefer, cats _____ dogs?",
+    "options": ["A) and", "B) or", "C) but", "D) so"],
+    "answer": "B",
+    "explanation": "選擇題的兩個選項之間用 or（還是）連接。Which do they prefer, cats or dogs?（他們比較喜歡哪個，貓還是狗？）"
+  },
+  {
+    "id": "q4-005",
+    "question": "— Which do you like, juice or milk?\n— _____",
+    "options": ["A) I like both!", "B) I like all!", "C) I like either!", "D) I like neither of them is!"],
+    "answer": "A",
+    "explanation": "兩個都喜歡用 both = 兩個都。I like both! = 兩個我都喜歡！"
+  },
+  {
+    "id": "q5-001",
+    "question": "下列哪一句是正確的？",
+    "options": ["A) How many water do you drink?", "B) How much water do you drink?", "C) How many waters do you drink?", "D) How much waters do you drink?"],
+    "answer": "B",
+    "explanation": "water 是不可數名詞，要用 How much，而且不可數名詞不能加 s。正確：How much water do you drink?（你喝多少水？）"
+  },
+  {
+    "id": "q5-002",
+    "question": "下列哪一句是正確的？",
+    "options": ["A) How much apples are there?", "B) How many apple are there?", "C) How many apples are there?", "D) How much apple are there?"],
+    "answer": "C",
+    "explanation": "apples 是可數名詞，要用 How many，而且要加 s。正確：How many apples are there?（有多少蘋果？）"
+  },
+  {
+    "id": "q5-003",
+    "question": "「How many rice do you need?」這句話哪裡錯了？",
+    "options": ["A) How many 應改為 How much", "B) rice 應改為 rices", "C) do 應改為 does", "D) need 應改為 needs"],
+    "answer": "A",
+    "explanation": "rice（米飯）是不可數名詞，不能用 How many，要改成 How much。正確：How much rice do you need?"
+  },
+  {
+    "id": "q5-004",
+    "question": "「How much students are there in the class?」這句話哪裡錯了？",
+    "options": ["A) How much 應改為 How many", "B) students 應改為 student", "C) are 應改為 is", "D) in the class 應改為 at the class"],
+    "answer": "A",
+    "explanation": "students 是可數名詞，不能用 How much，要改成 How many。正確：How many students are there in the class?"
+  },
+  {
+    "id": "q5-005",
+    "question": "下列哪一個不可數名詞搭配 How many 是錯的？",
+    "options": ["A) How many books", "B) How many eggs", "C) How many money", "D) How many students"],
+    "answer": "C",
+    "explanation": "money（錢）是不可數名詞，不能用 How many，要用 How much money。books、eggs、students 都是可數名詞，用 How many 是正確的。"
+  },
+  {
+    "id": "q6-001",
+    "question": "_____ homework do you have today?",
+    "options": ["A) How many", "B) How much", "C) How long", "D) How often"],
+    "answer": "B",
+    "explanation": "homework（功課）是不可數名詞，不能說 one homework、two homeworks，所以用 How much。How much homework do you have today?（你今天有多少功課？）"
+  },
+  {
+    "id": "q6-002",
+    "question": "Which does he _____ , basketball or soccer?",
+    "options": ["A) like", "B) likes", "C) liking", "D) liked"],
+    "answer": "A",
+    "explanation": "助動詞 does 後面的動詞要用原形。所以是 like，不是 likes。Which does he like, basketball or soccer?（他喜歡哪個，籃球還是足球？）"
+  },
+  {
+    "id": "q6-003",
+    "question": "How many _____ can you see in the picture?",
+    "options": ["A) bird", "B) birds", "C) a bird", "D) the bird"],
+    "answer": "B",
+    "explanation": "How many 後面要用複數名詞，bird 的複數是 birds。How many birds can you see in the picture?（圖片裡你能看到幾隻鳥？）"
+  },
+  {
+    "id": "q6-004",
+    "question": "How much _____ does she need for the cake?",
+    "options": ["A) flours", "B) flour", "C) a flour", "D) the flours"],
+    "answer": "B",
+    "explanation": "flour（麵粉）是不可數名詞，不能加 s。How much flour does she need for the cake?（她做蛋糕需要多少麵粉？）"
+  },
+  {
+    "id": "q6-005",
+    "question": "— How many people are there at the party?\n— _____",
+    "options": ["A) There is twenty people.", "B) There are twenty people.", "C) There has twenty people.", "D) There have twenty people."],
+    "answer": "B",
+    "explanation": "twenty people 是複數，用 There are。people 雖然看起來沒有加 s，但它本身就是複數（person 的複數）。"
+  },
+  {
+    "id": "q6-006",
+    "question": "Which do you want, the red one _____ the blue one?",
+    "options": ["A) and", "B) or", "C) but", "D) so"],
+    "answer": "B",
+    "explanation": "選擇題用 or（還是）連接兩個選項。Which do you want, the red one or the blue one?（你想要哪個，紅色的還是藍色的？）"
+  },
+  {
+    "id": "q6-007",
+    "question": "下列哪一句是正確的？",
+    "options": ["A) How many milk do you drink?", "B) How much milk do you drink?", "C) How many milks do you drink?", "D) How much milks do you drink?"],
+    "answer": "B",
+    "explanation": "milk（牛奶）是不可數名詞，要用 How much，而且不能加 s。正確：How much milk do you drink?（你喝多少牛奶？）"
+  },
+  {
+    "id": "q6-008",
+    "question": "How many _____ does your brother have?",
+    "options": ["A) toy", "B) toys", "C) a toy", "D) the toy"],
+    "answer": "B",
+    "explanation": "How many 後面要用複數名詞。toy 的複數是 toys。How many toys does your brother have?（你弟弟有幾個玩具？）"
+  },
+  {
+    "id": "q6-009",
+    "question": "_____ tea or coffee?",
+    "options": ["A) Which you like", "B) Which do you like", "C) Which does you like", "D) Which are you like"],
+    "answer": "B",
+    "explanation": "主詞是 you，助動詞用 do。Which do you like, tea or coffee?（你喜歡哪個，茶還是咖啡？）"
+  },
+  {
+    "id": "q6-010",
+    "question": "How much _____ are there in the fridge?",
+    "options": ["A) chicken", "B) chickens", "C) a chicken", "D) the chickens"],
+    "answer": "A",
+    "explanation": "這裡的 chicken 指的是「雞肉」（不可數名詞），所以不加 s，用 How much。How much chicken is there in the fridge?（冰箱裡有多少雞肉？）注意：如果指「幾隻雞」則是可數，要用 How many chickens。"
+  }
+]
