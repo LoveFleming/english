@@ -22,6 +22,8 @@ import DirectInverseProportion from "./pages/DirectInverseProportion";
 import DirectInverseProportionQuiz from "./pages/DirectInverseProportionQuiz";
 import Quantifiers from "./pages/Quantifiers";
 import QuantifiersQuiz from "./pages/QuantifiersQuiz";
+import MeasureWords from "./pages/MeasureWords";
+import MeasureWordsQuiz from "./pages/MeasureWordsQuiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -59,6 +61,7 @@ function AppContent() {
     "🔤 文法 Grammar": [
       { id: "pronouns", title: "代名詞全攻略" },
       { id: "quantifiers", title: "數量形容詞" },
+      { id: "measure-words", title: "計量單位" },
     ],
     "🔢 數學 Math": [
       { id: "linear-equations", title: "二元一次方程式" },
@@ -84,6 +87,7 @@ function AppContent() {
     if (id === "quiz.lesson3") return "測驗: 7下 Lesson 3";
     if (id === "quiz.pronouns") return "測驗: 代名詞全攻略";
     if (id === "quiz.quantifiers") return "測驗: 數量形容詞";
+    if (id === "quiz.measure-words") return "測驗: 計量單位";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
@@ -112,6 +116,8 @@ function AppContent() {
       case "quiz.pronouns": return <PronounsQuiz />;
       case "quantifiers": return <Quantifiers openApp={openApp} />;
       case "quiz.quantifiers": return <QuantifiersQuiz />;
+      case "measure-words": return <MeasureWords openApp={openApp} />;
+      case "quiz.measure-words": return <MeasureWordsQuiz />;
       case "ratio-proportion": return <RatioAndProportion openApp={openApp} />;
       case "quiz.ratio-proportion": return <RatioAndProportionQuiz />;
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;

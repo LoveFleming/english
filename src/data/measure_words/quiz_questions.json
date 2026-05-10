@@ -1,0 +1,377 @@
+[
+  {
+    "id": "q1-001",
+    "question": "I need _____ eggs to make the cake.",
+    "options": ["A) a little", "B) a few", "C) much", "D) a drop"],
+    "answer": "B",
+    "explanation": "eggs 是可數名詞（可以一個一個數），所以要搭配 a few（一些、幾個）。a little 只能搭配不可數名詞。"
+  },
+  {
+    "id": "q1-002",
+    "question": "Can I have _____ milk in my coffee?",
+    "options": ["A) a few", "B) many", "C) a little", "D) a few of"],
+    "answer": "C",
+    "explanation": "milk 是不可數名詞（不能說 one milk, two milks），所以要搭配 a little（一點點）。a few 只能配可數名詞。"
+  },
+  {
+    "id": "q1-003",
+    "question": "There aren't _____ apples left in the fridge.",
+    "options": ["A) much", "B) a little", "C) many", "D) a drop"],
+    "answer": "C",
+    "explanation": "apples 是可數名詞，否定句中要用 many（不多）。much 只能搭配不可數名詞。"
+  },
+  {
+    "id": "q1-004",
+    "question": "How _____ sugar do you need?",
+    "options": ["A) many", "B) much", "C) a few", "D) few"],
+    "answer": "B",
+    "explanation": "sugar 是不可數名詞，問「多少」要用 How much。How many 只能配可數名詞。"
+  },
+  {
+    "id": "q1-005",
+    "question": "There are only _____ students in the classroom today.",
+    "options": ["A) a little", "B) much", "C) a few", "D) a slice"],
+    "answer": "C",
+    "explanation": "students 是可數名詞，表示「幾個、一些」用 a few。a little 不能搭配可數名詞。"
+  },
+  {
+    "id": "q1-006",
+    "question": "I don't have _____ money with me.",
+    "options": ["A) many", "B) much", "C) a few", "D) few"],
+    "answer": "B",
+    "explanation": "money 是不可數名詞，否定句中用 much 表示「不多」。many 只能搭配可數名詞。"
+  },
+  {
+    "id": "q1-007",
+    "question": "She added _____ salt to the soup.",
+    "options": ["A) a few", "B) many", "C) a little", "D) a few of"],
+    "answer": "C",
+    "explanation": "salt 是不可數名詞，表示「加了一點鹽」用 a little。a few 不能搭配不可數名詞。"
+  },
+  {
+    "id": "q1-008",
+    "question": "How _____ books did you read this month?",
+    "options": ["A) much", "B) a little", "C) many", "D) little"],
+    "answer": "C",
+    "explanation": "books 是可數名詞，問「多少本」要用 How many。How much 只能配不可數名詞。"
+  },
+  {
+    "id": "q1-009",
+    "question": "We only have _____ time before the movie starts.",
+    "options": ["A) a few", "B) many", "C) a little", "D) few"],
+    "answer": "C",
+    "explanation": "time（時間）是不可數名詞，表示「一點點時間」用 a little。a few 不能搭配不可數名詞。"
+  },
+  {
+    "id": "q1-010",
+    "question": "I saw _____ birds in the park this morning.",
+    "options": ["A) a little", "B) much", "C) a few", "D) a piece"],
+    "answer": "C",
+    "explanation": "birds 是可數名詞，表示「幾隻鳥」用 a few。a little 只能搭配不可數名詞。"
+  },
+  {
+    "id": "q2-001",
+    "question": "I bought a _____ of water at the convenience store.",
+    "options": ["A) bowl", "B) bottle", "C) plate", "D) bar"],
+    "answer": "B",
+    "explanation": "裝水用瓶子，a bottle of water = 一瓶水。bowl 是碗，plate 是盤子，bar 是條狀物。"
+  },
+  {
+    "id": "q2-002",
+    "question": "Mom served us a _____ of hot soup for dinner.",
+    "options": ["A) glass", "B) bowl", "C) slice", "D) box"],
+    "answer": "B",
+    "explanation": "湯用碗裝，a bowl of soup = 一碗湯。glass 是玻璃杯，slice 是薄片，box 是盒子。"
+  },
+  {
+    "id": "q2-003",
+    "question": "Can I have a _____ of pizza, please?",
+    "options": ["A) piece", "B) bowl", "C) bar", "D) drop"],
+    "answer": "A",
+    "explanation": "披薩切成一片一片，a piece of pizza = 一塊披薩。也可以用 a slice of pizza。"
+  },
+  {
+    "id": "q2-004",
+    "question": "She poured a _____ of orange juice for me.",
+    "options": ["A) cup", "B) glass", "C) bowl", "D) plate"],
+    "answer": "B",
+    "explanation": "果汁通常用玻璃杯裝，a glass of orange juice = 一杯柳橙汁。glass 強調玻璃杯。"
+  },
+  {
+    "id": "q2-005",
+    "question": "Dad bought a _____ of chocolate for my birthday.",
+    "options": ["A) slice", "B) piece", "C) bar", "D) bowl"],
+    "answer": "C",
+    "explanation": "巧克力是一長條的，用 a bar of chocolate = 一條巧克力。slice 是薄片，bar 是長條狀。"
+  },
+  {
+    "id": "q2-006",
+    "question": "I'd like a _____ of bread, please.",
+    "options": ["A) loaf", "B) bar", "C) drop", "D) bowl"],
+    "answer": "A",
+    "explanation": "一條麵包用 loaf，a loaf of bread = 一條麵包。loaf 是麵包專用的單位，bar 不能配麵包。"
+  },
+  {
+    "id": "q2-007",
+    "question": "He gave me a _____ of paper to write on.",
+    "options": ["A) glass", "B) drop", "C) piece", "D) bar"],
+    "answer": "C",
+    "explanation": "一張紙用 piece，a piece of paper = 一張紙。piece 是萬用單位，什麼都能搭。"
+  },
+  {
+    "id": "q2-008",
+    "question": "There's only a _____ of water left on the floor.",
+    "options": ["A) drop", "B) bowl", "C) bar", "D) box"],
+    "answer": "A",
+    "explanation": "一滴水用 drop，a drop of water = 一滴水。drop 專門用來形容液體的一小滴。"
+  },
+  {
+    "id": "q2-009",
+    "question": "I need a _____ of tea to warm up.",
+    "options": ["A) plate", "B) cup", "C) bar", "D) bowl"],
+    "answer": "B",
+    "explanation": "茶用杯子裝，a cup of tea = 一杯茶。cup 可以是任何材質的杯子。"
+  },
+  {
+    "id": "q2-010",
+    "question": "We ordered a _____ of fried rice at the restaurant.",
+    "options": ["A) plate", "B) glass", "C) bar", "D) drop"],
+    "answer": "A",
+    "explanation": "炒飯用盤子裝，a plate of fried rice = 一盤炒飯。plate 是平盤。"
+  },
+  {
+    "id": "q3-001",
+    "question": "「a bowl of rice」這個用法是正確的。",
+    "options": ["A) 正確 ✓", "B) 錯誤 ✗"],
+    "answer": "A",
+    "explanation": "正確！a bowl of rice = 一碗飯。碗裝的食物用 bowl。"
+  },
+  {
+    "id": "q3-002",
+    "question": "「a glass of rice」這個用法是正確的。",
+    "options": ["A) 正確 ✓", "B) 錯誤 ✗"],
+    "answer": "B",
+    "explanation": "錯誤！飯不會用玻璃杯裝。應該是 a bowl of rice（一碗飯）或 a plate of rice（一盤飯）。glass 通常裝液體。"
+  },
+  {
+    "id": "q3-003",
+    "question": "「two bottles of water」這個用法是正確的。",
+    "options": ["A) 正確 ✓", "B) 錯誤 ✗"],
+    "answer": "A",
+    "explanation": "正確！數字 two > 1，所以 bottle 加 s 變成 two bottles of water = 兩瓶水。完全正確！"
+  },
+  {
+    "id": "q3-004",
+    "question": "「a slice of chocolate」這個用法是正確的。",
+    "options": ["A) 正確 ✓", "B) 錯誤 ✗"],
+    "answer": "B",
+    "explanation": "錯誤！巧克力通常用 a bar of chocolate（一條巧克力）。slice 是指切成薄片的東西，如 a slice of pizza 或 a slice of bread。"
+  },
+  {
+    "id": "q3-005",
+    "question": "「a few sugar」這個用法是正確的。",
+    "options": ["A) 正確 ✓", "B) 錯誤 ✗"],
+    "answer": "B",
+    "explanation": "錯誤！sugar 是不可數名詞，不能搭配 a few。應該用 a little sugar（一點糖）。a few 只能搭配可數名詞。"
+  },
+  {
+    "id": "q4-001",
+    "question": "找出錯誤：She bought a bottle water from the store.",
+    "options": ["A) a → an", "B) bottle water → bottle of water", "C) bought → buy", "D) store → shop"],
+    "answer": "B",
+    "explanation": "錯誤是缺少 of！正確應該是 a bottle OF water。計量單位 + of + 名詞，of 不可省略。"
+  },
+  {
+    "id": "q4-002",
+    "question": "找出錯誤：I ate three bowl of soup for lunch.",
+    "options": ["A) ate → eat", "B) three → a", "C) bowl → bowls", "D) soup → soups"],
+    "answer": "C",
+    "explanation": "數字 three > 1，所以 bowl 要加 s 變成 bowls。正確：three bowls of soup = 三碗湯。"
+  },
+  {
+    "id": "q4-003",
+    "question": "找出錯誤：He needs a little eggs to make breakfast.",
+    "options": ["A) a little → a few", "B) needs → need", "C) eggs → egg", "D) make → making"],
+    "answer": "A",
+    "explanation": "eggs 是可數名詞，不能搭配 a little。應該改成 a few eggs（幾顆蛋）。a little 只能配不可數名詞。"
+  },
+  {
+    "id": "q4-004",
+    "question": "找出錯誤：We need many milk for the recipe.",
+    "options": ["A) many → much", "B) need → needs", "C) milk → milks", "D) recipe → recipes"],
+    "answer": "A",
+    "explanation": "milk 是不可數名詞，不能用 many。應該改成 much milk（很多牛奶）。many 只能配可數名詞。"
+  },
+  {
+    "id": "q4-005",
+    "question": "找出錯誤：A loaf of cake was on the table.",
+    "options": ["A) A → An", "B) loaf → piece", "C) was → is", "D) table → desk"],
+    "answer": "B",
+    "explanation": "loaf 只能用在麵包（a loaf of bread）。蛋糕應該用 a piece of cake 或 a slice of cake。"
+  },
+  {
+    "id": "q5-001",
+    "question": "Which is correct?",
+    "options": ["A) a cup of coffees", "B) a cup of coffee", "C) a cup coffee", "D) cup of coffee"],
+    "answer": "B",
+    "explanation": "正確是 a cup of coffee = 一杯咖啡。coffee 不可數不加 s，要有 of 連接，也要有冠詞 a。"
+  },
+  {
+    "id": "q5-002",
+    "question": "I'd like two _____ of bread, please.",
+    "options": ["A) loaf", "B) loafs", "C) loaves", "D) loafes"],
+    "answer": "C",
+    "explanation": "loaf 的複數是不規則變化：loaf → loaves（不是 loafs）。two loaves of bread = 兩條麵包。"
+  },
+  {
+    "id": "q5-003",
+    "question": "There is _____ rice in the kitchen. We don't need to buy more.",
+    "options": ["A) a few", "B) many", "C) a little", "D) a few of"],
+    "answer": "C",
+    "explanation": "rice 是不可數名詞，表示「還有一點米」用 a little。a few 只能搭配可數名詞。"
+  },
+  {
+    "id": "q5-004",
+    "question": "The teacher gave us _____ advice about the test.",
+    "options": ["A) a few", "B) many", "C) a piece of", "D) a few of"],
+    "answer": "C",
+    "explanation": "advice 是不可數名詞，不能直接加 a few。要說 a piece of advice = 一個建議。這是 piece 的特殊用法！"
+  },
+  {
+    "id": "q5-005",
+    "question": "How much _____ do you want?",
+    "options": ["A) apples", "B) eggs", "C) rice", "D) books"],
+    "answer": "C",
+    "explanation": "How much 只能搭配不可數名詞。rice 是不可數名詞，而 apples、eggs、books 都是可數名詞，要用 How many。"
+  },
+  {
+    "id": "q5-006",
+    "question": "She bought 500 _____ of chicken at the market.",
+    "options": ["A) gram", "B) grams", "C) kilo", "D) a gram"],
+    "answer": "B",
+    "explanation": "數字 500 > 1，所以 gram 要加 s 變成 grams。500 grams of chicken = 500 公克的雞肉。"
+  },
+  {
+    "id": "q5-007",
+    "question": "Which sentence uses 'a bar of' correctly?",
+    "options": ["A) a bar of bread", "B) a bar of soap", "C) a bar of pizza", "D) a bar of water"],
+    "answer": "B",
+    "explanation": "a bar of soap = 一條肥皂，是正確的搭配。bar 用在長條狀的東西，如 chocolate、soap、gold。不能配 bread（用 loaf）、pizza（用 slice/piece）、water（用 glass/bottle）。"
+  },
+  {
+    "id": "q5-008",
+    "question": "I have _____ homework to do tonight.",
+    "options": ["A) a few", "B) many", "C) a little", "D) a few of"],
+    "answer": "C",
+    "explanation": "homework 是不可數名詞（不能說 one homework, two homeworks），所以用 a little 表示「一點功課」。a few 只能配可數名詞。"
+  },
+  {
+    "id": "q5-009",
+    "question": "We need to buy a _____ of eggs at the supermarket.",
+    "options": ["A) bottle", "B) box", "C) glass", "D) bowl"],
+    "answer": "B",
+    "explanation": "雞蛋用盒子裝，a box of eggs = 一盒蛋。bottle 裝液體，glass 是玻璃杯，bowl 是碗。"
+  },
+  {
+    "id": "q5-010",
+    "question": "Can you pass me a _____ of tissue?",
+    "options": ["A) box", "B) bar", "C) slice", "D) drop"],
+    "answer": "A",
+    "explanation": "面紙用盒子裝，a box of tissue = 一盒面紙。bar 是條狀物，slice 是薄片，drop 是液體的一滴。"
+  },
+  {
+    "id": "q6-001",
+    "question": "Which sentence has NO mistakes?",
+    "options": [
+      "A) She drank two glass of milk.",
+      "B) She drank two glasses of milk.",
+      "C) She drank two glasss of milk.",
+      "D) She drank two glasses of milks."
+    ],
+    "answer": "B",
+    "explanation": "數字 two > 1，glass 要加 s（glasses）。但 milk 是不可數名詞，不能加 s。正確：two glasses of milk。"
+  },
+  {
+    "id": "q6-002",
+    "question": "Choose the correct sentence:",
+    "options": [
+      "A) He gave me a good advice.",
+      "B) He gave me a good piece of advice.",
+      "C) He gave me a few advice.",
+      "D) He gave me many advice."
+    ],
+    "answer": "B",
+    "explanation": "advice 是不可數名詞，不能直接說 an advice 或 a few advice。要用 a piece of advice = 一個建議。這是 piece 的特殊用法！"
+  },
+  {
+    "id": "q6-003",
+    "question": "We bought 2 _____ of apples. Each one weighs about 1 _____.",
+    "options": [
+      "A) kilos ... kilo",
+      "B) kilo ... kilos",
+      "C) kilos ... kilos",
+      "D) kilo ... kilo"
+    ],
+    "answer": "A",
+    "explanation": "2 kilograms = 2 kilos（複數加 s）。但 each one = 每一個，是單數，所以 1 kilo（不加 s）。句子意思是：我們買了 2 公斤蘋果，每顆大約 1 公斤。"
+  },
+  {
+    "id": "q6-004",
+    "question": "There's _____ news about the school trip.",
+    "options": ["A) a few", "B) a piece of", "C) many", "D) a few of"],
+    "answer": "B",
+    "explanation": "news 是不可數名詞，不能搭配 a few 或 many。要說 a piece of news = 一則新聞。news 雖然有 s 但不是複數！"
+  },
+  {
+    "id": "q6-005",
+    "question": "I'd like a _____ of lemon in my tea.",
+    "options": ["A) piece", "B) slice", "C) bar", "D) drop"],
+    "answer": "B",
+    "explanation": "檸檬切成薄片放在茶裡，用 slice 最合適。a slice of lemon = 一片檸檬。slice 強調切成薄片。"
+  },
+  {
+    "id": "q6-006",
+    "question": "Which pair is wrong?",
+    "options": [
+      "A) a loaf of bread",
+      "B) a bar of chocolate",
+      "C) a slice of soap",
+      "D) a drop of water"
+    ],
+    "answer": "C",
+    "explanation": "肥皂用 a bar of soap（一條肥皂），不是 slice。slice 是薄片，肥皂不會切成薄片。"
+  },
+  {
+    "id": "q6-007",
+    "question": "_____ people came to the party last night.",
+    "options": ["A) A little", "B) Much", "C) A few", "D) A drop"],
+    "answer": "C",
+    "explanation": "people 是可數名詞（person 的複數），所以用 a few = 幾個人。a little 和 much 只能配不可數名詞。"
+  },
+  {
+    "id": "q6-008",
+    "question": "I only have a _____ of cake. Do you want to share?",
+    "options": ["A) bar", "B) piece", "C) bowl", "D) box"],
+    "answer": "B",
+    "explanation": "一塊蛋糕用 a piece of cake。bar 是長條狀的，bowl 是碗裝的，box 是盒裝的，都不適合蛋糕。"
+  },
+  {
+    "id": "q6-009",
+    "question": "Choose the correct sentence:",
+    "options": [
+      "A) I need a few informations.",
+      "B) I need a few pieces of information.",
+      "C) I need a little pieces of information.",
+      "D) I need many information."
+    ],
+    "answer": "B",
+    "explanation": "information 是不可數名詞，不能加 s 也不能用 a few。要表達「幾則資訊」，用 a few pieces of information。"
+  },
+  {
+    "id": "q6-010",
+    "question": "Half _____ kilo of sugar costs about 20 dollars.",
+    "options": ["A) a", "B) an", "C) the", "D) /"],
+    "answer": "A",
+    "explanation": "half a kilo = 半公斤，是固定用法。kilo 發音以子音開頭，用 a 不用 an。half a kilo of sugar = 半公斤的糖。"
+  }
+]
