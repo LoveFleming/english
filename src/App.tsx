@@ -20,6 +20,7 @@ import RatioAndProportion from "./pages/RatioAndProportion";
 import RatioAndProportionQuiz from "./pages/RatioAndProportionQuiz";
 import DirectInverseProportion from "./pages/DirectInverseProportion";
 import DirectInverseProportionQuiz from "./pages/DirectInverseProportionQuiz";
+import MidtermSprint from "./pages/MidtermSprint";
 import Quantifiers from "./pages/Quantifiers";
 import QuantifiersQuiz from "./pages/QuantifiersQuiz";
 import MeasureWords from "./pages/MeasureWords";
@@ -72,6 +73,7 @@ function AppContent() {
       { id: "quadrant", title: "象限座標挑戰" },
       { id: "ratio-proportion", title: "3-1 比與比例式" },
       { id: "direct-inverse-proportion", title: "3-2 正比與反比" },
+      { id: "midterm-sprint", title: "🔥 7下期中考衝刺" },
     ],
     "📚 課程 Lessons": [
       { id: "lesson3", title: "7下 Lesson 3" },
@@ -128,6 +130,7 @@ function AppContent() {
       case "quiz.ratio-proportion": return <RatioAndProportionQuiz />;
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;
       case "quiz.direct-inverse-proportion": return <DirectInverseProportionQuiz />;
+      case "midterm-sprint": return <MidtermSprint />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
   };

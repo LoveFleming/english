@@ -114,7 +114,9 @@ export default function HowMuchManyQuiz() {
     const userAns = answers[q.id];
     if (!userAns) return;
 
-    const isCorrect = userAns === q.correctAnswer;
+    // Extract option letter (e.g. "B" from "B) something") for comparison
+    const userLetter = userAns.match(/^([A-Z])\)/)?.[1] || userAns;
+    const isCorrect = userLetter === q.correctAnswer;
     if (isCorrect) setScore(prev => prev + 1);
 
     setGradedResults(prev => [...prev, {
