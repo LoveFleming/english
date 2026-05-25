@@ -27,6 +27,8 @@ import MeasureWords from "./pages/MeasureWords";
 import MeasureWordsQuiz from "./pages/MeasureWordsQuiz";
 import HowMuchMany from "./pages/HowMuchMany";
 import HowMuchManyQuiz from "./pages/HowMuchManyQuiz";
+import CompoundWords from "./pages/CompoundWords";
+import CompoundWordsQuiz from "./pages/CompoundWordsQuiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -75,6 +77,9 @@ function AppContent() {
       { id: "direct-inverse-proportion", title: "3-2 正比與反比" },
       { id: "midterm-sprint", title: "🔥 7下期中考衝刺" },
     ],
+    "🇨🇳 國文 Chinese": [
+      { id: "compound-words", title: "複詞三兄弟" },
+    ],
     "📚 課程 Lessons": [
       { id: "lesson3", title: "7下 Lesson 3" },
     ],
@@ -94,6 +99,7 @@ function AppContent() {
     if (id === "quiz.quantifiers") return "測驗: 數量形容詞";
     if (id === "quiz.measure-words") return "測驗: 計量單位";
     if (id === "quiz.how-much-many") return "測驗: How Much/Many";
+    if (id === "quiz.compound-words") return "測驗: 複詞三兄弟";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
@@ -126,6 +132,8 @@ function AppContent() {
       case "quiz.measure-words": return <MeasureWordsQuiz />;
       case "how-much-many": return <HowMuchMany openApp={openApp} />;
       case "quiz.how-much-many": return <HowMuchManyQuiz />;
+      case "compound-words": return <CompoundWords openApp={openApp} />;
+      case "quiz.compound-words": return <CompoundWordsQuiz />;
       case "ratio-proportion": return <RatioAndProportion openApp={openApp} />;
       case "quiz.ratio-proportion": return <RatioAndProportionQuiz />;
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;
