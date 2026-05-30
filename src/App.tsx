@@ -218,12 +218,6 @@ function AppContent() {
           </div>
 
           <div className="mt-auto border-t border-zinc-200 opacity-95 hover:opacity-100 transition-opacity overflow-hidden bg-white hidden sm:block">
-            <img
-              src="/king.jpeg"
-              alt="Little Yuanbao King"
-              className="w-full aspect-square object-cover hover:scale-105 transition-transform origin-bottom"
-              onError={(e) => { e.currentTarget.style.display = 'none'; }}
-            />
           </div>
         </aside>
 
