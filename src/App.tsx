@@ -35,8 +35,8 @@ import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
 function AppContent() {
   const { user, isAuthenticated, logout, scores } = useAuth();
-  const [activeAppId, setActiveAppId] = useState<string>("present-simple");
-  const [openTabs, setOpenTabs] = useState<string[]>(["present-simple"]);
+  const [activeAppId, setActiveAppId] = useState<string>("tsmc-practice");
+  const [openTabs, setOpenTabs] = useState<string[]>(["tsmc-practice"]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   if (!isAuthenticated) return <AuthPage />;
@@ -50,15 +50,12 @@ function AppContent() {
   const closeTab = (id: string) => {
     setOpenTabs((prev) => {
       const next = prev.filter((t) => t !== id);
-      if (activeAppId === id) setActiveAppId(next.length > 0 ? next[next.length - 1] : "present-simple");
+      if (activeAppId === id) setActiveAppId(next.length > 0 ? next[next.length - 1] : "tsmc-practice");
       return next;
     });
   };
 
   const nav: Record<string, { id: string; title: string }[]> = {
-    "🏗️ 前進台積": [
-      { id: "tsmc-practice", title: "實踐紀錄" },
-    ],
     "⏰ 時態 Tense": [
       { id: "present-simple", title: "現在簡單式" },
       { id: "present-continuous", title: "現在進行式" },
@@ -105,6 +102,7 @@ function AppContent() {
     if (id === "quiz.how-much-many") return "測驗: How Much/Many";
     if (id === "quiz.compound-words") return "測驗: 複詞三兄弟";
     if (id === "dixon-verbs") return "狄克森動詞片語";
+    if (id === "tsmc-practice") return "前進台積";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
       if (item) return item.title;
@@ -164,9 +162,14 @@ function AppContent() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
-          <div className="text-base sm:text-lg font-bold tracking-tight text-blue-700" style={{ fontFamily: "cursive, sans-serif" }}>
-            👑 國王的學習空間
-          </div>
+          <button
+            onClick={() => openApp("tsmc-practice")}
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          >
+            <div className="text-base sm:text-lg font-bold tracking-tight text-blue-700" style={{ fontFamily: "cursive, sans-serif" }}>
+              👑 國王的學習空間
+            </div>
+          </button>
         </div>
 
         <div className="flex items-center gap-2 sm:gap-4">
@@ -258,7 +261,7 @@ function AppContent() {
             })}
           </div>
 
-          <div className="flex-1 w-full px-3 sm:px-6 py-3 sm:py-4 flex flex-col min-h-0 bg-zinc-50 overflow-y-auto">
+          <div className="flex-1 w-full px-0 py-0 flex flex-col min-h-0 bg-zinc-50 overflow-hidden">
             {renderContent()}
           </div>
         </main>
