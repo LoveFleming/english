@@ -160,12 +160,11 @@ export default function TsmcPractice() {
   return (
     <div className="flex h-full flex-col bg-[#fff8ea] overflow-hidden">
       {/* ── Banner — compact, no crop ── */}
-      <div className="shrink-0 flex justify-center bg-[#fff3cc]">
+      <div className="shrink-0">
         <img
           src="/banner.png"
           alt="前進台積 實踐紀錄"
-          className="w-full max-w-4xl object-contain"
-          style={{ maxHeight: "18vh" }}
+          className="w-full object-contain"
         />
       </div>
 
