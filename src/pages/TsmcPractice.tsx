@@ -164,7 +164,7 @@ export default function TsmcPractice() {
         <img
           src="/banner.png"
           alt="前進台積 實踐紀錄"
-          className="w-full object-contain"
+          className="w-full object-cover"
           style={{ maxHeight: "14vh" }}
         />
       </div>
