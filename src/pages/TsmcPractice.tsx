@@ -159,17 +159,18 @@ export default function TsmcPractice() {
 
   return (
     <div className="flex h-full flex-col bg-[#fff8ea] overflow-hidden">
-      {/* ── Banner — compact, no crop ── */}
+      {/* ── Banner ── */}
       <div className="shrink-0">
         <img
           src="/banner.png"
           alt="前進台積 實踐紀錄"
           className="w-full object-contain"
+          style={{ maxHeight: "14vh" }}
         />
       </div>
 
-      {/* ── Four value columns — flex fills remaining space ── */}
-      <div className="flex flex-1 min-h-0 gap-3 px-3 py-3">
+      {/* ── Four value columns ── */}
+      <div className="flex flex-1 min-h-0 gap-2 px-2 py-2">
         {values.map((item) => {
           const Icon = item.icon;
           const t = theme[item.color];
@@ -178,34 +179,34 @@ export default function TsmcPractice() {
           return (
             <div key={item.key} className="flex flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-md">
               {/* Image — no crop, contain within card */}
-              <div className="shrink-0 flex items-center justify-center bg-white px-3 pt-3">
+              <div className="shrink-0 flex items-center justify-center bg-white px-2 pt-2">
                 <img
                   src={item.image}
                   alt={item.zh}
-                  className="w-full rounded-xl object-contain"
-                  style={{ maxHeight: "30vh" }}
+                  className="w-full rounded-lg object-contain"
+                  style={{ maxHeight: "28vh" }}
                 />
               </div>
 
               {/* Pocket */}
-              <div className={`flex flex-1 min-h-0 flex-col rounded-b-2xl border-2 border-dashed ${t.pocket} px-3 pb-3 pt-2`}>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <Icon className={`h-4 w-4 ${t.text}`} />
-                    <span className={`text-sm font-black ${t.text}`}>{item.zh}</span>
-                    <span className="text-xs text-neutral-400">({vRecords.length})</span>
+              <div className={`flex flex-1 min-h-0 flex-col rounded-b-2xl border-2 border-dashed ${t.pocket} px-2 pb-2 pt-1.5`}>
+                <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center gap-1.5">
+                    <Icon className={`h-3.5 w-3.5 ${t.text}`} />
+                    <span className={`text-xs font-black ${t.text}`}>{item.zh}</span>
+                    <span className="text-[10px] text-neutral-400">({vRecords.length})</span>
                   </div>
                   <button onClick={() => setFormValue(item)}
-                    className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold text-white ${t.button}`}>
-                    <Plus className="h-3.5 w-3.5" />紀錄
+                    className={`flex items-center gap-0.5 rounded-full px-2 py-0.5 text-[10px] font-bold text-white ${t.button}`}>
+                    <Plus className="h-3 w-3" />紀錄
                   </button>
                 </div>
 
                 <div className="flex-1 min-h-0 space-y-1.5 overflow-y-auto" style={{ scrollbarWidth: "thin" }}>
                   {vRecords.length === 0 ? (
-                    <div className="py-3 text-center">
-                      <div className="text-base opacity-30">📝</div>
-                      <div className="text-xs text-neutral-400">還沒有紀錄</div>
+                    <div className="py-2 text-center">
+                      <div className="text-sm opacity-30">📝</div>
+                      <div className="text-[10px] text-neutral-400">還沒有紀錄</div>
                     </div>
                   ) : (
                     vRecords.map((r) => (
@@ -220,7 +221,7 @@ export default function TsmcPractice() {
       </div>
 
       {/* ── Footer ── */}
-      <div className="shrink-0 flex items-center justify-center gap-4 border-t border-amber-200 bg-amber-50 px-4 py-2 text-sm font-bold text-[#7a552f]">
+      <div className="shrink-0 flex items-center justify-center gap-3 border-t border-amber-200 bg-amber-50 px-3 py-1.5 text-xs font-bold text-[#7a552f]">
         <span>小小行動・大大影響 ♡</span>
         <span className="text-amber-300">|</span>
         <span>持續練習，成為更好的自己！</span>
