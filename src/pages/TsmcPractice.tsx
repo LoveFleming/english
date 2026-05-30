@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
-import { Star, Heart, Handshake, Lightbulb, Users, CheckCircle2, Plus, Trash2, ChevronDown, X, ImagePlus, Camera } from "lucide-react";
+import { Star, Heart, Handshake, Lightbulb, Users, CheckCircle2, Plus, Trash2, ChevronDown, X, ImagePlus, Camera, ChevronLeft, ChevronRight } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 
 // ── Types ──
@@ -9,8 +9,15 @@ interface PracticeRecord {
   date: string;
   what: string;
   reflection: string;
-  imageUrl?: string;
+  images?: string[];
+  imageUrl?: string; // legacy compat
   createdAt: number;
+}
+
+function getImages(record: PracticeRecord): string[] {
+  if (record.images && record.images.length > 0) return record.images;
+  if (record.imageUrl) return [record.imageUrl];
+  return [];
 }
 
 const API_BASE = "/api/practice-records";
@@ -34,9 +41,7 @@ function fileToBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => {
-      const result = reader.result as string;
-      // Strip data:image/xxx;base64, prefix
-      const base64 = result.split(",")[1];
+      const base64 = (reader.result as string).split(",")[1];
       resolve(base64);
     };
     reader.onerror = reject;
@@ -44,7 +49,67 @@ function fileToBase64(file: File): Promise<string> {
   });
 }
 
-// ── Record Form Modal (with image upload) ──
+// ── Image Viewer (full-screen left panel) ──
+function ImageViewer({ images, initialIndex, onClose }: { images: string[]; initialIndex: number; onClose: () => void }) {
+  const [idx, setIdx] = useState(initialIndex);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") setIdx(i => Math.max(0, i - 1));
+      if (e.key === "ArrowRight") setIdx(i => Math.min(images.length - 1, i + 1));
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [images.length, onClose]);
+
+  return (
+    <div className="fixed inset-0 z-[60] flex bg-black/80 backdrop-blur-sm" onClick={onClose}>
+      {/* Left: Large image viewer */}
+      <div className="flex flex-1 items-center justify-center relative p-4" onClick={(e) => e.stopPropagation()}>
+        {images.length > 1 && idx > 0 && (
+          <button onClick={() => setIdx(i => i - 1)}
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/20 p-2 hover:bg-white/40 transition-colors text-white">
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+        )}
+        <img src={images[idx]} alt={`證據 ${idx + 1}`} className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl" />
+        {images.length > 1 && idx < images.length - 1 && (
+          <button onClick={() => setIdx(i => i + 1)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/20 p-2 hover:bg-white/40 transition-colors text-white">
+            <ChevronRight className="h-6 w-6" />
+          </button>
+        )}
+        {images.length > 1 && (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {images.map((_, i) => (
+              <button key={i} onClick={() => setIdx(i)}
+                className={`h-2.5 w-2.5 rounded-full transition-colors ${i === idx ? "bg-white" : "bg-white/40"}`} />
+            ))}
+          </div>
+        )}
+      </div>
+      {/* Right: Thumbnail sidebar */}
+      {images.length > 1 && (
+        <div className="w-20 bg-black/50 flex flex-col gap-2 p-2 overflow-y-auto" onClick={(e) => e.stopPropagation()} style={{ scrollbarWidth: "thin" }}>
+          {images.map((src, i) => (
+            <button key={i} onClick={() => setIdx(i)}
+              className={`rounded-lg overflow-hidden border-2 transition-all ${i === idx ? "border-amber-400 shadow-lg" : "border-white/20 opacity-60 hover:opacity-100"}`}>
+              <img src={src} alt="" className="w-full object-cover" />
+            </button>
+          ))}
+        </div>
+      )}
+      {/* Close button */}
+      <button onClick={onClose}
+        className="absolute top-3 right-3 z-10 rounded-full bg-black/50 p-2 text-white hover:bg-black/70 transition-colors">
+        <X className="h-5 w-5" />
+      </button>
+    </div>
+  );
+}
+
+// ── Record Form Modal (multi-image upload) ──
 function RecordForm({
   valueItem,
   onSave,
@@ -53,7 +118,7 @@ function RecordForm({
   initial,
 }: {
   valueItem: typeof values[number];
-  onSave: (data: { valueKey: string; date: string; what: string; reflection: string; imageBase64?: string; imageExt?: string }) => void;
+  onSave: (data: { valueKey: string; date: string; what: string; reflection: string; imagesBase64?: { base64: string; ext: string }[] }) => void;
   onCancel: () => void;
   saving: boolean;
   initial?: PracticeRecord;
@@ -61,21 +126,31 @@ function RecordForm({
   const [date, setDate] = useState(initial?.date ?? new Date().toISOString().slice(0, 10));
   const [what, setWhat] = useState(initial?.what ?? "");
   const [reflection, setReflection] = useState(initial?.reflection ?? "");
-  const [imagePreview, setImagePreview] = useState<string | null>(initial?.imageUrl ?? null);
-  const [imageBase64, setImageBase64] = useState<string | null>(null);
-  const [imageExt, setImageExt] = useState<string>("png");
+  const existingImages = getImages(initial ?? { images: [], id: '', valueKey: '', date: '', what: '', reflection: '', createdAt: 0 });
+  const [imageEntries, setImageEntries] = useState<{ preview: string; base64: string | null; ext: string }[]>(
+    existingImages.map(url => ({ preview: url, base64: null, ext: "png" }))
+  );
   const fileInputRef = useRef<HTMLInputElement>(null);
   const t = theme[valueItem.color];
   const Icon = valueItem.icon;
 
   const handleImageSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const ext = file.name.split(".").pop()?.toLowerCase() || "png";
-    setImageExt(ext);
-    const base64 = await fileToBase64(file);
-    setImageBase64(base64);
-    setImagePreview(URL.createObjectURL(file));
+    const files = e.target.files;
+    if (!files) return;
+    const newEntries: { preview: string; base64: string | null; ext: string }[] = [];
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const ext = file.name.split(".").pop()?.toLowerCase() || "png";
+      const base64 = await fileToBase64(file);
+      newEntries.push({ preview: URL.createObjectURL(file), base64, ext });
+    }
+    setImageEntries(prev => [...prev, ...newEntries]);
+    // Reset input
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
+
+  const removeImage = (index: number) => {
+    setImageEntries(prev => prev.filter((_, i) => i !== index));
   };
 
   return (
@@ -111,31 +186,34 @@ function RecordForm({
               placeholder="我學到了... 我覺得..."
               className="w-full rounded-lg border-2 border-neutral-200 px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-amber-300" />
           </div>
-          {/* Image upload */}
+          {/* Multi-image upload */}
           <div>
-            <label className="mb-1 block text-sm font-bold text-neutral-700">📷 證據照片（選填）</label>
-            <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleImageSelect} />
-            {imagePreview ? (
-              <div className="relative rounded-xl overflow-hidden border-2 border-amber-200">
-                <img src={imagePreview} alt="preview" className="w-full max-h-40 object-contain bg-neutral-50" />
-                <button onClick={() => { setImagePreview(null); setImageBase64(null); }}
-                  className="absolute top-1 right-1 rounded-full bg-white/80 p-1 hover:bg-white shadow">
-                  <X className="h-3 w-3 text-neutral-500" />
-                </button>
-              </div>
-            ) : (
+            <label className="mb-1 block text-sm font-bold text-neutral-700">📷 證據照片（可多張）</label>
+            <input ref={fileInputRef} type="file" accept="image/*" multiple className="hidden" onChange={handleImageSelect} />
+            <div className="flex flex-wrap gap-2">
+              {imageEntries.map((entry, i) => (
+                <div key={i} className="relative w-20 h-20 rounded-lg overflow-hidden border-2 border-amber-200 bg-neutral-50">
+                  <img src={entry.preview} alt="" className="w-full h-full object-cover" />
+                  <button onClick={() => removeImage(i)}
+                    className="absolute top-0.5 right-0.5 rounded-full bg-white/90 p-0.5 shadow hover:bg-red-50">
+                    <X className="h-3 w-3 text-neutral-500 hover:text-red-500" />
+                  </button>
+                </div>
+              ))}
               <button onClick={() => fileInputRef.current?.click()}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-amber-300 bg-amber-50 py-4 text-sm font-bold text-amber-600 hover:bg-amber-100 transition-colors">
-                <ImagePlus className="h-5 w-5" /> 選擇照片上傳
+                className="w-20 h-20 flex flex-col items-center justify-center gap-1 rounded-lg border-2 border-dashed border-amber-300 bg-amber-50 text-amber-600 hover:bg-amber-100 transition-colors">
+                <ImagePlus className="h-5 w-5" />
+                <span className="text-[9px] font-bold">加照片</span>
               </button>
-            )}
+            </div>
           </div>
         </div>
         <div className="flex justify-end gap-2 border-t border-neutral-100 px-5 py-3">
           <button onClick={onCancel} disabled={saving} className="rounded-lg px-4 py-2 text-sm font-bold text-neutral-500 hover:bg-neutral-100 disabled:opacity-50">取消</button>
           <button onClick={() => {
             if (!what.trim() || saving) return;
-            onSave({ valueKey: valueItem.key, date, what: what.trim(), reflection: reflection.trim(), imageBase64: imageBase64 || undefined, imageExt });
+            const newImages = imageEntries.filter(e => e.base64).map(e => ({ base64: e.base64!, ext: e.ext }));
+            onSave({ valueKey: valueItem.key, date, what: what.trim(), reflection: reflection.trim(), imagesBase64: newImages.length > 0 ? newImages : undefined });
           }} disabled={saving || !what.trim()}
             className={`flex items-center gap-1.5 rounded-lg px-5 py-2 text-sm font-bold text-white ${t.button} disabled:opacity-50`}>
             {saving ? (
@@ -151,10 +229,13 @@ function RecordForm({
   );
 }
 
-// ── Record Item (with image + edit) ──
-function RecordItem({ record, colorKey, onDelete, onEdit }: { record: PracticeRecord; colorKey: keyof typeof theme; onDelete: () => void; onEdit: () => void }) {
+// ── Record Item (with multi-image + edit) ──
+function RecordItem({ record, colorKey, onDelete, onEdit, onViewImages }: {
+  record: PracticeRecord; colorKey: keyof typeof theme; onDelete: () => void; onEdit: () => void; onViewImages: () => void;
+}) {
   const [open, setOpen] = useState(false);
   const t = theme[colorKey];
+  const imgs = getImages(record);
 
   return (
     <div className="overflow-hidden rounded-lg bg-white/90 shadow-sm">
@@ -163,7 +244,7 @@ function RecordItem({ record, colorKey, onDelete, onEdit }: { record: PracticeRe
           <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold text-white ${t.badge}`}>
             {record.date.slice(5)}
           </span>
-          {record.imageUrl && <Camera className="h-3 w-3 shrink-0 text-amber-500" />}
+          {imgs.length > 0 && <Camera className="h-3 w-3 shrink-0 text-amber-500" />}
           <span className="truncate text-xs font-semibold text-neutral-700">
             {record.what.slice(0, 20)}{record.what.length > 20 ? "..." : ""}
           </span>
@@ -186,9 +267,15 @@ function RecordItem({ record, colorKey, onDelete, onEdit }: { record: PracticeRe
       </div>
       {open && (
         <div className="space-y-1.5 border-t border-dashed border-neutral-200 px-2.5 pb-2.5 pt-2">
-          {record.imageUrl && (
-            <div className="rounded-lg overflow-hidden border border-amber-200">
-              <img src={record.imageUrl} alt="證據照片" className="w-full max-h-32 object-contain bg-neutral-50" />
+          {/* Thumbnails row */}
+          {imgs.length > 0 && (
+            <div className="flex gap-1.5 overflow-x-auto pb-1" style={{ scrollbarWidth: "thin" }}>
+              {imgs.map((src, i) => (
+                <button key={i} onClick={() => onViewImages()}
+                  className="shrink-0 w-14 h-14 rounded-lg overflow-hidden border border-amber-200 hover:border-amber-400 transition-colors">
+                  <img src={src} alt="" className="w-full h-full object-cover" />
+                </button>
+              ))}
             </div>
           )}
           <div>
@@ -220,49 +307,42 @@ export default function TsmcPractice() {
   const [editingRecord, setEditingRecord] = useState<PracticeRecord | null>(null);
   const [saving, setSaving] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [viewerImages, setViewerImages] = useState<string[] | null>(null);
+  const [viewerIndex, setViewerIndex] = useState(0);
 
-  // Fetch records from API on mount
   useEffect(() => {
     (async () => {
       try {
         const res = await fetch(`${API_BASE}?action=list&username=${user?.username}`);
-        if (res.ok) {
-          const data = await res.json();
-          setRecords(data);
-        }
+        if (res.ok) setRecords(await res.json());
       } catch {}
       setLoading(false);
     })();
   }, [user?.username]);
 
-  const handleSave = useCallback(async (data: { valueKey: string; date: string; what: string; reflection: string; imageBase64?: string; imageExt?: string }) => {
+  const handleSave = useCallback(async (data: { valueKey: string; date: string; what: string; reflection: string; imagesBase64?: { base64: string; ext: string }[] }) => {
     setSaving(true);
     try {
+      const payload: any = { username: user?.username, valueKey: data.valueKey, date: data.date, what: data.what, reflection: data.reflection };
+      if (data.imagesBase64 && data.imagesBase64.length > 0) {
+        payload.imagesBase64 = data.imagesBase64;
+      }
       if (editingRecord) {
-        // Update existing
+        payload.recordId = editingRecord.id;
         const res = await fetch(`${API_BASE}?action=update`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username: user?.username, recordId: editingRecord.id, ...data }),
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload),
         });
         if (res.ok) {
           const result = await res.json();
-          if (result.record) {
-            setRecords(prev => prev.map(r => r.id === editingRecord.id ? result.record : r));
-          }
+          if (result.record) setRecords(prev => prev.map(r => r.id === editingRecord.id ? result.record : r));
         }
       } else {
-        // Create new
         const res = await fetch(`${API_BASE}?action=create`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username: user?.username, ...data }),
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload),
         });
         if (res.ok) {
           const result = await res.json();
-          if (result.record) {
-            setRecords(prev => [result.record, ...prev]);
-          }
+          if (result.record) setRecords(prev => [result.record, ...prev]);
         }
       }
     } catch {}
@@ -274,8 +354,7 @@ export default function TsmcPractice() {
   const handleDelete = useCallback(async (id: string) => {
     try {
       await fetch(`${API_BASE}?action=delete`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: user?.username, recordId: id }),
       });
       setRecords(prev => prev.filter(r => r.id !== id));
@@ -322,10 +401,16 @@ export default function TsmcPractice() {
                       <div className="text-[10px] text-neutral-400">還沒有紀錄</div>
                     </div>
                   ) : (
-                    vRecords.map((r) => (
-                      <RecordItem key={r.id} record={r} colorKey={item.color} onDelete={() => handleDelete(r.id)}
-                        onEdit={() => { setEditingRecord(r); setFormValue(item); }} />
-                    ))
+                    vRecords.map((r) => {
+                      const imgs = getImages(r);
+                      return (
+                        <RecordItem key={r.id} record={r} colorKey={item.color}
+                          onDelete={() => handleDelete(r.id)}
+                          onEdit={() => { setEditingRecord(r); setFormValue(item); }}
+                          onViewImages={() => { if (imgs.length > 0) { setViewerImages(imgs); setViewerIndex(0); } }}
+                        />
+                      );
+                    })
                   )}
                 </div>
               </div>
@@ -346,6 +431,11 @@ export default function TsmcPractice() {
       {/* ── Form Modal ── */}
       {formValue && (
         <RecordForm valueItem={formValue} onSave={handleSave} onCancel={() => { setFormValue(null); setEditingRecord(null); }} saving={saving} initial={editingRecord ?? undefined} />
+      )}
+
+      {/* ── Image Viewer ── */}
+      {viewerImages && (
+        <ImageViewer images={viewerImages} initialIndex={viewerIndex} onClose={() => setViewerImages(null)} />
       )}
     </div>
   );
