@@ -50,16 +50,18 @@ function RecordForm({
   onSave,
   onCancel,
   saving,
+  initial,
 }: {
   valueItem: typeof values[number];
   onSave: (data: { valueKey: string; date: string; what: string; reflection: string; imageBase64?: string; imageExt?: string }) => void;
   onCancel: () => void;
   saving: boolean;
+  initial?: PracticeRecord;
 }) {
-  const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
-  const [what, setWhat] = useState("");
-  const [reflection, setReflection] = useState("");
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [date, setDate] = useState(initial?.date ?? new Date().toISOString().slice(0, 10));
+  const [what, setWhat] = useState(initial?.what ?? "");
+  const [reflection, setReflection] = useState(initial?.reflection ?? "");
+  const [imagePreview, setImagePreview] = useState<string | null>(initial?.imageUrl ?? null);
   const [imageBase64, setImageBase64] = useState<string | null>(null);
   const [imageExt, setImageExt] = useState<string>("png");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -149,8 +151,8 @@ function RecordForm({
   );
 }
 
-// ── Record Item (with image) ──
-function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; colorKey: keyof typeof theme; onDelete: () => void }) {
+// ── Record Item (with image + edit) ──
+function RecordItem({ record, colorKey, onDelete, onEdit }: { record: PracticeRecord; colorKey: keyof typeof theme; onDelete: () => void; onEdit: () => void }) {
   const [open, setOpen] = useState(false);
   const t = theme[colorKey];
 
@@ -168,8 +170,16 @@ function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; co
         </div>
         <div className="flex shrink-0 items-center gap-1">
           {open && (
-            <button onClick={(e) => { e.stopPropagation(); onDelete(); }}
-              className="rounded-full p-0.5 text-neutral-400 hover:text-red-500"><Trash2 className="h-3 w-3" /></button>
+            <>
+              <button onClick={(e) => { e.stopPropagation(); onEdit(); }}
+                className="rounded-full p-0.5 text-neutral-400 hover:text-blue-500" title="編輯">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-3 w-3">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                </svg>
+              </button>
+              <button onClick={(e) => { e.stopPropagation(); onDelete(); }}
+                className="rounded-full p-0.5 text-neutral-400 hover:text-red-500" title="刪除"><Trash2 className="h-3 w-3" /></button>
+            </>
           )}
           <ChevronDown className={`h-3.5 w-3.5 text-neutral-400 transition-transform ${open ? "rotate-180" : ""}`} />
         </div>
@@ -185,11 +195,16 @@ function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; co
             <div className="text-[10px] font-bold text-neutral-500 mb-0.5">✏️ 實踐內容</div>
             <div className="text-xs leading-relaxed text-neutral-700 whitespace-pre-wrap">{record.what}</div>
           </div>
-          {record.reflection && (
+          {record.reflection ? (
             <div>
               <div className="text-[10px] font-bold text-neutral-500 mb-0.5">🪞 心得反思</div>
               <div className="text-xs leading-relaxed italic text-neutral-600 whitespace-pre-wrap">{record.reflection}</div>
             </div>
+          ) : (
+            <button onClick={(e) => { e.stopPropagation(); onEdit(); }}
+              className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold text-white ${theme[colorKey].button}`}>
+              <Plus className="h-3 w-3" />寫心得
+            </button>
           )}
         </div>
       )}
@@ -202,6 +217,7 @@ export default function TsmcPractice() {
   const { user } = useAuth();
   const [records, setRecords] = useState<PracticeRecord[]>([]);
   const [formValue, setFormValue] = useState<typeof values[number] | null>(null);
+  const [editingRecord, setEditingRecord] = useState<PracticeRecord | null>(null);
   const [saving, setSaving] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -222,21 +238,38 @@ export default function TsmcPractice() {
   const handleSave = useCallback(async (data: { valueKey: string; date: string; what: string; reflection: string; imageBase64?: string; imageExt?: string }) => {
     setSaving(true);
     try {
-      const res = await fetch(`${API_BASE}?action=create`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: user?.username, ...data }),
-      });
-      if (res.ok) {
-        const result = await res.json();
-        if (result.record) {
-          setRecords(prev => [result.record, ...prev]);
+      if (editingRecord) {
+        // Update existing
+        const res = await fetch(`${API_BASE}?action=update`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username: user?.username, recordId: editingRecord.id, ...data }),
+        });
+        if (res.ok) {
+          const result = await res.json();
+          if (result.record) {
+            setRecords(prev => prev.map(r => r.id === editingRecord.id ? result.record : r));
+          }
+        }
+      } else {
+        // Create new
+        const res = await fetch(`${API_BASE}?action=create`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username: user?.username, ...data }),
+        });
+        if (res.ok) {
+          const result = await res.json();
+          if (result.record) {
+            setRecords(prev => [result.record, ...prev]);
+          }
         }
       }
     } catch {}
     setSaving(false);
     setFormValue(null);
-  }, [user?.username]);
+    setEditingRecord(null);
+  }, [user?.username, editingRecord]);
 
   const handleDelete = useCallback(async (id: string) => {
     try {
@@ -290,7 +323,8 @@ export default function TsmcPractice() {
                     </div>
                   ) : (
                     vRecords.map((r) => (
-                      <RecordItem key={r.id} record={r} colorKey={item.color} onDelete={() => handleDelete(r.id)} />
+                      <RecordItem key={r.id} record={r} colorKey={item.color} onDelete={() => handleDelete(r.id)}
+                        onEdit={() => { setEditingRecord(r); setFormValue(item); }} />
                     ))
                   )}
                 </div>
@@ -311,7 +345,7 @@ export default function TsmcPractice() {
 
       {/* ── Form Modal ── */}
       {formValue && (
-        <RecordForm valueItem={formValue} onSave={handleSave} onCancel={() => setFormValue(null)} saving={saving} />
+        <RecordForm valueItem={formValue} onSave={handleSave} onCancel={() => { setFormValue(null); setEditingRecord(null); }} saving={saving} initial={editingRecord ?? undefined} />
       )}
     </div>
   );

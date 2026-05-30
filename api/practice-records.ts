@@ -97,6 +97,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.json({ success: true, record: newRecord });
     }
 
+    // ── POST update record ──
+    if (action === 'update' && req.method === 'POST') {
+      const { username, recordId, valueKey, date, what, reflection, imageBase64, imageExt } = req.body;
+      if (!username || !recordId) return res.status(400).json({ error: 'missing data' });
+
+      const { content, sha } = await readFile(RECORDS_PATH);
+      const records: any[] = content || [];
+      const idx = records.findIndex((r: any) => r.id === recordId && r.username === username);
+      if (idx === -1) return res.status(404).json({ error: 'record not found' });
+
+      let imageUrl = records[idx].imageUrl;
+      if (imageBase64) {
+        const ext = imageExt || 'png';
+        const filename = `${username}-${Date.now()}.${ext}`;
+        imageUrl = await uploadImage(filename, imageBase64);
+      }
+
+      records[idx] = {
+        ...records[idx],
+        valueKey: valueKey ?? records[idx].valueKey,
+        date: date ?? records[idx].date,
+        what: what ?? records[idx].what,
+        reflection: reflection ?? records[idx].reflection,
+        imageUrl,
+      };
+      await writeFile(RECORDS_PATH, records, sha, `update practice record ${recordId}`);
+      return res.json({ success: true, record: records[idx] });
+    }
+
     // ── DELETE record ──
     if (action === 'delete' && req.method === 'POST') {
       const { username, recordId } = req.body;
