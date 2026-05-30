@@ -23,13 +23,13 @@ function saveRecords(records: PracticeRecord[]) {
 // ── Value Definitions ──
 const values = [
   { key: "integrity", icon: Heart, title: "Integrity", zh: "誠信正直", color: "green" as const,
-    story: "小元寶國王撿到一個錢包，想到不是自己的東西，所以主動還給失主。", scene: "wallet" },
+    story: "小元寶國王撿到一個錢包，想到不是自己的東西，所以主動還給失主。", image: "/integrity.png" },
   { key: "commitment", icon: Handshake, title: "Commitment", zh: "承諾", color: "blue" as const,
-    story: "小元寶國王答應今天要完成閱讀筆記，最後專心寫完，說到做到。", scene: "study" },
+    story: "小元寶國王答應今天要完成閱讀筆記，最後專心寫完，說到做到。", image: "/commitment.png" },
   { key: "innovation", icon: Lightbulb, title: "Innovation", zh: "創新", color: "purple" as const,
-    story: "小元寶國王發現積木車常常散開，想到用新方法讓它更穩固、更好玩。", scene: "idea" },
+    story: "小元寶國王發現積木車常常散開，想到用新方法讓它更穩固、更好玩。", image: "/innovation.png" },
   { key: "trust", icon: Users, title: "Trust & Responsibility", zh: "信任與責任", color: "orange" as const,
-    story: "小元寶國王看到朋友拿不動書，主動幫忙並整理好書本，讓大家放心信任他。", scene: "help" },
+    story: "小元寶國王看到朋友拿不動書，主動幫忙並整理好書本，讓大家放心信任他。", image: "/trust.png" },
 ];
 
 const theme = {
@@ -104,22 +104,11 @@ function Mascot({ className = "", small = false }: { className?: string; small?:
   );
 }
 
-// ── Scene Illustration ──
-function Scene({ type, color }: { type: string; color: keyof typeof theme }) {
-  const t = theme[color];
+// ── Scene Illustration (using actual images) ──
+function Scene({ image }: { image: string }) {
   return (
-    <div className="relative mx-auto mt-4 h-36 max-w-[260px] overflow-hidden rounded-3xl bg-white/65 p-3 shadow-inner">
-      <div className="absolute inset-x-0 bottom-0 h-12 rounded-t-[100%] bg-green-200/70" />
-      <Mascot small className="scale-75" />
-      {type === "wallet" && <WalletCards className="absolute right-9 top-12 h-10 w-10 rounded-full bg-amber-100 p-2 text-amber-700 shadow" />}
-      {type === "study" && <BookOpen className="absolute right-7 top-16 h-12 w-12 rounded-full bg-white p-2 text-sky-700 shadow" />}
-      {type === "idea" && <Lightbulb className="absolute right-8 top-8 h-12 w-12 rounded-full bg-yellow-100 p-2 text-yellow-600 shadow" />}
-      {type === "help" && (
-        <div className="absolute right-5 top-12 rounded-2xl bg-white p-3 shadow">
-          <BookOpen className="h-9 w-9 text-orange-600" />
-        </div>
-      )}
-      <Star className={`absolute left-5 top-6 h-5 w-5 ${t.text}`} />
+    <div className="mx-auto mt-4 max-w-[280px] overflow-hidden rounded-3xl shadow-md">
+      <img src={image} alt="" className="w-full object-cover" />
     </div>
   );
 }
@@ -140,7 +129,7 @@ function ValueCard({ item }: { item: typeof values[number] }) {
         </div>
       </div>
       <div className="my-3 border-t-2 border-dashed border-current opacity-20" />
-      <Scene type={item.scene} color={item.color} />
+      <Scene image={item.image} />
       <p className="mx-auto mt-4 min-h-[72px] max-w-[260px] text-center text-base font-semibold leading-7 text-neutral-700">
         {item.story}
       </p>
