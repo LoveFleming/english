@@ -29,6 +29,7 @@ import HowMuchMany from "./pages/HowMuchMany";
 import HowMuchManyQuiz from "./pages/HowMuchManyQuiz";
 import CompoundWords from "./pages/CompoundWords";
 import CompoundWordsQuiz from "./pages/CompoundWordsQuiz";
+import TsmcPractice from "./pages/TsmcPractice";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -82,6 +83,9 @@ function AppContent() {
     ],
     "📚 課程 Lessons": [
       { id: "lesson3", title: "7下 Lesson 3" },
+    ],
+    "🏗️ 前進台積": [
+      { id: "tsmc-practice", title: "實踐紀錄" },
     ],
     "👤 會員": [
       { id: "score-history", title: "📊 考試成績" },
@@ -139,6 +143,7 @@ function AppContent() {
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;
       case "quiz.direct-inverse-proportion": return <DirectInverseProportionQuiz />;
       case "midterm-sprint": return <MidtermSprint />;
+      case "tsmc-practice": return <TsmcPractice />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
   };
