@@ -20,7 +20,6 @@ function saveRecords(records: PracticeRecord[]) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
 }
 
-// ── Value Definitions ──
 const values = [
   { key: "integrity", icon: Heart, title: "Integrity", zh: "誠信正直", color: "green" as const, image: "/integrity.png" },
   { key: "commitment", icon: Handshake, title: "Commitment", zh: "承諾", color: "blue" as const, image: "/commitment.png" },
@@ -29,10 +28,10 @@ const values = [
 ];
 
 const theme = {
-  green: { badge: "bg-green-500", text: "text-green-700", button: "bg-green-500 hover:bg-green-600", pocket: "bg-green-100 border-green-200" },
-  blue: { badge: "bg-sky-500", text: "text-sky-700", button: "bg-sky-500 hover:bg-sky-600", pocket: "bg-sky-100 border-sky-200" },
-  purple: { badge: "bg-purple-500", text: "text-purple-700", button: "bg-purple-500 hover:bg-purple-600", pocket: "bg-purple-100 border-purple-200" },
-  orange: { badge: "bg-orange-500", text: "text-orange-700", button: "bg-orange-500 hover:bg-orange-600", pocket: "bg-orange-100 border-orange-200" },
+  green: { badge: "bg-green-500", text: "text-green-700", button: "bg-green-500 hover:bg-green-600", pocket: "bg-green-50 border-green-200" },
+  blue: { badge: "bg-sky-500", text: "text-sky-700", button: "bg-sky-500 hover:bg-sky-600", pocket: "bg-sky-50 border-sky-200" },
+  purple: { badge: "bg-purple-500", text: "text-purple-700", button: "bg-purple-500 hover:bg-purple-600", pocket: "bg-purple-50 border-purple-200" },
+  orange: { badge: "bg-orange-500", text: "text-orange-700", button: "bg-orange-500 hover:bg-orange-600", pocket: "bg-orange-50 border-orange-200" },
 };
 
 // ── Record Form Modal ──
@@ -103,7 +102,7 @@ function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; co
   const t = theme[colorKey];
 
   return (
-    <div className="overflow-hidden rounded-lg bg-white/80 shadow-sm">
+    <div className="overflow-hidden rounded-lg bg-white/90 shadow-sm">
       <div className="flex cursor-pointer items-center justify-between gap-1.5 px-2.5 py-2" onClick={() => setOpen(!open)}>
         <div className="flex items-center gap-2 min-w-0">
           <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold text-white ${t.badge}`}>
@@ -160,13 +159,18 @@ export default function TsmcPractice() {
 
   return (
     <div className="flex h-full flex-col bg-[#fff8ea] overflow-hidden">
-      {/* ── Banner (smaller) ── */}
-      <div className="shrink-0">
-        <img src="/banner.png" alt="前進台積 實踐紀錄" className="w-full object-cover" style={{ maxHeight: "22vh" }} />
+      {/* ── Banner — compact, no crop ── */}
+      <div className="shrink-0 flex justify-center bg-[#fff3cc]">
+        <img
+          src="/banner.png"
+          alt="前進台積 實踐紀錄"
+          className="w-full max-w-4xl object-contain"
+          style={{ maxHeight: "18vh" }}
+        />
       </div>
 
-      {/* ── Four value columns ── */}
-      <div className="flex flex-1 min-h-0 gap-4 px-4 pt-3 pb-2">
+      {/* ── Four value columns — flex fills remaining space ── */}
+      <div className="flex flex-1 min-h-0 gap-3 px-3 py-3">
         {values.map((item) => {
           const Icon = item.icon;
           const t = theme[item.color];
@@ -174,17 +178,21 @@ export default function TsmcPractice() {
 
           return (
             <div key={item.key} className="flex flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-md">
-              {/* Value image (smaller, padded) */}
-              <div className="shrink-0 p-2">
-                <img src={item.image} alt={item.zh} className="w-full rounded-xl object-cover" style={{ maxHeight: "22vh" }} />
+              {/* Image — no crop, contain within card */}
+              <div className="shrink-0 flex items-center justify-center bg-white px-3 pt-3">
+                <img
+                  src={item.image}
+                  alt={item.zh}
+                  className="w-full rounded-xl object-contain"
+                  style={{ maxHeight: "30vh" }}
+                />
               </div>
 
-              {/* Pocket area */}
-              <div className={`flex flex-1 min-h-0 flex-col border-2 border-dashed ${t.pocket} rounded-b-2xl px-3 pb-3 pt-2`}>
-                {/* Pocket header */}
+              {/* Pocket */}
+              <div className={`flex flex-1 min-h-0 flex-col rounded-b-2xl border-2 border-dashed ${t.pocket} px-3 pb-3 pt-2`}>
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <Icon className={`h-5 w-5 ${t.text}`} />
+                    <Icon className={`h-4 w-4 ${t.text}`} />
                     <span className={`text-sm font-black ${t.text}`}>{item.zh}</span>
                     <span className="text-xs text-neutral-400">({vRecords.length})</span>
                   </div>
@@ -194,11 +202,10 @@ export default function TsmcPractice() {
                   </button>
                 </div>
 
-                {/* Records */}
                 <div className="flex-1 min-h-0 space-y-1.5 overflow-y-auto" style={{ scrollbarWidth: "thin" }}>
                   {vRecords.length === 0 ? (
                     <div className="py-3 text-center">
-                      <div className="text-lg opacity-30">📝</div>
+                      <div className="text-base opacity-30">📝</div>
                       <div className="text-xs text-neutral-400">還沒有紀錄</div>
                     </div>
                   ) : (
