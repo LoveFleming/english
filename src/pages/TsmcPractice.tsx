@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { Crown, Star, Heart, Handshake, Lightbulb, Users, Bell, BookOpen, CheckCircle2, WalletCards, ArrowRight, Plus, Trash2, ChevronDown, X } from "lucide-react";
+import { Star, Heart, Handshake, Lightbulb, Users, CheckCircle2, Plus, Trash2, ChevronDown, X } from "lucide-react";
 
 // ── Types ──
 interface PracticeRecord {
@@ -11,7 +11,7 @@ interface PracticeRecord {
   createdAt: number;
 }
 
-const STORAGE_KEY = "eng…smc";
+const STORAGE_KEY = "***";
 
 function loadRecords(): PracticeRecord[] {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); } catch { return []; }
@@ -22,105 +22,18 @@ function saveRecords(records: PracticeRecord[]) {
 
 // ── Value Definitions ──
 const values = [
-  { key: "integrity", icon: Heart, title: "Integrity", zh: "誠信正直", color: "green" as const,
-    story: "小元寶國王撿到一個錢包，想到不是自己的東西，所以主動還給失主。", image: "/integrity.png" },
-  { key: "commitment", icon: Handshake, title: "Commitment", zh: "承諾", color: "blue" as const,
-    story: "小元寶國王答應今天要完成閱讀筆記，最後專心寫完，說到做到。", image: "/commitment.png" },
-  { key: "innovation", icon: Lightbulb, title: "Innovation", zh: "創新", color: "purple" as const,
-    story: "小元寶國王發現積木車常常散開，想到用新方法讓它更穩固、更好玩。", image: "/innovation.png" },
-  { key: "trust", icon: Users, title: "Trust & Responsibility", zh: "信任與責任", color: "orange" as const,
-    story: "小元寶國王看到朋友拿不動書，主動幫忙並整理好書本，讓大家放心信任他。", image: "/trust.png" },
+  { key: "integrity", icon: Heart, title: "Integrity", zh: "誠信正直", color: "green" as const, image: "/integrity.png" },
+  { key: "commitment", icon: Handshake, title: "Commitment", zh: "承諾", color: "blue" as const, image: "/commitment.png" },
+  { key: "innovation", icon: Lightbulb, title: "Innovation", zh: "創新", color: "purple" as const, image: "/innovation.png" },
+  { key: "trust", icon: Users, title: "Trust & Responsibility", zh: "信任與責任", color: "orange" as const, image: "/trust.png" },
 ];
 
 const theme = {
-  green: {
-    card: "border-green-200 bg-green-50/70",
-    badge: "bg-green-500",
-    text: "text-green-700",
-    button: "bg-green-500 hover:bg-green-600",
-    pocket: "bg-green-100 border-green-200",
-  },
-  blue: {
-    card: "border-sky-200 bg-sky-50/70",
-    badge: "bg-sky-500",
-    text: "text-sky-700",
-    button: "bg-sky-500 hover:bg-sky-600",
-    pocket: "bg-sky-100 border-sky-200",
-  },
-  purple: {
-    card: "border-purple-200 bg-purple-50/70",
-    badge: "bg-purple-500",
-    text: "text-purple-700",
-    button: "bg-purple-500 hover:bg-purple-600",
-    pocket: "bg-purple-100 border-purple-200",
-  },
-  orange: {
-    card: "border-orange-200 bg-orange-50/70",
-    badge: "bg-orange-500",
-    text: "text-orange-700",
-    button: "bg-orange-500 hover:bg-orange-600",
-    pocket: "bg-orange-100 border-orange-200",
-  },
+  green: { badge: "bg-green-500", text: "text-green-700", button: "bg-green-500 hover:bg-green-600", pocket: "bg-green-100 border-green-200" },
+  blue: { badge: "bg-sky-500", text: "text-sky-700", button: "bg-sky-500 hover:bg-sky-600", pocket: "bg-sky-100 border-sky-200" },
+  purple: { badge: "bg-purple-500", text: "text-purple-700", button: "bg-purple-500 hover:bg-purple-600", pocket: "bg-purple-100 border-purple-200" },
+  orange: { badge: "bg-orange-500", text: "text-orange-700", button: "bg-orange-500 hover:bg-orange-600", pocket: "bg-orange-100 border-orange-200" },
 };
-
-// ── Mascot (CSS-drawn 小元寶國王) ──
-function Mascot({ className = "", small = false }: { className?: string; small?: boolean }) {
-  return (
-    <div className={`relative mx-auto ${small ? "h-32 w-32" : "h-64 w-64"} ${className}`}>
-      {/* Crown */}
-      <div className="absolute left-1/2 top-0 z-30 -translate-x-1/2">
-        <div className={`${small ? "h-8 w-11" : "h-14 w-20"} rounded-t-2xl border-4 border-neutral-900 bg-yellow-300`}>
-          <div className="flex h-full items-start justify-around pt-1">
-            {[0, 1, 2].map((i) => (
-              <span key={i} className={`${small ? "h-2 w-2" : "h-3 w-3"} rounded-full bg-orange-400 ring-2 ring-neutral-900`} />
-            ))}
-          </div>
-        </div>
-      </div>
-      {/* Head */}
-      <div className="absolute left-1/2 top-8 z-20 -translate-x-1/2">
-        <div className={`${small ? "h-24 w-28" : "h-44 w-52"} rounded-[45%] border-4 border-neutral-900 bg-[#6b442f]`}>
-          <div className="absolute left-1/2 top-8 -translate-x-1/2">
-            <div className={`${small ? "h-14 w-24" : "h-28 w-44"} rounded-[46%] bg-[#fff3ee]`}>
-              <div className="absolute left-1/2 top-0 h-full w-4 -translate-x-1/2 rounded-b-full bg-white/90" />
-              <div className="absolute left-3 top-7 flex gap-8">
-                <span className={`${small ? "h-4 w-5" : "h-7 w-9"} rounded-full border-4 border-neutral-900 bg-sky-200`} />
-                <span className={`${small ? "h-4 w-5" : "h-7 w-9"} rounded-full border-4 border-neutral-900 bg-sky-200`} />
-              </div>
-              <div className="absolute left-5 top-14 h-3 w-8 rounded-full bg-pink-200/80" />
-              <div className="absolute right-5 top-14 h-3 w-8 rounded-full bg-pink-200/80" />
-              <div className="absolute left-1/2 top-16 h-4 w-8 -translate-x-1/2 rounded-b-full border-b-4 border-neutral-900" />
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Body */}
-      <div className="absolute bottom-2 left-1/2 z-10 -translate-x-1/2">
-        <div className={`${small ? "h-20 w-32" : "h-32 w-52"} rounded-[34px] border-4 border-neutral-900 bg-amber-100 shadow-sm`}>
-          <div className="mx-auto h-full w-1/3 bg-yellow-300" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── Scene Illustration (using actual images) ──
-function Scene({ image }: { image: string }) {
-  return (
-    <div className="mx-auto mt-4 max-w-[280px] overflow-hidden rounded-3xl shadow-md">
-      <img src={image} alt="" className="w-full object-cover" />
-    </div>
-  );
-}
-
-// ── Value Card ──
-function ValueCard({ item }: { item: typeof values[number] }) {
-  return (
-    <div className="overflow-hidden rounded-[20px] shadow-md transition hover:-translate-y-1 hover:shadow-xl">
-      <img src={item.image} alt={item.zh} className="w-full object-cover" />
-    </div>
-  );
-}
 
 // ── Record Form Modal ──
 function RecordForm({
@@ -141,47 +54,41 @@ function RecordForm({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4" onClick={onCancel}>
       <div className="w-full max-w-md overflow-hidden rounded-[24px] bg-white shadow-2xl" onClick={(e) => e.stopPropagation()}>
-        {/* Header */}
-        <div className={`flex items-center justify-between px-5 py-4 ${t.card}`}>
+        <div className={`flex items-center justify-between px-5 py-3 ${t.pocket}`}>
           <div className="flex items-center gap-3">
-            <div className={`grid h-10 w-10 place-items-center rounded-full text-white ${t.badge} shadow-sm`}>
-              <Icon className="h-6 w-6" />
+            <div className={`grid h-9 w-9 place-items-center rounded-full text-white ${t.badge} shadow-sm`}>
+              <Icon className="h-5 w-5" />
             </div>
             <div>
-              <div className={`text-lg font-black ${t.text}`}>{valueItem.zh}</div>
-              <div className="text-xs font-semibold text-neutral-500">{valueItem.title}</div>
+              <div className={`text-base font-black ${t.text}`}>{valueItem.zh}</div>
+              <div className="text-[10px] font-semibold text-neutral-500">{valueItem.title}</div>
             </div>
           </div>
-          <button onClick={onCancel} className="rounded-full p-1 hover:bg-white/50"><X className="h-5 w-5 text-neutral-400" /></button>
+          <button onClick={onCancel} className="rounded-full p-1 hover:bg-white/50"><X className="h-4 w-4 text-neutral-400" /></button>
         </div>
-
-        {/* Form */}
-        <div className="space-y-4 px-5 py-5">
+        <div className="space-y-3 px-5 py-4">
           <div>
-            <label className="mb-1 block text-sm font-bold text-neutral-700">📅 日期</label>
+            <label className="mb-1 block text-xs font-bold text-neutral-700">📅 日期</label>
             <input type="date" value={date} onChange={(e) => setDate(e.target.value)}
-              className="w-full rounded-xl border-2 border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300" />
+              className="w-full rounded-lg border-2 border-neutral-200 px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300" />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-bold text-neutral-700">✏️ 我做了什麼？</label>
-            <textarea value={what} onChange={(e) => setWhat(e.target.value)} rows={3}
+            <label className="mb-1 block text-xs font-bold text-neutral-700">✏️ 我做了什麼？</label>
+            <textarea value={what} onChange={(e) => setWhat(e.target.value)} rows={2}
               placeholder={`今天我在「${valueItem.zh}」方面做了...`}
-              className="w-full rounded-xl border-2 border-neutral-200 px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-amber-300" />
+              className="w-full rounded-lg border-2 border-neutral-200 px-3 py-1.5 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-amber-300" />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-bold text-neutral-700">🪞 我的心得與反思</label>
-            <textarea value={reflection} onChange={(e) => setReflection(e.target.value)} rows={3}
+            <label className="mb-1 block text-xs font-bold text-neutral-700">🪞 我的心得與反思</label>
+            <textarea value={reflection} onChange={(e) => setReflection(e.target.value)} rows={2}
               placeholder="我學到了... 我覺得..."
-              className="w-full rounded-xl border-2 border-neutral-200 px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-amber-300" />
+              className="w-full rounded-lg border-2 border-neutral-200 px-3 py-1.5 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-amber-300" />
           </div>
         </div>
-
-        {/* Footer */}
-        <div className="flex justify-end gap-2 border-t border-neutral-100 px-5 py-4">
-          <button onClick={onCancel}
-            className="rounded-xl px-4 py-2 text-sm font-bold text-neutral-500 hover:bg-neutral-100">取消</button>
+        <div className="flex justify-end gap-2 border-t border-neutral-100 px-5 py-3">
+          <button onClick={onCancel} className="rounded-lg px-4 py-1.5 text-sm font-bold text-neutral-500 hover:bg-neutral-100">取消</button>
           <button onClick={() => { if (!what.trim()) return; onSave({ valueKey: valueItem.key, date, what: what.trim(), reflection: reflection.trim() }); }}
-            className={`flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white ${t.button} shadow-sm`}>
+            className={`flex items-center gap-1.5 rounded-lg px-4 py-1.5 text-sm font-bold text-white ${t.button}`}>
             <CheckCircle2 className="h-4 w-4" /> 寫好了！
           </button>
         </div>
@@ -194,100 +101,37 @@ function RecordForm({
 function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; colorKey: keyof typeof theme; onDelete: () => void }) {
   const [open, setOpen] = useState(false);
   const t = theme[colorKey];
-  const Icon = values.find(v => v.key === record.valueKey)?.icon ?? Star;
 
   return (
-    <div className="overflow-hidden rounded-xl bg-white/80 shadow-sm">
-      <div className="flex cursor-pointer items-center justify-between gap-2 px-3 py-2" onClick={() => setOpen(!open)}>
-        <div className="flex items-center gap-2 min-w-0">
-          <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold text-white ${t.badge}`}>
+    <div className="overflow-hidden rounded-lg bg-white/80 shadow-sm">
+      <div className="flex cursor-pointer items-center justify-between gap-1 px-2 py-1.5" onClick={() => setOpen(!open)}>
+        <div className="flex items-center gap-1.5 min-w-0">
+          <span className={`shrink-0 rounded-full px-1.5 py-0.5 text-[8px] font-bold text-white ${t.badge}`}>
             {record.date.slice(5)}
           </span>
-          <span className="truncate text-xs font-semibold text-neutral-700">
-            {record.what.slice(0, 22)}{record.what.length > 22 ? "..." : ""}
+          <span className="truncate text-[10px] font-semibold text-neutral-700">
+            {record.what.slice(0, 18)}{record.what.length > 18 ? "..." : ""}
           </span>
         </div>
-        <div className="flex shrink-0 items-center gap-1">
+        <div className="flex shrink-0 items-center gap-0.5">
           {open && (
             <button onClick={(e) => { e.stopPropagation(); onDelete(); }}
-              className="rounded-full p-0.5 text-neutral-400 hover:text-red-500">
-              <Trash2 className="h-3 w-3" />
-            </button>
+              className="rounded-full p-0.5 text-neutral-400 hover:text-red-500"><Trash2 className="h-2.5 w-2.5" /></button>
           )}
-          <ChevronDown className={`h-3.5 w-3.5 text-neutral-400 transition-transform ${open ? "rotate-180" : ""}`} />
+          <ChevronDown className={`h-3 w-3 text-neutral-400 transition-transform ${open ? "rotate-180" : ""}`} />
         </div>
       </div>
       {open && (
-        <div className="space-y-1.5 border-t border-dashed border-neutral-200 px-3 pb-2.5 pt-2">
-          <div>
-            <div className="text-[10px] font-bold text-neutral-500">✏️ 實踐內容</div>
-            <div className="text-xs leading-relaxed text-neutral-700 whitespace-pre-wrap">{record.what}</div>
-          </div>
-          {record.reflection && (
-            <div>
-              <div className="text-[10px] font-bold text-neutral-500">🪞 心得反思</div>
-              <div className="text-xs leading-relaxed italic text-neutral-600 whitespace-pre-wrap">{record.reflection}</div>
-            </div>
-          )}
+        <div className="space-y-1 border-t border-dashed border-neutral-200 px-2 pb-2 pt-1.5">
+          <div className="text-[9px] font-bold text-neutral-500">✏️ {record.what}</div>
+          {record.reflection && <div className="text-[9px] italic text-neutral-600">🪞 {record.reflection}</div>}
         </div>
       )}
     </div>
   );
 }
 
-// ── Pocket with Records ──
-function PocketWithRecords({
-  item,
-  records,
-  onAdd,
-  onDelete,
-}: {
-  item: typeof values[number];
-  records: PracticeRecord[];
-  onAdd: () => void;
-  onDelete: (id: string) => void;
-}) {
-  const Icon = item.icon;
-  const t = theme[item.color];
-  return (
-    <div className="relative min-w-[210px]">
-      {/* Card sticking out */}
-      <div className="absolute left-6 right-6 top-0 h-20 rounded-2xl border-2 border-dashed border-white/80 bg-white shadow-sm">
-        <div className="flex items-center gap-2 px-4 py-3 text-sm text-neutral-500">
-          <Icon className={`h-5 w-5 ${t.text}`} />
-          <span className="border-b-2 border-dashed border-neutral-300 px-10" />
-        </div>
-      </div>
-      {/* Pocket body */}
-      <div className={`mt-14 rounded-[24px] border-2 border-dashed ${t.pocket} p-4 shadow-md`}>
-        <div className="mb-2 flex items-center justify-center gap-3 text-lg font-black">
-          <Star className={`h-6 w-6 ${t.text}`} />
-          <span className={t.text}>{item.zh}</span>
-        </div>
-        {/* Records list */}
-        <div className="space-y-1.5 max-h-[160px] overflow-y-auto" style={{ scrollbarWidth: "thin" }}>
-          {records.length === 0 ? (
-            <div className="py-3 text-center">
-              <div className="text-lg opacity-30">📝</div>
-              <div className="text-[10px] text-neutral-400">還沒有紀錄</div>
-            </div>
-          ) : (
-            records.map((r) => (
-              <RecordItem key={r.id} record={r} colorKey={item.color} onDelete={() => onDelete(r.id)} />
-            ))
-          )}
-        </div>
-        {/* Add button */}
-        <button onClick={onAdd}
-          className={`mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl py-1.5 text-xs font-bold text-white ${t.button} shadow-sm`}>
-          <Plus className="h-3.5 w-3.5" /> 新增實踐紀錄
-        </button>
-      </div>
-    </div>
-  );
-}
-
-// ── Main Page ──
+// ── Main Page (single screen, no scroll) ──
 export default function TsmcPractice() {
   const [records, setRecords] = useState<PracticeRecord[]>(loadRecords);
   const [formValue, setFormValue] = useState<typeof values[number] | null>(null);
@@ -306,80 +150,70 @@ export default function TsmcPractice() {
     setRecords(prev => prev.filter(r => r.id !== id));
   }, []);
 
-  const totalRecords = records.length;
-
   return (
-    <div className="min-h-full bg-[#fff8ea] text-neutral-800">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-amber-50 to-[#fff3cc] px-4 pb-6 pt-8 sm:px-6">
-        <div className="absolute -bottom-10 left-0 h-32 w-80 rounded-t-full bg-green-200/70" />
-        <div className="absolute -bottom-8 right-0 h-28 w-96 rounded-t-full bg-green-200/70" />
-        <Star className="absolute left-[18%] top-8 h-7 w-7 fill-amber-300 text-amber-400" />
-        <Star className="absolute right-[26%] top-12 h-6 w-6 fill-amber-200 text-amber-400" />
-        <div className="relative mx-auto grid max-w-4xl items-center gap-4 sm:grid-cols-[1fr_200px]">
-          <div className="text-center sm:text-left">
-            <div className="mb-3 flex justify-center gap-3 text-5xl font-black tracking-wider sm:justify-start sm:text-6xl md:text-7xl">
-              <span className="text-[#0e4b7d] drop-shadow-sm">前進</span>
-              <span className="text-[#d95732] drop-shadow-sm">台積</span>
-            </div>
-            <div className="mx-auto mb-3 w-fit rounded-full border-2 border-amber-300 bg-white/70 px-6 py-1.5 text-xl font-black text-[#5b3c25] sm:mx-0 md:text-2xl">
-              ── 實踐紀錄 ──
-            </div>
-            <p className="text-lg font-bold text-[#5b3c25] md:text-xl">和小元寶國王一起學習價值與行動 ♡</p>
-            <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-amber-200/60 px-4 py-1 text-sm font-bold text-amber-800">
-              <Star className="h-4 w-4 fill-amber-400" /> 已記錄 {totalRecords} 筆
-            </div>
-          </div>
-          <Mascot className="hidden sm:block" />
-        </div>
-      </section>
-
-      {/* Value Cards */}
-      <div className="bg-[#fffaf0] p-4 sm:p-6">
-        <section className="grid gap-4 lg:grid-cols-4">
-          {values.map((item) => <ValueCard key={item.key} item={item} />)}
-        </section>
+    <div className="flex h-full flex-col bg-[#fff8ea] overflow-hidden">
+      {/* ── Banner ── */}
+      <div className="shrink-0">
+        <img src="/banner.png" alt="前進台積 實踐紀錄" className="w-full object-cover" style={{ maxHeight: "30vh" }} />
       </div>
 
-      {/* My Record Cards Section */}
-      <div className="bg-[#fffaf0] px-4 pb-6 sm:px-6">
-        <section className="rounded-[28px] border-2 border-amber-200 bg-white/70 p-5 shadow-sm">
-          <div className="grid gap-6 lg:grid-cols-[240px_1fr]">
-            <div className="flex items-center gap-4 lg:block">
-              <Star className="h-9 w-9 fill-amber-300 text-amber-400 lg:mb-3" />
-              <div>
-                <h2 className="text-2xl font-black text-[#6b4b28] lg:text-3xl">我的紀錄卡</h2>
-                <p className="mt-2 text-sm font-semibold text-neutral-600 lg:text-base">記錄每天的行動，累積成長的力量！</p>
+      {/* ── Four value columns ── */}
+      <div className="flex flex-1 min-h-0 gap-3 p-3">
+        {values.map((item) => {
+          const Icon = item.icon;
+          const t = theme[item.color];
+          const vRecords = records.filter(r => r.valueKey === item.key).sort((a, b) => b.createdAt - a.createdAt);
+
+          return (
+            <div key={item.key} className="flex flex-1 flex-col overflow-hidden rounded-2xl shadow-md">
+              {/* Value image */}
+              <div className="shrink-0">
+                <img src={item.image} alt={item.zh} className="w-full object-cover" style={{ maxHeight: "28vh" }} />
+              </div>
+
+              {/* Pocket area */}
+              <div className={`flex flex-1 min-h-0 flex-col border-2 border-dashed ${t.pocket} rounded-b-2xl p-2`}>
+                {/* Pocket header */}
+                <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center gap-1.5">
+                    <Icon className={`h-4 w-4 ${t.text}`} />
+                    <span className={`text-xs font-black ${t.text}`}>{item.zh}</span>
+                    <span className="text-[9px] text-neutral-400">({vRecords.length})</span>
+                  </div>
+                  <button onClick={() => setFormValue(item)}
+                    className={`flex items-center gap-0.5 rounded-full px-2 py-0.5 text-[10px] font-bold text-white ${t.button}`}>
+                    <Plus className="h-3 w-3" />紀錄
+                  </button>
+                </div>
+
+                {/* Records */}
+                <div className="flex-1 min-h-0 space-y-1 overflow-y-auto" style={{ scrollbarWidth: "thin" }}>
+                  {vRecords.length === 0 ? (
+                    <div className="py-2 text-center text-[9px] text-neutral-400">還沒有紀錄</div>
+                  ) : (
+                    vRecords.map((r) => (
+                      <RecordItem key={r.id} record={r} colorKey={item.color} onDelete={() => handleDelete(r.id)} />
+                    ))
+                  )}
+                </div>
               </div>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {values.map((item) => (
-                <PocketWithRecords
-                  key={item.key}
-                  item={item}
-                  records={records.filter(r => r.valueKey === item.key).sort((a, b) => b.createdAt - a.createdAt)}
-                  onAdd={() => setFormValue(item)}
-                  onDelete={handleDelete}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+          );
+        })}
       </div>
 
-      {/* Footer */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-amber-200 bg-amber-50 px-4 py-3 text-xs font-bold text-[#7a552f] sm:px-6 sm:text-sm">
-        <span className="flex items-center gap-2"><Crown className="h-4 w-4" /> 小小行動・大大影響 ♡</span>
-        <span className="flex items-center gap-2"><Star className="h-4 w-4 fill-amber-300 text-amber-400" /> 持續練習，成為更好的自己！</span>
+      {/* ── Footer ── */}
+      <div className="shrink-0 flex items-center justify-center gap-2 border-t border-amber-200 bg-amber-50 px-4 py-1.5 text-[10px] font-bold text-[#7a552f]">
+        <span>小小行動・大大影響 ♡</span>
+        <span className="text-amber-300">|</span>
+        <span>持續練習，成為更好的自己！</span>
+        <span className="text-amber-300">|</span>
+        <span>已記錄 {records.length} 筆</span>
       </div>
 
-      {/* Form Modal */}
+      {/* ── Form Modal ── */}
       {formValue && (
-        <RecordForm
-          valueItem={formValue}
-          onSave={handleSave}
-          onCancel={() => setFormValue(null)}
-        />
+        <RecordForm valueItem={formValue} onSave={handleSave} onCancel={() => setFormValue(null)} />
       )}
     </div>
   );
