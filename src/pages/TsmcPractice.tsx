@@ -1,5 +1,6 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Star, Heart, Handshake, Lightbulb, Users, CheckCircle2, Plus, Trash2, ChevronDown, X } from "lucide-react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
+import { Star, Heart, Handshake, Lightbulb, Users, CheckCircle2, Plus, Trash2, ChevronDown, X, ImagePlus, Camera } from "lucide-react";
+import { useAuth } from "../contexts/AuthContext";
 
 // ── Types ──
 interface PracticeRecord {
@@ -8,17 +9,11 @@ interface PracticeRecord {
   date: string;
   what: string;
   reflection: string;
+  imageUrl?: string;
   createdAt: number;
 }
 
-const STORAGE_KEY = "***";
-
-function loadRecords(): PracticeRecord[] {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); } catch { return []; }
-}
-function saveRecords(records: PracticeRecord[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
-}
+const API_BASE = "/api/practice-records";
 
 const values = [
   { key: "integrity", icon: Heart, title: "Integrity", zh: "誠信正直", color: "green" as const, image: "/integrity.png" },
@@ -34,21 +29,52 @@ const theme = {
   orange: { badge: "bg-orange-500", text: "text-orange-700", button: "bg-orange-500 hover:bg-orange-600", pocket: "bg-orange-50 border-orange-200" },
 };
 
-// ── Record Form Modal ──
+// ── Convert file to base64 ──
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      // Strip data:image/xxx;base64, prefix
+      const base64 = result.split(",")[1];
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+// ── Record Form Modal (with image upload) ──
 function RecordForm({
   valueItem,
   onSave,
   onCancel,
+  saving,
 }: {
   valueItem: typeof values[number];
-  onSave: (r: Omit<PracticeRecord, "id" | "createdAt">) => void;
+  onSave: (data: { valueKey: string; date: string; what: string; reflection: string; imageBase64?: string; imageExt?: string }) => void;
   onCancel: () => void;
+  saving: boolean;
 }) {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const [what, setWhat] = useState("");
   const [reflection, setReflection] = useState("");
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [imageBase64, setImageBase64] = useState<string | null>(null);
+  const [imageExt, setImageExt] = useState<string>("png");
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const t = theme[valueItem.color];
   const Icon = valueItem.icon;
+
+  const handleImageSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const ext = file.name.split(".").pop()?.toLowerCase() || "png";
+    setImageExt(ext);
+    const base64 = await fileToBase64(file);
+    setImageBase64(base64);
+    setImagePreview(URL.createObjectURL(file));
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-4" onClick={onCancel}>
@@ -65,7 +91,7 @@ function RecordForm({
           </div>
           <button onClick={onCancel} className="rounded-full p-1 hover:bg-white/50"><X className="h-5 w-5 text-neutral-400" /></button>
         </div>
-        <div className="space-y-3 px-5 py-4">
+        <div className="space-y-3 px-5 py-4 max-h-[60vh] overflow-y-auto">
           <div>
             <label className="mb-1 block text-sm font-bold text-neutral-700">📅 日期</label>
             <input type="date" value={date} onChange={(e) => setDate(e.target.value)}
@@ -83,12 +109,39 @@ function RecordForm({
               placeholder="我學到了... 我覺得..."
               className="w-full rounded-lg border-2 border-neutral-200 px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-amber-300" />
           </div>
+          {/* Image upload */}
+          <div>
+            <label className="mb-1 block text-sm font-bold text-neutral-700">📷 證據照片（選填）</label>
+            <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleImageSelect} />
+            {imagePreview ? (
+              <div className="relative rounded-xl overflow-hidden border-2 border-amber-200">
+                <img src={imagePreview} alt="preview" className="w-full max-h-40 object-contain bg-neutral-50" />
+                <button onClick={() => { setImagePreview(null); setImageBase64(null); }}
+                  className="absolute top-1 right-1 rounded-full bg-white/80 p-1 hover:bg-white shadow">
+                  <X className="h-3 w-3 text-neutral-500" />
+                </button>
+              </div>
+            ) : (
+              <button onClick={() => fileInputRef.current?.click()}
+                className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-amber-300 bg-amber-50 py-4 text-sm font-bold text-amber-600 hover:bg-amber-100 transition-colors">
+                <ImagePlus className="h-5 w-5" /> 選擇照片上傳
+              </button>
+            )}
+          </div>
         </div>
         <div className="flex justify-end gap-2 border-t border-neutral-100 px-5 py-3">
-          <button onClick={onCancel} className="rounded-lg px-4 py-2 text-sm font-bold text-neutral-500 hover:bg-neutral-100">取消</button>
-          <button onClick={() => { if (!what.trim()) return; onSave({ valueKey: valueItem.key, date, what: what.trim(), reflection: reflection.trim() }); }}
-            className={`flex items-center gap-1.5 rounded-lg px-5 py-2 text-sm font-bold text-white ${t.button}`}>
-            <CheckCircle2 className="h-4 w-4" /> 寫好了！
+          <button onClick={onCancel} disabled={saving} className="rounded-lg px-4 py-2 text-sm font-bold text-neutral-500 hover:bg-neutral-100 disabled:opacity-50">取消</button>
+          <button onClick={() => {
+            if (!what.trim() || saving) return;
+            onSave({ valueKey: valueItem.key, date, what: what.trim(), reflection: reflection.trim(), imageBase64: imageBase64 || undefined, imageExt });
+          }} disabled={saving || !what.trim()}
+            className={`flex items-center gap-1.5 rounded-lg px-5 py-2 text-sm font-bold text-white ${t.button} disabled:opacity-50`}>
+            {saving ? (
+              <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
+            ) : (
+              <CheckCircle2 className="h-4 w-4" />
+            )}
+            {saving ? "儲存中..." : "寫好了！"}
           </button>
         </div>
       </div>
@@ -96,7 +149,7 @@ function RecordForm({
   );
 }
 
-// ── Record Item ──
+// ── Record Item (with image) ──
 function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; colorKey: keyof typeof theme; onDelete: () => void }) {
   const [open, setOpen] = useState(false);
   const t = theme[colorKey];
@@ -108,6 +161,7 @@ function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; co
           <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold text-white ${t.badge}`}>
             {record.date.slice(5)}
           </span>
+          {record.imageUrl && <Camera className="h-3 w-3 shrink-0 text-amber-500" />}
           <span className="truncate text-xs font-semibold text-neutral-700">
             {record.what.slice(0, 20)}{record.what.length > 20 ? "..." : ""}
           </span>
@@ -122,6 +176,11 @@ function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; co
       </div>
       {open && (
         <div className="space-y-1.5 border-t border-dashed border-neutral-200 px-2.5 pb-2.5 pt-2">
+          {record.imageUrl && (
+            <div className="rounded-lg overflow-hidden border border-amber-200">
+              <img src={record.imageUrl} alt="證據照片" className="w-full max-h-32 object-contain bg-neutral-50" />
+            </div>
+          )}
           <div>
             <div className="text-[10px] font-bold text-neutral-500 mb-0.5">✏️ 實踐內容</div>
             <div className="text-xs leading-relaxed text-neutral-700 whitespace-pre-wrap">{record.what}</div>
@@ -140,32 +199,61 @@ function RecordItem({ record, colorKey, onDelete }: { record: PracticeRecord; co
 
 // ── Main Page ──
 export default function TsmcPractice() {
-  const [records, setRecords] = useState<PracticeRecord[]>(loadRecords);
+  const { user } = useAuth();
+  const [records, setRecords] = useState<PracticeRecord[]>([]);
   const [formValue, setFormValue] = useState<typeof values[number] | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => { saveRecords(records); }, [records]);
+  // Fetch records from API on mount
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch(`${API_BASE}?action=list&username=${user?.username}`);
+        if (res.ok) {
+          const data = await res.json();
+          setRecords(data);
+        }
+      } catch {}
+      setLoading(false);
+    })();
+  }, [user?.username]);
 
-  const handleSave = useCallback((data: Omit<PracticeRecord, "id" | "createdAt">) => {
-    setRecords(prev => [
-      { ...data, id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, createdAt: Date.now() },
-      ...prev,
-    ]);
+  const handleSave = useCallback(async (data: { valueKey: string; date: string; what: string; reflection: string; imageBase64?: string; imageExt?: string }) => {
+    setSaving(true);
+    try {
+      const res = await fetch(`${API_BASE}?action=create`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: user?.username, ...data }),
+      });
+      if (res.ok) {
+        const result = await res.json();
+        if (result.record) {
+          setRecords(prev => [result.record, ...prev]);
+        }
+      }
+    } catch {}
+    setSaving(false);
     setFormValue(null);
-  }, []);
+  }, [user?.username]);
 
-  const handleDelete = useCallback((id: string) => {
-    setRecords(prev => prev.filter(r => r.id !== id));
-  }, []);
+  const handleDelete = useCallback(async (id: string) => {
+    try {
+      await fetch(`${API_BASE}?action=delete`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: user?.username, recordId: id }),
+      });
+      setRecords(prev => prev.filter(r => r.id !== id));
+    } catch {}
+  }, [user?.username]);
 
   return (
     <div className="flex h-full flex-col bg-[#fff8ea] overflow-hidden">
       {/* ── Banner ── */}
       <div className="shrink-0">
-        <img
-          src="/banner.png"
-          alt="前進台積 實踐紀錄"
-          className="w-full h-auto object-contain"
-        />
+        <img src="/banner.png" alt="前進台積 實踐紀錄" className="w-full h-auto object-contain" />
       </div>
 
       {/* ── Four value columns ── */}
@@ -177,17 +265,9 @@ export default function TsmcPractice() {
 
           return (
             <div key={item.key} className="flex flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-md">
-              {/* Image — no crop, contain within card */}
               <div className="shrink-0 flex items-center justify-center bg-white px-2 pt-2">
-                <img
-                  src={item.image}
-                  alt={item.zh}
-                  className="w-full rounded-lg object-contain"
-                  style={{ maxHeight: "28vh" }}
-                />
+                <img src={item.image} alt={item.zh} className="w-full rounded-lg object-contain" style={{ maxHeight: "28vh" }} />
               </div>
-
-              {/* Pocket */}
               <div className={`flex flex-1 min-h-0 flex-col rounded-b-2xl border-2 border-dashed ${t.pocket} px-2 pb-2 pt-1.5`}>
                 <div className="flex items-center justify-between mb-1.5">
                   <div className="flex items-center gap-1.5">
@@ -200,9 +280,10 @@ export default function TsmcPractice() {
                     <Plus className="h-3 w-3" />紀錄
                   </button>
                 </div>
-
                 <div className="flex-1 min-h-0 space-y-1.5 overflow-y-auto" style={{ scrollbarWidth: "thin" }}>
-                  {vRecords.length === 0 ? (
+                  {loading ? (
+                    <div className="py-2 text-center text-[10px] text-neutral-400">載入中...</div>
+                  ) : vRecords.length === 0 ? (
                     <div className="py-2 text-center">
                       <div className="text-sm opacity-30">📝</div>
                       <div className="text-[10px] text-neutral-400">還沒有紀錄</div>
@@ -230,7 +311,7 @@ export default function TsmcPractice() {
 
       {/* ── Form Modal ── */}
       {formValue && (
-        <RecordForm valueItem={formValue} onSave={handleSave} onCancel={() => setFormValue(null)} />
+        <RecordForm valueItem={formValue} onSave={handleSave} onCancel={() => setFormValue(null)} saving={saving} />
       )}
     </div>
   );

@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/api/practice-records", "destination": "/api/practice-records" },
     { "source": "/api/:path*", "destination": "/api/auth" }
   ]
 }
