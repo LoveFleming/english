@@ -115,28 +115,10 @@ function Scene({ image }: { image: string }) {
 
 // ── Value Card ──
 function ValueCard({ item }: { item: typeof values[number] }) {
-  const Icon = item.icon;
-  const t = theme[item.color];
   return (
-    <article className={`rounded-[28px] border-2 ${t.card} p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg`}>
-      <div className="flex items-start gap-3">
-        <div className={`grid h-12 w-12 shrink-0 place-items-center rounded-full text-white ${t.badge} shadow-sm`}>
-          <Icon className="h-7 w-7" />
-        </div>
-        <div>
-          <h3 className={`text-2xl font-black leading-tight ${t.text}`}>{item.title}</h3>
-          <p className={`text-xl font-black ${t.text}`}>{item.zh}</p>
-        </div>
-      </div>
-      <div className="my-3 border-t-2 border-dashed border-current opacity-20" />
-      <Scene image={item.image} />
-      <p className="mx-auto mt-4 min-h-[72px] max-w-[260px] text-center text-base font-semibold leading-7 text-neutral-700">
-        {item.story}
-      </p>
-      <button className={`mx-auto mt-4 flex items-center gap-2 rounded-full px-6 py-2 text-sm font-bold text-white ${t.button}`}>
-        查看更多 <ArrowRight className="h-4 w-4" />
-      </button>
-    </article>
+    <div className="overflow-hidden rounded-[20px] shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+      <img src={item.image} alt={item.zh} className="w-full object-cover" />
+    </div>
   );
 }
 
