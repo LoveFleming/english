@@ -56,6 +56,9 @@ function AppContent() {
   };
 
   const nav: Record<string, { id: string; title: string }[]> = {
+    "🏗️ 前進台積": [
+      { id: "tsmc-practice", title: "實踐紀錄" },
+    ],
     "⏰ 時態 Tense": [
       { id: "present-simple", title: "現在簡單式" },
       { id: "present-continuous", title: "現在進行式" },
@@ -83,9 +86,6 @@ function AppContent() {
     ],
     "📚 課程 Lessons": [
       { id: "lesson3", title: "7下 Lesson 3" },
-    ],
-    "🏗️ 前進台積": [
-      { id: "tsmc-practice", title: "實踐紀錄" },
     ],
     "👤 會員": [
       { id: "score-history", title: "📊 考試成績" },
