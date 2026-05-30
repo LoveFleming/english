@@ -230,7 +230,7 @@ function AppContent() {
         {/* Main */}
         <main className="flex-1 overflow-y-auto bg-zinc-50 flex flex-col min-w-0">
           {/* Tabs - scrollable on mobile */}
-          <div className="flex w-full items-end gap-1 overflow-x-auto bg-zinc-100 px-2 sm:px-4 pt-2 border-b border-zinc-200">
+          <div className="flex w-full items-end gap-0.5 overflow-x-auto bg-zinc-100 px-2 pt-2 border-b border-zinc-200" style={{ scrollbarWidth: 'none' }}>
             {openTabs.map((tabId) => {
               const isActive = activeAppId === tabId;
               return (
@@ -238,7 +238,7 @@ function AppContent() {
                   key={tabId}
                   onClick={() => openApp(tabId)}
                   className={cn(
-                    "group relative flex cursor-pointer items-center justify-between gap-1 sm:gap-3 px-2 sm:px-4 py-2 text-xs sm:text-sm transition-all border-t border-l border-r border-transparent rounded-t-md whitespace-nowrap shrink-0",
+                    "group relative flex cursor-pointer items-center justify-between gap-1 px-3 py-2 text-xs transition-all border-t border-l border-r border-transparent rounded-t-md whitespace-nowrap shrink-0",
                     isActive
                       ? "bg-white text-blue-600 font-medium border-zinc-200 -mb-px pb-[9px]"
                       : "bg-transparent text-zinc-600 hover:bg-zinc-200/50"
