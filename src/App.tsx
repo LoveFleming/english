@@ -30,6 +30,8 @@ import HowMuchManyQuiz from "./pages/HowMuchManyQuiz";
 import CompoundWords from "./pages/CompoundWords";
 import CompoundWordsQuiz from "./pages/CompoundWordsQuiz";
 import TsmcPractice from "./pages/TsmcPractice";
+import PastTense from "./pages/PastTense";
+import PastTenseQuiz from "./pages/PastTenseQuiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -59,6 +61,7 @@ function AppContent() {
     "⏰ 時態 Tense": [
       { id: "present-simple", title: "現在簡單式" },
       { id: "present-continuous", title: "現在進行式" },
+      { id: "past-tense", title: "動詞過去式" },
     ],
     "📝 片語 Phrases": [
       { id: "prep-phrases", title: "介系詞片語" },
@@ -101,6 +104,7 @@ function AppContent() {
     if (id === "quiz.measure-words") return "測驗: 計量單位";
     if (id === "quiz.how-much-many") return "測驗: How Much/Many";
     if (id === "quiz.compound-words") return "測驗: 複詞三兄弟";
+    if (id === "quiz.past-tense") return "測驗: 動詞過去式";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     if (id === "tsmc-practice") return "前進台積";
     for (const category in nav) {
@@ -136,6 +140,8 @@ function AppContent() {
       case "quiz.how-much-many": return <HowMuchManyQuiz />;
       case "compound-words": return <CompoundWords openApp={openApp} />;
       case "quiz.compound-words": return <CompoundWordsQuiz />;
+      case "past-tense": return <PastTense openApp={openApp} />;
+      case "quiz.past-tense": return <PastTenseQuiz />;
       case "ratio-proportion": return <RatioAndProportion openApp={openApp} />;
       case "quiz.ratio-proportion": return <RatioAndProportionQuiz />;
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;

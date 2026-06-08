@@ -5,3 +5,12 @@ providers:
     models:
       glm-5.1:
         name: GLM 5.1
+  openrouter:
+    apiKey: "${OPENROUTER_API_KEY}"
+    baseURL: "https://openrouter.ai/api/v1"
+    models:
+      moonshotai/kimi-k2.6:
+        name: Kimi 2.6
+model:
+  provider: openrouter
+  name: moonshotai/kimi-k2.6
