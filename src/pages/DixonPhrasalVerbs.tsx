@@ -110,7 +110,7 @@ export default function DixonPhrasalVerbs({ openApp }: { openApp: (id: string) =
   if (mode === "intro") {
     return (
       <div className="space-y-6 max-w-4xl animate-in slide-in-from-bottom-2 duration-500">
-        <div className="flex items-center justify-between mb-4 pb-4 border-b border-zinc-200">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-zinc-200">
           <h1 className="text-3xl font-bold text-stone-900 tracking-tight">狄克森動詞片語 (Dixon Phrasal Verbs)</h1>
           <button onClick={() => setMode("setup")} className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all active:scale-95 flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>

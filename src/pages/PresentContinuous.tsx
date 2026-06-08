@@ -7,7 +7,7 @@ import markdownContent from "../data/present_continuous/present_continuous.md?ra
 export default function PresentContinuous({ openApp }: { openApp: (id: string) => void }) {
   return (
     <div className="space-y-6 max-w-4xl animate-in slide-in-from-bottom-2 duration-500">
-      <div className="flex items-center justify-between mb-4 pb-4 border-b border-zinc-200">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-zinc-200">
         <h1 className="text-3xl font-bold text-stone-900 tracking-tight">現在進行式 (Present Continuous Tense)</h1>
         <button
           onClick={() => openApp("quiz.present-continuous")}

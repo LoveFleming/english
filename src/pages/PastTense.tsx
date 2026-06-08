@@ -7,8 +7,8 @@ import markdownContent from "../data/past-tense/past_tense.md?raw";
 export default function PastTense({ openApp }: { openApp: (id: string) => void }) {
   return (
     <div className="space-y-6 max-w-4xl animate-in slide-in-from-bottom-2 duration-500">
-      <div className="flex items-center justify-between mb-4 pb-4 border-b border-zinc-200">
-        <h1 className="text-3xl font-bold text-stone-900 tracking-tight">動詞過去式 (Past Tense)</h1>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-zinc-200">
+        <h1 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">動詞過去式 (Past Tense)</h1>
         <button
           onClick={() => openApp("quiz.past-tense")}
           className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all active:scale-95 flex items-center gap-2"
@@ -41,8 +41,8 @@ export default function PastTense({ openApp }: { openApp: (id: string) => void }
               </div>
             ),
             thead: ({node, ...props}) => <thead className="bg-blue-600 text-white" {...props} />,
-            th: ({node, ...props}) => <th className="px-4 py-3 font-bold text-center" {...props} />,
-            td: ({node, ...props}) => <td className="px-4 py-3 text-center text-lg border-t border-blue-100" {...props} />,
+            th: ({node, ...props}) => <th className="px-2 sm:px-4 py-2 sm:py-3 font-bold text-center text-sm sm:text-base" {...props} />,
+            td: ({node, ...props}) => <td className="px-2 sm:px-4 py-2 sm:py-3 text-center text-sm sm:text-lg border-t border-blue-100" {...props} />,
             tr: ({node, ...props}) => <tr className="even:bg-blue-50/50" {...props} />,
             code: ({node, inline, className, children, ...props}: any) => {
               if (inline) return <code className="bg-stone-100 text-stone-800 px-1.5 py-0.5 rounded-md text-sm font-mono border border-stone-200 shadow-sm" {...props}>{children}</code>;

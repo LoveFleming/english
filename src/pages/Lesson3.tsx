@@ -7,7 +7,7 @@ import { CodeBlock } from "../components/ui/shared";
 export default function Lesson3({ openApp }: { openApp: (id: string) => void }) {
   return (
     <div className="space-y-6 max-w-4xl animate-in slide-in-from-bottom-2 duration-500">
-      <div className="flex items-center justify-between mb-4 pb-4 border-b border-zinc-200">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-zinc-200">
         <h1 className="text-3xl font-bold text-stone-900 tracking-tight">7下 Lesson 3 (Numbers, Dates & Pronouns)</h1>
         <button onClick={() => openApp("quiz.lesson3")} className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all active:scale-95 flex items-center gap-2">
           <span>開始考試</span>

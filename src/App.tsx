@@ -261,7 +261,7 @@ function AppContent() {
             })}
           </div>
 
-          <div className="flex-1 w-full px-0 py-0 flex flex-col min-h-0 bg-zinc-50 overflow-hidden">
+          <div className="flex-1 w-full px-0 py-0 flex flex-col min-h-0 bg-zinc-50 overflow-y-auto">
             {renderContent()}
           </div>
         </main>
