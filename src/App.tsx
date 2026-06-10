@@ -32,6 +32,8 @@ import CompoundWordsQuiz from "./pages/CompoundWordsQuiz";
 import TsmcPractice from "./pages/TsmcPractice";
 import PastTense from "./pages/PastTense";
 import PastTenseQuiz from "./pages/PastTenseQuiz";
+import StatisticsCharts from "./pages/StatisticsCharts";
+import StatisticsChartsQuiz from "./pages/StatisticsChartsQuiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -80,6 +82,7 @@ function AppContent() {
       { id: "ratio-proportion", title: "3-1 比與比例式" },
       { id: "direct-inverse-proportion", title: "3-2 正比與反比" },
       { id: "midterm-sprint", title: "🔥 7下期中考衝刺" },
+      { id: "statistics-charts", title: "5-1 統計圖表" },
     ],
     "🇨🇳 國文 Chinese": [
       { id: "compound-words", title: "複詞三兄弟" },
@@ -105,6 +108,8 @@ function AppContent() {
     if (id === "quiz.how-much-many") return "測驗: How Much/Many";
     if (id === "quiz.compound-words") return "測驗: 複詞三兄弟";
     if (id === "quiz.past-tense") return "測驗: 動詞過去式";
+    if (id === "statistics-charts") return "5-1 統計圖表";
+    if (id === "quiz.statistics-charts") return "測驗: 5-1 統計圖表";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     if (id === "tsmc-practice") return "前進台積";
     for (const category in nav) {
@@ -147,6 +152,8 @@ function AppContent() {
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;
       case "quiz.direct-inverse-proportion": return <DirectInverseProportionQuiz />;
       case "midterm-sprint": return <MidtermSprint />;
+      case "statistics-charts": return <StatisticsCharts openApp={openApp} />;
+      case "quiz.statistics-charts": return <StatisticsChartsQuiz />;
       case "tsmc-practice": return <TsmcPractice />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
