@@ -38,6 +38,7 @@ import AuxiliaryBeVerbs from "./pages/AuxiliaryBeVerbs";
 import AuxiliaryBeVerbsQuiz from "./pages/AuxiliaryBeVerbsQuiz";
 import IrregularVerbs from "./pages/IrregularVerbs";
 import IrregularVerbsQuiz from "./pages/IrregularVerbsQuiz";
+import GeographyNotes from "./pages/GeographyNotes";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -90,6 +91,9 @@ function AppContent() {
       { id: "midterm-sprint", title: "🔥 7下期中考衝刺" },
       { id: "statistics-charts", title: "5-1 統計圖表" },
     ],
+    "🌍 地理 Geography": [
+      { id: "geo-notes", title: "地理錯題本" },
+    ],
     "🇨🇳 國文 Chinese": [
       { id: "compound-words", title: "複詞三兄弟" },
     ],
@@ -116,6 +120,7 @@ function AppContent() {
     if (id === "quiz.past-tense") return "測驗: 動詞過去式";
     if (id === "statistics-charts") return "5-1 統計圖表";
     if (id === "quiz.auxiliary-be") return "測驗: 助動詞 & Be 動詞";
+    if (id === "geo-notes") return "地理錯題本";
     if (id === "irregular-verbs") return "不規則動詞";
     if (id === "quiz.irregular-verbs") return "測驗: 不規則動詞";
     if (id === "auxiliary-be") return "助動詞 & Be 動詞";
@@ -162,6 +167,7 @@ function AppContent() {
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;
       case "quiz.direct-inverse-proportion": return <DirectInverseProportionQuiz />;
       case "midterm-sprint": return <MidtermSprint />;
+      case "geo-notes": return <GeographyNotes />;
       case "irregular-verbs": return <IrregularVerbs openApp={openApp} />;
       case "quiz.irregular-verbs": return <IrregularVerbsQuiz />;
       case "auxiliary-be": return <AuxiliaryBeVerbs openApp={openApp} />;
