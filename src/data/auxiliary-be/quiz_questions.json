@@ -1,0 +1,352 @@
+[
+  {
+    "id": "be-001",
+    "question": "I ___ a student.",
+    "options": ["am", "is", "are", "be"],
+    "answer": "am",
+    "explanation": "I 搭配 am"
+  },
+  {
+    "id": "be-002",
+    "question": "She ___ very tall.",
+    "options": ["am", "is", "are", "were"],
+    "answer": "is",
+    "explanation": "She（三單）搭配 is"
+  },
+  {
+    "id": "be-003",
+    "question": "They ___ my classmates.",
+    "options": ["am", "is", "are", "was"],
+    "answer": "are",
+    "explanation": "They（複數）搭配 are"
+  },
+  {
+    "id": "be-004",
+    "question": "He ___ at the library yesterday.",
+    "options": ["is", "are", "was", "were"],
+    "answer": "was",
+    "explanation": "He（三單）+ 昨天（過去）→ was"
+  },
+  {
+    "id": "be-005",
+    "question": "We ___ happy about the result.",
+    "options": ["was", "were", "is", "am"],
+    "answer": "were",
+    "explanation": "We（複數）+ 過去式 → were"
+  },
+  {
+    "id": "be-006",
+    "question": "The cat ___ on the sofa now.",
+    "options": ["am", "is", "are", "were"],
+    "answer": "is",
+    "explanation": "The cat（單數）+ now（現在）→ is"
+  },
+  {
+    "id": "be-007",
+    "question": "___ you tired?",
+    "options": ["Am", "Is", "Are", "Was"],
+    "answer": "Are",
+    "explanation": "you 搭配 are"
+  },
+  {
+    "id": "be-008",
+    "question": "It ___ very cold last night.",
+    "options": ["is", "are", "was", "were"],
+    "answer": "was",
+    "explanation": "It（單數）+ last night（過去）→ was"
+  },
+  {
+    "id": "be-009",
+    "question": "My parents ___ at home now.",
+    "options": ["is", "are", "was", "am"],
+    "answer": "are",
+    "explanation": "My parents（複數）+ now（現在）→ are"
+  },
+  {
+    "id": "be-010",
+    "question": "The students ___ noisy in class yesterday.",
+    "options": ["is", "are", "was", "were"],
+    "answer": "were",
+    "explanation": "The students（複數）+ yesterday（過去）→ were"
+  },
+  {
+    "id": "be-011",
+    "question": "I ___ not ready yet. (現在式)",
+    "options": ["am", "is", "are", "was"],
+    "answer": "am",
+    "explanation": "I 搭配 am → am not（縮寫 I'm not）"
+  },
+  {
+    "id": "be-012",
+    "question": "She ___ not at school yesterday.",
+    "options": ["is", "was", "are", "were"],
+    "answer": "was",
+    "explanation": "She（單數）+ yesterday（過去）→ was not (wasn't)"
+  },
+  {
+    "id": "be-013",
+    "question": "___ he your brother?",
+    "options": ["Am", "Is", "Are", "Were"],
+    "answer": "Is",
+    "explanation": "he 搭配 is → Is he...?"
+  },
+  {
+    "id": "be-014",
+    "question": "The books ___ on the desk now.",
+    "options": ["is", "are", "was", "am"],
+    "answer": "are",
+    "explanation": "The books（複數）+ now → are"
+  },
+  {
+    "id": "be-015",
+    "question": "There ___ a lot of people at the party last night.",
+    "options": ["is", "are", "was", "were"],
+    "answer": "were",
+    "explanation": "a lot of people（複數）+ last night（過去）→ were"
+  },
+  {
+    "id": "aux-001",
+    "question": "She can ___ very fast.",
+    "options": ["run", "runs", "running", "ran"],
+    "answer": "run",
+    "explanation": "can 後面接原形動詞 → can run"
+  },
+  {
+    "id": "aux-002",
+    "question": "___ you help me, please?",
+    "options": ["Can", "Are", "Do", "Is"],
+    "answer": "Can",
+    "explanation": "請求幫忙用 Can you...?"
+  },
+  {
+    "id": "aux-003",
+    "question": "He ___ play the piano when he was five.",
+    "options": ["can", "could", "will", "should"],
+    "answer": "could",
+    "explanation": "過去的能力用 could"
+  },
+  {
+    "id": "aux-004",
+    "question": "It ___ rain tomorrow.",
+    "options": ["will", "shall", "does", "is"],
+    "answer": "will",
+    "explanation": "明天的事用 will（未來式）"
+  },
+  {
+    "id": "aux-005",
+    "question": "You ___ drink more water. It's good for you.",
+    "options": ["should", "would", "do", "are"],
+    "answer": "should",
+    "explanation": "給建議用 should"
+  },
+  {
+    "id": "aux-006",
+    "question": "We ___ not go to school on Sundays.",
+    "options": ["do", "does", "are", "can"],
+    "answer": "do",
+    "explanation": "We 否定用 do not (don't)"
+  },
+  {
+    "id": "aux-007",
+    "question": "___ she like ice cream?",
+    "options": ["Do", "Does", "Is", "Can"],
+    "answer": "Does",
+    "explanation": "she（三單）現在簡單式疑問用 Does"
+  },
+  {
+    "id": "aux-008",
+    "question": "He doesn't ___ coffee.",
+    "options": ["drink", "drinks", "drinking", "drank"],
+    "answer": "drink",
+    "explanation": "doesn't 後面接原形動詞 → drink"
+  },
+  {
+    "id": "aux-009",
+    "question": "___ you see the rainbow yesterday?",
+    "options": ["Do", "Does", "Did", "Were"],
+    "answer": "Did",
+    "explanation": "yesterday（過去）疑問用 Did"
+  },
+  {
+    "id": "aux-010",
+    "question": "They ___ not come to the party last night.",
+    "options": ["do", "does", "did", "were"],
+    "answer": "did",
+    "explanation": "過去式否定用 did not (didn't)"
+  },
+  {
+    "id": "aux-011",
+    "question": "Students ___ wear uniforms in this school. (必須)",
+    "options": ["must", "may", "would", "do"],
+    "answer": "must",
+    "explanation": "學校規定必須穿制服 → must"
+  },
+  {
+    "id": "aux-012",
+    "question": "You ___ run in the hallway. It's dangerous. (不可以)",
+    "options": ["mustn't", "don't have to", "shouldn't", "can't"],
+    "answer": "mustn't",
+    "explanation": "禁止（不可以）用 mustn't"
+  },
+  {
+    "id": "aux-013",
+    "question": "It ___ snow this weekend. (也許)",
+    "options": ["must", "might", "should", "will"],
+    "answer": "might",
+    "explanation": "表示可能性（也許）用 might"
+  },
+  {
+    "id": "aux-014",
+    "question": "I would ___ some juice, please.",
+    "options": ["like", "likes", "liked", "liking"],
+    "answer": "like",
+    "explanation": "would 後面接原形動詞 → would like"
+  },
+  {
+    "id": "aux-015",
+    "question": "Can he swim? Yes, he ___.",
+    "options": ["can", "does", "is", "will"],
+    "answer": "can",
+    "explanation": "用 can 問就用 can 答 → Yes, he can"
+  },
+  {
+    "id": "ans-001",
+    "question": "Is she a doctor? Yes, she ___.",
+    "options": ["is", "does", "can", "was"],
+    "answer": "is",
+    "explanation": "用 is 問就用 is 答 → Yes, she is"
+  },
+  {
+    "id": "ans-002",
+    "question": "Are they your friends? No, they ___.",
+    "options": ["aren't", "don't", "can't", "won't"],
+    "answer": "aren't",
+    "explanation": "用 are 問就用 are 答 → No, they aren't"
+  },
+  {
+    "id": "ans-003",
+    "question": "Was he at home? No, he ___.",
+    "options": ["wasn't", "weren't", "didn't", "isn't"],
+    "answer": "wasn't",
+    "explanation": "用 was 問就用 was 答 → No, he wasn't"
+  },
+  {
+    "id": "ans-004",
+    "question": "Were you at the park? Yes, I ___.",
+    "options": ["was", "were", "did", "am"],
+    "answer": "was",
+    "explanation": "用 Were you 問 → 回答 I was（第一人稱用 was）"
+  },
+  {
+    "id": "ans-005",
+    "question": "Do you like pizza? Yes, I ___.",
+    "options": ["do", "does", "am", "can"],
+    "answer": "do",
+    "explanation": "用 Do 問就用 do 答 → Yes, I do"
+  },
+  {
+    "id": "ans-006",
+    "question": "Does she play tennis? No, she ___.",
+    "options": ["doesn't", "don't", "isn't", "can't"],
+    "answer": "doesn't",
+    "explanation": "用 Does 問就用 does 答 → No, she doesn't"
+  },
+  {
+    "id": "ans-007",
+    "question": "Did they finish the homework? Yes, they ___.",
+    "options": ["did", "do", "were", "had"],
+    "answer": "did",
+    "explanation": "用 Did 問就用 did 答 → Yes, they did"
+  },
+  {
+    "id": "ans-008",
+    "question": "Will you come to the party? Yes, I ___.",
+    "options": ["will", "would", "do", "am"],
+    "answer": "will",
+    "explanation": "用 Will 問就用 will 答 → Yes, I will"
+  },
+  {
+    "id": "ans-009",
+    "question": "Can birds fly? Yes, they ___.",
+    "options": ["can", "do", "are", "will"],
+    "answer": "can",
+    "explanation": "用 Can 問就用 can 答 → Yes, they can"
+  },
+  {
+    "id": "ans-010",
+    "question": "Should we leave now? No, we ___.",
+    "options": ["shouldn't", "won't", "don't", "aren't"],
+    "answer": "shouldn't",
+    "explanation": "用 Should 問就用 should 答 → No, we shouldn't"
+  },
+  {
+    "id": "hav-001",
+    "question": "I ___ go now. (必須)",
+    "options": ["have to", "has to", "had to", "having to"],
+    "answer": "have to",
+    "explanation": "I + have to + 原形動詞"
+  },
+  {
+    "id": "hav-002",
+    "question": "She ___ study tonight. (必須)",
+    "options": ["has to", "have to", "had to", "having to"],
+    "answer": "has to",
+    "explanation": "She（三單）→ has to + 原形動詞"
+  },
+  {
+    "id": "hav-003",
+    "question": "He has to ___ his room every weekend.",
+    "options": ["clean", "cleans", "cleaned", "cleaning"],
+    "answer": "clean",
+    "explanation": "has to 後面接原形動詞 → clean"
+  },
+  {
+    "id": "hav-004",
+    "question": "They ___ wait for an hour yesterday. (不得不)",
+    "options": ["had to", "have to", "has to", "having to"],
+    "answer": "had to",
+    "explanation": "yesterday（過去）→ had to"
+  },
+  {
+    "id": "hav-005",
+    "question": "We don't ___ worry about it. (不必)",
+    "options": ["have to", "has to", "had to", "having to"],
+    "answer": "have to",
+    "explanation": "We + don't have to + 原形動詞（不必）"
+  },
+  {
+    "id": "hav-006",
+    "question": "She doesn't ___ wear a uniform on weekends.",
+    "options": ["have to", "has to", "had to", "having to"],
+    "answer": "have to",
+    "explanation": "doesn't 後面已經有助動詞 → have to（原形 have）"
+  },
+  {
+    "id": "hav-007",
+    "question": "___ you have to get up early tomorrow?",
+    "options": ["Do", "Does", "Did", "Are"],
+    "answer": "Do",
+    "explanation": "you + Do ... have to...?（現在式疑問）"
+  },
+  {
+    "id": "hav-008",
+    "question": "Does he ___ work on Saturdays?",
+    "options": ["have to", "has to", "had to", "having to"],
+    "answer": "have to",
+    "explanation": "Does 已經是助動詞 → 後面用 have to（原形 have）"
+  },
+  {
+    "id": "hav-009",
+    "question": "I have to ___ my homework before dinner.",
+    "options": ["finish", "finishes", "finished", "finishing"],
+    "answer": "finish",
+    "explanation": "have to 後面接原形動詞 → finish"
+  },
+  {
+    "id": "hav-010",
+    "question": "You ___ smoke here. (禁止)",
+    "options": ["mustn't", "don't have to", "shouldn't", "can't"],
+    "answer": "mustn't",
+    "explanation": "禁止（不可以）用 mustn't；don't have to 是「不必」，語意不同"
+  }
+]

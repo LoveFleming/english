@@ -34,6 +34,8 @@ import PastTense from "./pages/PastTense";
 import PastTenseQuiz from "./pages/PastTenseQuiz";
 import StatisticsCharts from "./pages/StatisticsCharts";
 import StatisticsChartsQuiz from "./pages/StatisticsChartsQuiz";
+import AuxiliaryBeVerbs from "./pages/AuxiliaryBeVerbs";
+import AuxiliaryBeVerbsQuiz from "./pages/AuxiliaryBeVerbsQuiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -70,6 +72,7 @@ function AppContent() {
       { id: "dixon-verbs", title: "狄克森動詞片語" },
     ],
     "🔤 文法 Grammar": [
+      { id: "auxiliary-be", title: "助動詞 & Be 動詞" },
       { id: "pronouns", title: "代名詞全攻略" },
       { id: "quantifiers", title: "數量形容詞" },
       { id: "measure-words", title: "計量單位" },
@@ -109,6 +112,8 @@ function AppContent() {
     if (id === "quiz.compound-words") return "測驗: 複詞三兄弟";
     if (id === "quiz.past-tense") return "測驗: 動詞過去式";
     if (id === "statistics-charts") return "5-1 統計圖表";
+    if (id === "quiz.auxiliary-be") return "測驗: 助動詞 & Be 動詞";
+    if (id === "auxiliary-be") return "助動詞 & Be 動詞";
     if (id === "quiz.statistics-charts") return "測驗: 5-1 統計圖表";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     if (id === "tsmc-practice") return "前進台積";
@@ -152,6 +157,8 @@ function AppContent() {
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;
       case "quiz.direct-inverse-proportion": return <DirectInverseProportionQuiz />;
       case "midterm-sprint": return <MidtermSprint />;
+      case "auxiliary-be": return <AuxiliaryBeVerbs openApp={openApp} />;
+      case "quiz.auxiliary-be": return <AuxiliaryBeVerbsQuiz />;
       case "statistics-charts": return <StatisticsCharts openApp={openApp} />;
       case "quiz.statistics-charts": return <StatisticsChartsQuiz />;
       case "tsmc-practice": return <TsmcPractice />;
