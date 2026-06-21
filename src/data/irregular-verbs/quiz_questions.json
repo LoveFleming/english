@@ -1,0 +1,352 @@
+[
+  {
+    "id": "v01-001",
+    "question": "go 的過去式是 ___。",
+    "options": ["goed", "went", "gone", "going"],
+    "answer": "went",
+    "explanation": "go → went → gone（ABC 型，三態都不同）"
+  },
+  {
+    "id": "v01-002",
+    "question": "see 的過去式是 ___。",
+    "options": ["seed", "saw", "seen", "sawed"],
+    "answer": "saw",
+    "explanation": "see → saw → seen（ABC 型）"
+  },
+  {
+    "id": "v01-003",
+    "question": "do 的過去式是 ___。",
+    "options": ["did", "done", "doed", "doing"],
+    "answer": "did",
+    "explanation": "do → did → done（ABC 型）"
+  },
+  {
+    "id": "v01-004",
+    "question": "eat 的過去式是 ___。",
+    "options": ["eated", "ate", "eaten", "eat"],
+    "answer": "ate",
+    "explanation": "eat → ate → eaten（ABC 型）"
+  },
+  {
+    "id": "v01-005",
+    "question": "drink 的過去式是 ___。",
+    "options": ["drinked", "drank", "drunk", "drank"],
+    "answer": "drank",
+    "explanation": "drink → drank → drunk（ABC 型）"
+  },
+  {
+    "id": "v01-006",
+    "question": "take 的過去式是 ___。",
+    "options": ["taked", "took", "taken", "taking"],
+    "answer": "took",
+    "explanation": "take → took → taken（ABC 型）"
+  },
+  {
+    "id": "v01-007",
+    "question": "give 的過去式是 ___。",
+    "options": ["gived", "gave", "given", "gives"],
+    "answer": "gave",
+    "explanation": "give → gave → given（ABC 型）"
+  },
+  {
+    "id": "v01-008",
+    "question": "write 的過去式是 ___。",
+    "options": ["writed", "wrote", "written", "writing"],
+    "answer": "wrote",
+    "explanation": "write → wrote → written（ABC 型）"
+  },
+  {
+    "id": "v01-009",
+    "question": "drive 的過去式是 ___。",
+    "options": ["drived", "drove", "driven", "driving"],
+    "answer": "drove",
+    "explanation": "drive → drove → driven（ABC 型）"
+  },
+  {
+    "id": "v01-010",
+    "question": "sing 的過去式是 ___。",
+    "options": ["sing", "sang", "sung", "singed"],
+    "answer": "sang",
+    "explanation": "sing → sang → sung（ABC 型）"
+  },
+  {
+    "id": "v02-001",
+    "question": "make 的過去式是 ___。",
+    "options": ["maked", "made", "making", "makes"],
+    "answer": "made",
+    "explanation": "make → made → made（ABB 型）"
+  },
+  {
+    "id": "v02-002",
+    "question": "have 的過去式是 ___。",
+    "options": ["haved", "had", "has", "having"],
+    "answer": "had",
+    "explanation": "have → had → had（ABB 型）"
+  },
+  {
+    "id": "v02-003",
+    "question": "buy 的過去式是 ___。",
+    "options": ["buyed", "bought", "buying", "buys"],
+    "answer": "bought",
+    "explanation": "buy → bought → bought（ABB 型）"
+  },
+  {
+    "id": "v02-004",
+    "question": "think 的過去式是 ___。",
+    "options": ["thinked", "thought", "thinking", "thinks"],
+    "answer": "thought",
+    "explanation": "think → thought → thought（ABB 型）"
+  },
+  {
+    "id": "v02-005",
+    "question": "teach 的過去式是 ___。",
+    "options": ["teached", "taught", "teaching", "teaches"],
+    "answer": "taught",
+    "explanation": "teach → taught → taught（ABB 型）"
+  },
+  {
+    "id": "v02-006",
+    "question": "bring 的過去式是 ___。",
+    "options": ["bring", "brought", "bringed", "brings"],
+    "answer": "brought",
+    "explanation": "bring → brought → brought（ABB 型）"
+  },
+  {
+    "id": "v02-007",
+    "question": "sleep 的過去式是 ___。",
+    "options": ["sleeped", "slept", "sleeping", "sleeps"],
+    "answer": "slept",
+    "explanation": "sleep → slept → slept（ABB 型）"
+  },
+  {
+    "id": "v02-008",
+    "question": "keep 的過去式是 ___。",
+    "options": ["keeped", "kept", "keeping", "keeps"],
+    "answer": "kept",
+    "explanation": "keep → kept → kept（ABB 型）"
+  },
+  {
+    "id": "v02-009",
+    "question": "feel 的過去式是 ___。",
+    "options": ["feeled", "felt", "feeling", "feels"],
+    "answer": "felt",
+    "explanation": "feel → felt → felt（ABB 型）"
+  },
+  {
+    "id": "v02-010",
+    "question": "leave 的過去式是 ___。",
+    "options": ["leaved", "left", "leaving", "leaves"],
+    "answer": "left",
+    "explanation": "leave → left → left（ABB 型，注意 left 跟「左邊」同字）"
+  },
+  {
+    "id": "v02-011",
+    "question": "find 的過去式是 ___。",
+    "options": ["finded", "found", "finding", "finds"],
+    "answer": "found",
+    "explanation": "find → found → found（ABB 型）"
+  },
+  {
+    "id": "v02-012",
+    "question": "win 的過去式是 ___。",
+    "options": ["wined", "won", "winning", "wins"],
+    "answer": "won",
+    "explanation": "win → won → won（ABB 型，注意 won 跟 win 長得很像但拼法不同）"
+  },
+  {
+    "id": "v02-013",
+    "question": "tell 的過去式是 ___。",
+    "options": ["telled", "told", "telling", "tells"],
+    "answer": "told",
+    "explanation": "tell → told → told（ABB 型）"
+  },
+  {
+    "id": "v02-014",
+    "question": "sell 的過去式是 ___。",
+    "options": ["selled", "sold", "selling", "sells"],
+    "answer": "sold",
+    "explanation": "sell → sold → sold（ABB 型）"
+  },
+  {
+    "id": "v02-015",
+    "question": "pay 的過去式是 ___。",
+    "options": ["payed", "paid", "paying", "pays"],
+    "answer": "paid",
+    "explanation": "pay → paid → paid（ABB 型）"
+  },
+  {
+    "id": "v03-001",
+    "question": "put 的過去式是 ___。",
+    "options": ["putted", "put", "putting", "puts"],
+    "answer": "put",
+    "explanation": "put → put → put（AAA 型，三態相同！）"
+  },
+  {
+    "id": "v03-002",
+    "question": "cut 的過去式是 ___。",
+    "options": ["cutted", "cut", "cutting", "cuts"],
+    "answer": "cut",
+    "explanation": "cut → cut → cut（AAA 型，三態相同！）"
+  },
+  {
+    "id": "v03-003",
+    "question": "hit 的過去式是 ___。",
+    "options": ["hitted", "hit", "hitting", "hits"],
+    "answer": "hit",
+    "explanation": "hit → hit → hit（AAA 型，三態相同！）"
+  },
+  {
+    "id": "v03-004",
+    "question": "cost 的過去式是 ___。",
+    "options": ["costed", "cost", "costing", "costs"],
+    "answer": "cost",
+    "explanation": "cost → cost → cost（AAA 型，三態相同！）"
+  },
+  {
+    "id": "v03-005",
+    "question": "hurt 的過去式是 ___。",
+    "options": ["hurted", "hurt", "hurting", "hurts"],
+    "answer": "hurt",
+    "explanation": "hurt → hurt → hurt（AAA 型，三態相同！）"
+  },
+  {
+    "id": "v03-006",
+    "question": "let 的過去式是 ___。",
+    "options": ["letted", "let", "letting", "lets"],
+    "answer": "let",
+    "explanation": "let → let → let（AAA 型，三態相同！）"
+  },
+  {
+    "id": "v03-007",
+    "question": "come 的過去式是 ___。",
+    "options": ["comed", "came", "coming", "comes"],
+    "answer": "came",
+    "explanation": "come → came → come（ABA 型，原形和過去分詞相同）"
+  },
+  {
+    "id": "v03-008",
+    "question": "become 的過去式是 ___。",
+    "options": ["becomed", "became", "becoming", "becomes"],
+    "answer": "became",
+    "explanation": "become → became → become（ABA 型）"
+  },
+  {
+    "id": "v03-009",
+    "question": "run 的過去式是 ___。",
+    "options": ["runned", "ran", "running", "runs"],
+    "answer": "ran",
+    "explanation": "run → ran → run（ABA 型，原形和過去分詞相同）"
+  },
+  {
+    "id": "v03-010",
+    "question": "read 的過去式拼法是 ___。",
+    "options": ["readed", "read", "reading", "reads"],
+    "answer": "read",
+    "explanation": "read → read → read（AAA 型，拼法一樣但讀音不同：/riːd/ → /rɛd/）"
+  },
+  {
+    "id": "v04-001",
+    "question": "She ___ to school yesterday.",
+    "options": ["go", "goes", "went", "gone"],
+    "answer": "went",
+    "explanation": "yesterday 是過去，go 的過去式 = went"
+  },
+  {
+    "id": "v04-002",
+    "question": "He ___ a sandwich for lunch.",
+    "options": ["eat", "eats", "ate", "eaten"],
+    "answer": "ate",
+    "explanation": "過去式情境，eat → ate"
+  },
+  {
+    "id": "v04-003",
+    "question": "They ___ a movie last night.",
+    "options": ["see", "saw", "seen", "seed"],
+    "answer": "saw",
+    "explanation": "last night 是過去，see → saw"
+  },
+  {
+    "id": "v04-004",
+    "question": "I ___ my homework two hours ago.",
+    "options": ["do", "did", "done", "doing"],
+    "answer": "did",
+    "explanation": "two hours ago 是過去，do → did"
+  },
+  {
+    "id": "v04-005",
+    "question": "Mom ___ a cake for my birthday.",
+    "options": ["make", "makes", "made", "making"],
+    "answer": "made",
+    "explanation": "過去式情境，make → made"
+  },
+  {
+    "id": "v04-006",
+    "question": "We ___ the bus this morning.",
+    "options": ["take", "took", "taken", "takes"],
+    "answer": "took",
+    "explanation": "this morning（過去），take → took"
+  },
+  {
+    "id": "v04-007",
+    "question": "The baby ___ for ten hours last night.",
+    "options": ["sleep", "slept", "sleeps", "sleeping"],
+    "answer": "slept",
+    "explanation": "last night（過去），sleep → slept"
+  },
+  {
+    "id": "v04-008",
+    "question": "He ___ his key yesterday.",
+    "options": ["lose", "lost", "loses", "losing"],
+    "answer": "lost",
+    "explanation": "yesterday（過去），lose → lost"
+  },
+  {
+    "id": "v04-009",
+    "question": "She ___ a letter to her friend last week.",
+    "options": ["write", "wrote", "written", "writes"],
+    "answer": "wrote",
+    "explanation": "last week（過去），write → wrote"
+  },
+  {
+    "id": "v04-010",
+    "question": "They ___ a lot of money on clothes.",
+    "options": ["spend", "spent", "spends", "spending"],
+    "answer": "spent",
+    "explanation": "過去式情境，spend → spent"
+  },
+  {
+    "id": "v04-011",
+    "question": "He ___ his hand on the hot stove. (hurt)",
+    "options": ["hurt", "hurted", "hurts", "hurting"],
+    "answer": "hurt",
+    "explanation": "hurt 是 AAA 型，過去式還是 hurt"
+  },
+  {
+    "id": "v04-012",
+    "question": "The store ___ a lot of toys last year. (sell)",
+    "options": ["sell", "sold", "sells", "selling"],
+    "answer": "sold",
+    "explanation": "last year（過去），sell → sold"
+  },
+  {
+    "id": "v04-013",
+    "question": "I ___ a strange noise in the dark. (hear → heard)",
+    "options": ["hear", "heard", "hears", "hearing"],
+    "answer": "heard",
+    "explanation": "hear → heard → heard（ABB 型），過去式 = heard"
+  },
+  {
+    "id": "v04-014",
+    "question": "She ___ first place in the race! (win)",
+    "options": ["win", "won", "wins", "winning"],
+    "answer": "won",
+    "explanation": "過去式情境，win → won"
+  },
+  {
+    "id": "v04-015",
+    "question": "Dad ___ us to the zoo last Sunday. (drive)",
+    "options": ["drive", "drove", "driven", "drives"],
+    "answer": "drove",
+    "explanation": "last Sunday（過去），drive → drove"
+  }
+]

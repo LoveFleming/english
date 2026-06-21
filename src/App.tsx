@@ -36,6 +36,8 @@ import StatisticsCharts from "./pages/StatisticsCharts";
 import StatisticsChartsQuiz from "./pages/StatisticsChartsQuiz";
 import AuxiliaryBeVerbs from "./pages/AuxiliaryBeVerbs";
 import AuxiliaryBeVerbsQuiz from "./pages/AuxiliaryBeVerbsQuiz";
+import IrregularVerbs from "./pages/IrregularVerbs";
+import IrregularVerbsQuiz from "./pages/IrregularVerbsQuiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -66,6 +68,7 @@ function AppContent() {
       { id: "present-simple", title: "現在簡單式" },
       { id: "present-continuous", title: "現在進行式" },
       { id: "past-tense", title: "動詞過去式" },
+      { id: "irregular-verbs", title: "不規則動詞" },
     ],
     "📝 片語 Phrases": [
       { id: "prep-phrases", title: "介系詞片語" },
@@ -113,6 +116,8 @@ function AppContent() {
     if (id === "quiz.past-tense") return "測驗: 動詞過去式";
     if (id === "statistics-charts") return "5-1 統計圖表";
     if (id === "quiz.auxiliary-be") return "測驗: 助動詞 & Be 動詞";
+    if (id === "irregular-verbs") return "不規則動詞";
+    if (id === "quiz.irregular-verbs") return "測驗: 不規則動詞";
     if (id === "auxiliary-be") return "助動詞 & Be 動詞";
     if (id === "quiz.statistics-charts") return "測驗: 5-1 統計圖表";
     if (id === "dixon-verbs") return "狄克森動詞片語";
@@ -157,6 +162,8 @@ function AppContent() {
       case "direct-inverse-proportion": return <DirectInverseProportion openApp={openApp} />;
       case "quiz.direct-inverse-proportion": return <DirectInverseProportionQuiz />;
       case "midterm-sprint": return <MidtermSprint />;
+      case "irregular-verbs": return <IrregularVerbs openApp={openApp} />;
+      case "quiz.irregular-verbs": return <IrregularVerbsQuiz />;
       case "auxiliary-be": return <AuxiliaryBeVerbs openApp={openApp} />;
       case "quiz.auxiliary-be": return <AuxiliaryBeVerbsQuiz />;
       case "statistics-charts": return <StatisticsCharts openApp={openApp} />;
