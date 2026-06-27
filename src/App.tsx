@@ -36,6 +36,7 @@ import StatisticsCharts from "./pages/StatisticsCharts";
 import StatisticsChartsQuiz from "./pages/StatisticsChartsQuiz";
 import Inequalities from "./pages/Inequalities";
 import InequalitiesQuiz from "./pages/InequalitiesQuiz";
+import InequalitiesShiftQuiz from "./pages/InequalitiesShiftQuiz";
 import AuxiliaryBeVerbs from "./pages/AuxiliaryBeVerbs";
 import AuxiliaryBeVerbsQuiz from "./pages/AuxiliaryBeVerbsQuiz";
 import IrregularVerbs from "./pages/IrregularVerbs";
@@ -95,6 +96,7 @@ function AppContent() {
       { id: "midterm-sprint", title: "🔥 7下期中考衝刺" },
       { id: "statistics-charts", title: "5-1 統計圖表" },
       { id: "inequalities", title: "一元一次不等式" },
+      { id: "quiz.inequalities-shift", title: "不等式移項20題" },
     ],
     "🌍 地理 Geography": [
       { id: "geo-notes", title: "地理錯題本" },
@@ -136,6 +138,7 @@ function AppContent() {
     if (id === "dixon-verbs") return "狄克森動詞片語";
     if (id === "inequalities") return "一元一次不等式";
     if (id === "quiz.inequalities") return "測驗: 一元一次不等式";
+    if (id === "quiz.inequalities-shift") return "不等式移項20題";
     if (id === "tsmc-practice") return "前進台積";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
@@ -188,6 +191,7 @@ function AppContent() {
       case "quiz.statistics-charts": return <StatisticsChartsQuiz />;
       case "inequalities": return <Inequalities openApp={openApp} />;
       case "quiz.inequalities": return <InequalitiesQuiz />;
+      case "quiz.inequalities-shift": return <InequalitiesShiftQuiz />;
       case "tsmc-practice": return <TsmcPractice />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
