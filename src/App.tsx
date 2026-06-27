@@ -34,6 +34,7 @@ import PastTense from "./pages/PastTense";
 import PastTenseQuiz from "./pages/PastTenseQuiz";
 import StatisticsCharts from "./pages/StatisticsCharts";
 import StatisticsChartsQuiz from "./pages/StatisticsChartsQuiz";
+import GroupedMedianQuiz from "./pages/GroupedMedianQuiz";
 import Inequalities from "./pages/Inequalities";
 import InequalitiesQuiz from "./pages/InequalitiesQuiz";
 import InequalitiesShiftQuiz from "./pages/InequalitiesShiftQuiz";
@@ -95,6 +96,7 @@ function AppContent() {
       { id: "direct-inverse-proportion", title: "3-2 正比與反比" },
       { id: "midterm-sprint", title: "🔥 7下期中考衝刺" },
       { id: "statistics-charts", title: "5-1 統計圖表" },
+      { id: "quiz.grouped-median", title: "分組資料中位數20題" },
       { id: "inequalities", title: "一元一次不等式" },
       { id: "quiz.inequalities-shift", title: "不等式移項20題" },
     ],
@@ -135,6 +137,7 @@ function AppContent() {
     if (id === "quiz.irregular-verbs") return "測驗: 不規則動詞";
     if (id === "auxiliary-be") return "助動詞 & Be 動詞";
     if (id === "quiz.statistics-charts") return "測驗: 5-1 統計圖表";
+    if (id === "quiz.grouped-median") return "分組資料中位數20題";
     if (id === "dixon-verbs") return "狄克森動詞片語";
     if (id === "inequalities") return "一元一次不等式";
     if (id === "quiz.inequalities") return "測驗: 一元一次不等式";
@@ -189,6 +192,7 @@ function AppContent() {
       case "quiz.auxiliary-be": return <AuxiliaryBeVerbsQuiz />;
       case "statistics-charts": return <StatisticsCharts openApp={openApp} />;
       case "quiz.statistics-charts": return <StatisticsChartsQuiz />;
+      case "quiz.grouped-median": return <GroupedMedianQuiz />;
       case "inequalities": return <Inequalities openApp={openApp} />;
       case "quiz.inequalities": return <InequalitiesQuiz />;
       case "quiz.inequalities-shift": return <InequalitiesShiftQuiz />;
