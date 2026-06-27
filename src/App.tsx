@@ -34,6 +34,8 @@ import PastTense from "./pages/PastTense";
 import PastTenseQuiz from "./pages/PastTenseQuiz";
 import StatisticsCharts from "./pages/StatisticsCharts";
 import StatisticsChartsQuiz from "./pages/StatisticsChartsQuiz";
+import Inequalities from "./pages/Inequalities";
+import InequalitiesQuiz from "./pages/InequalitiesQuiz";
 import AuxiliaryBeVerbs from "./pages/AuxiliaryBeVerbs";
 import AuxiliaryBeVerbsQuiz from "./pages/AuxiliaryBeVerbsQuiz";
 import IrregularVerbs from "./pages/IrregularVerbs";
@@ -92,6 +94,7 @@ function AppContent() {
       { id: "direct-inverse-proportion", title: "3-2 正比與反比" },
       { id: "midterm-sprint", title: "🔥 7下期中考衝刺" },
       { id: "statistics-charts", title: "5-1 統計圖表" },
+      { id: "inequalities", title: "一元一次不等式" },
     ],
     "🌍 地理 Geography": [
       { id: "geo-notes", title: "地理錯題本" },
@@ -131,6 +134,8 @@ function AppContent() {
     if (id === "auxiliary-be") return "助動詞 & Be 動詞";
     if (id === "quiz.statistics-charts") return "測驗: 5-1 統計圖表";
     if (id === "dixon-verbs") return "狄克森動詞片語";
+    if (id === "inequalities") return "一元一次不等式";
+    if (id === "quiz.inequalities") return "測驗: 一元一次不等式";
     if (id === "tsmc-practice") return "前進台積";
     for (const category in nav) {
       const item = nav[category].find(i => i.id === id);
@@ -181,6 +186,8 @@ function AppContent() {
       case "quiz.auxiliary-be": return <AuxiliaryBeVerbsQuiz />;
       case "statistics-charts": return <StatisticsCharts openApp={openApp} />;
       case "quiz.statistics-charts": return <StatisticsChartsQuiz />;
+      case "inequalities": return <Inequalities openApp={openApp} />;
+      case "quiz.inequalities": return <InequalitiesQuiz />;
       case "tsmc-practice": return <TsmcPractice />;
       default: return <div className="p-4 text-stone-500">Select a lesson from the sidebar.</div>;
     }
