@@ -29,6 +29,8 @@ import HowMuchMany from "./pages/HowMuchMany";
 import HowMuchManyQuiz from "./pages/HowMuchManyQuiz";
 import CompoundWords from "./pages/CompoundWords";
 import CompoundWordsQuiz from "./pages/CompoundWordsQuiz";
+import PartsOfSpeech from "./pages/PartsOfSpeech";
+import PartsOfSpeechQuiz from "./pages/PartsOfSpeechQuiz";
 import TsmcPractice from "./pages/TsmcPractice";
 import PastTense from "./pages/PastTense";
 import PastTenseQuiz from "./pages/PastTenseQuiz";
@@ -105,6 +107,7 @@ function AppContent() {
     ],
     "🇨🇳 國文 Chinese": [
       { id: "compound-words", title: "複詞三兄弟" },
+      { id: "parts-of-speech", title: "詞性大冒險" },
       { id: "classical-chinese", title: "文言文字義比較" },
     ],
     "📚 課程 Lessons": [
@@ -127,6 +130,8 @@ function AppContent() {
     if (id === "quiz.measure-words") return "測驗: 計量單位";
     if (id === "quiz.how-much-many") return "測驗: How Much/Many";
     if (id === "quiz.compound-words") return "測驗: 複詞三兄弟";
+    if (id === "parts-of-speech") return "詞性大冒險";
+    if (id === "quiz.parts-of-speech") return "測驗: 詞性大冒險";
     if (id === "classical-chinese") return "文言文字義比較";
     if (id === "quiz.classical-chinese") return "測驗: 文言文字義比較";
     if (id === "quiz.past-tense") return "測驗: 動詞過去式";
@@ -176,6 +181,8 @@ function AppContent() {
       case "quiz.how-much-many": return <HowMuchManyQuiz />;
       case "compound-words": return <CompoundWords openApp={openApp} />;
       case "quiz.compound-words": return <CompoundWordsQuiz />;
+      case "parts-of-speech": return <PartsOfSpeech openApp={openApp} />;
+      case "quiz.parts-of-speech": return <PartsOfSpeechQuiz />;
       case "classical-chinese": return <ClassicalChinese openApp={openApp} />;
       case "quiz.classical-chinese": return <ClassicalChineseQuiz />;
       case "past-tense": return <PastTense openApp={openApp} />;
