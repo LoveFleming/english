@@ -49,6 +49,8 @@ import ClassicalChinese from "./pages/ClassicalChinese";
 import ClassicalChineseQuiz from "./pages/ClassicalChineseQuiz";
 import ClassicalParticles from "./pages/ClassicalParticles";
 import ClassicalParticlesQuiz from "./pages/ClassicalParticlesQuiz";
+import WordMeanings from "./pages/WordMeanings";
+import WordMeaningsQuiz from "./pages/WordMeaningsQuiz";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { SidebarSection, NavItem, cn } from "./components/ui/shared";
 
@@ -112,6 +114,7 @@ function AppContent() {
       { id: "parts-of-speech", title: "詞性大冒險" },
       { id: "classical-chinese", title: "文言文字義比較" },
       { id: "classical-particles", title: "文言虛字基本功" },
+      { id: "word-meanings", title: "一字多義達人" },
     ],
     "📚 課程 Lessons": [
       { id: "lesson3", title: "7下 Lesson 3" },
@@ -139,6 +142,8 @@ function AppContent() {
     if (id === "quiz.classical-chinese") return "測驗: 文言文字義比較";
     if (id === "classical-particles") return "文言虛字基本功";
     if (id === "quiz.classical-particles") return "測驗: 文言虛字基本功";
+    if (id === "word-meanings") return "一字多義達人";
+    if (id === "quiz.word-meanings") return "測驗: 一字多義達人";
     if (id === "quiz.past-tense") return "測驗: 動詞過去式";
     if (id === "statistics-charts") return "5-1 統計圖表";
     if (id === "quiz.auxiliary-be") return "測驗: 助動詞 & Be 動詞";
@@ -192,6 +197,8 @@ function AppContent() {
       case "quiz.classical-chinese": return <ClassicalChineseQuiz />;
       case "classical-particles": return <ClassicalParticles openApp={openApp} />;
       case "quiz.classical-particles": return <ClassicalParticlesQuiz />;
+      case "word-meanings": return <WordMeanings openApp={openApp} />;
+      case "quiz.word-meanings": return <WordMeaningsQuiz />;
       case "past-tense": return <PastTense openApp={openApp} />;
       case "quiz.past-tense": return <PastTenseQuiz />;
       case "ratio-proportion": return <RatioAndProportion openApp={openApp} />;
