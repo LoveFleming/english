@@ -34,3 +34,56 @@ pre { tab-size: 2; }
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+/* ─── Print styles ─── */
+@media print {
+  /* Hide sidebar, header, tabs, buttons */
+  .no-print,
+  header,
+  aside,
+  nav,
+  button,
+  [role="tablist"],
+  [class*="border-b border-zinc-200"] {
+    display: none !important;
+  }
+
+  /* Print area fills the page */
+  .print-area {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body {
+    background: white !important;
+    font-size: 11pt;
+    color: #1c1917 !important;
+  }
+
+  /* Clean up cards for print */
+  .print-area .rounded-2xl,
+  .print-area .rounded-xl {
+    border-radius: 6px !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure backgrounds print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Smaller fonts for print */
+  .print-area h1 { font-size: 18pt !important; }
+  .print-area h2 { font-size: 14pt !important; }
+  .print-area h3 { font-size: 12pt !important; }
+  .print-area p,
+  .print-area li,
+  .print-area span { font-size: 10pt !important; }
+
+  /* Page break hints */
+  .print-area > div[round] {
+    break-inside: avoid;
+  }
+}

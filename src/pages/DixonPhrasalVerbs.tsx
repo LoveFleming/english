@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { Card } from "../components/ui/shared";
 import { useAuth, ExamScore, WrongQuestion } from "../contexts/AuthContext";
 import quizDataRaw from "../data/phrases/dixon_verbs.json";
@@ -27,6 +25,48 @@ type GradedItem = {
 };
 
 type FilterMode = "new" | "failed" | "all" | "easy" | "medium" | "hard";
+
+const CATEGORY_COLORS: Record<string, { bg: string; border: string; header: string }> = {
+  basic: { bg: "bg-blue-50/70", border: "border-blue-200", header: "text-blue-800" },
+  break: { bg: "bg-red-50/70", border: "border-red-200", header: "text-red-800" },
+  bring: { bg: "bg-green-50/70", border: "border-green-200", header: "text-green-800" },
+  call: { bg: "bg-yellow-50/70", border: "border-yellow-200", header: "text-yellow-800" },
+  carry: { bg: "bg-purple-50/70", border: "border-purple-200", header: "text-purple-800" },
+  catch: { bg: "bg-orange-50/70", border: "border-orange-200", header: "text-orange-800" },
+  check: { bg: "bg-teal-50/70", border: "border-teal-200", header: "text-teal-800" },
+  come: { bg: "bg-pink-50/70", border: "border-pink-200", header: "text-pink-800" },
+  cut: { bg: "bg-amber-50/70", border: "border-amber-200", header: "text-amber-800" },
+  do: { bg: "bg-indigo-50/70", border: "border-indigo-200", header: "text-indigo-800" },
+  drop: { bg: "bg-cyan-50/70", border: "border-cyan-200", header: "text-cyan-800" },
+  fall: { bg: "bg-rose-50/70", border: "border-rose-200", header: "text-rose-800" },
+  figure: { bg: "bg-lime-50/70", border: "border-lime-200", header: "text-lime-800" },
+  fill: { bg: "bg-emerald-50/70", border: "border-emerald-200", header: "text-emerald-800" },
+  find: { bg: "bg-sky-50/70", border: "border-sky-200", header: "text-sky-800" },
+  get: { bg: "bg-violet-50/70", border: "border-violet-200", header: "text-violet-800" },
+  give: { bg: "bg-fuchsia-50/70", border: "border-fuchsia-200", header: "text-fuchsia-800" },
+  go: { bg: "bg-blue-50/70", border: "border-blue-200", header: "text-blue-800" },
+  grow: { bg: "bg-green-50/70", border: "border-green-200", header: "text-green-800" },
+  hand: { bg: "bg-yellow-50/70", border: "border-yellow-200", header: "text-yellow-800" },
+  hang: { bg: "bg-purple-50/70", border: "border-purple-200", header: "text-purple-800" },
+  hold: { bg: "bg-orange-50/70", border: "border-orange-200", header: "text-orange-800" },
+  keep: { bg: "bg-teal-50/70", border: "border-teal-200", header: "text-teal-800" },
+  lay: { bg: "bg-red-50/70", border: "border-red-200", header: "text-red-800" },
+  let: { bg: "bg-pink-50/70", border: "border-pink-200", header: "text-pink-800" },
+  look: { bg: "bg-indigo-50/70", border: "border-indigo-200", header: "text-indigo-800" },
+  make: { bg: "bg-cyan-50/70", border: "border-cyan-200", header: "text-cyan-800" },
+  pass: { bg: "bg-amber-50/70", border: "border-amber-200", header: "text-amber-800" },
+  pick: { bg: "bg-emerald-50/70", border: "border-emerald-200", header: "text-emerald-800" },
+  point: { bg: "bg-lime-50/70", border: "border-lime-200", header: "text-lime-800" },
+  put: { bg: "bg-rose-50/70", border: "border-rose-200", header: "text-rose-800" },
+  run: { bg: "bg-sky-50/70", border: "border-sky-200", header: "text-sky-800" },
+  set: { bg: "bg-violet-50/70", border: "border-violet-200", header: "text-violet-800" },
+  show: { bg: "bg-fuchsia-50/70", border: "border-fuchsia-200", header: "text-fuchsia-800" },
+  stand: { bg: "bg-blue-50/70", border: "border-blue-200", header: "text-blue-800" },
+  take: { bg: "bg-green-50/70", border: "border-green-200", header: "text-green-800" },
+  turn: { bg: "bg-orange-50/70", border: "border-orange-200", header: "text-orange-800" },
+};
+
+const DEFAULT_COLOR = { bg: "bg-zinc-50/70", border: "border-zinc-200", header: "text-zinc-800" };
 
 const FILTER_OPTIONS: { key: FilterMode; label: string; emoji: string; desc: string }[] = [
   { key: "new", label: "未考過", emoji: "🆕", desc: "只出還沒答對的題目" },
@@ -67,6 +107,16 @@ export default function DixonPhrasalVerbs({ openApp }: { openApp: (id: string) =
   const masteredCount = allQuestions.filter(q => questionStatus[q.id] === 'success').length;
 
   const categories = [...new Set(allQuestions.map(q => q.category))];
+
+  // Group by category for the study list
+  const grouped = categories.map(cat => ({
+    key: cat,
+    label: cat === "basic" ? "📝 基礎 Basic" : `${cat.charAt(0).toUpperCase() + cat.slice(1)}`,
+    color: CATEGORY_COLORS[cat] || DEFAULT_COLOR,
+    items: allQuestions.filter(q => q.category === cat),
+  }));
+
+  const handlePrint = () => window.print();
 
   const handleStartQuiz = () => {
     let pool = getFilteredQuestions(filter);
@@ -109,46 +159,81 @@ export default function DixonPhrasalVerbs({ openApp }: { openApp: (id: string) =
   // ─── INTRO ───
   if (mode === "intro") {
     return (
-      <div className="space-y-6 max-w-4xl animate-in slide-in-from-bottom-2 duration-500">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-zinc-200">
-          <h1 className="text-3xl font-bold text-stone-900 tracking-tight">狄克森動詞片語 (Dixon Phrasal Verbs)</h1>
-          <button onClick={() => setMode("setup")} className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all active:scale-95 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
-            開始考試
-          </button>
+      <div className="space-y-6 max-w-4xl animate-in slide-in-from-bottom-2 duration-500 print-area">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-zinc-200 no-print">
+          <h1 className="text-3xl font-bold text-stone-900 tracking-tight">狄克森動詞片語 (Phrasal Verbs)</h1>
+          <div className="flex gap-2">
+            <button
+              onClick={handlePrint}
+              className="px-4 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold rounded-xl border border-stone-300 transition-all active:scale-95 flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m0 0a48.09 48.09 0 018.5 0m-8.5 0V6.75a2.25 2.25 0 012.25-2.25h4.5a2.25 2.25 0 012.25 2.25v.284" />
+              </svg>
+              列印
+            </button>
+            <button
+              onClick={() => setMode("setup")}
+              className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 transition-all active:scale-95 flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+              開始考試
+            </button>
+          </div>
         </div>
 
-        <div className="markdown-body">
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-6">
-            <h2 className="text-xl font-bold text-blue-800 mb-3">📖 什麼是狄克森動詞片語？</h2>
-            <p className="text-stone-700 text-lg leading-relaxed mb-4">
-              <strong>狄克森動詞片語 (Dixon's Essential Phrasal Verbs)</strong> 是英語學習中最重要、最常用的片語動詞集合。
-              動詞片語由「動詞 + 介系詞/副詞」組成，意思通常<strong>不能從字面猜出</strong>。
-            </p>
-            <p className="text-stone-700 text-lg leading-relaxed mb-4">
-              例如：<strong>give up</strong> 不是「給上去」，而是<strong>「放棄」</strong>！
-            </p>
-            <div className="bg-white rounded-xl p-4 border border-blue-100">
-              <h3 className="font-bold text-stone-800 mb-2">💡 學習要訣：</h3>
-              <ul className="list-disc pl-6 text-stone-700 space-y-1">
-                <li>每個片語要整組記住，不要拆開看</li>
-                <li>多看例句，理解使用情境</li>
-                <li>同一個片語可能有多種意思</li>
-              </ul>
-            </div>
-          </div>
+        {/* Print header */}
+        <div className="hidden print:block print:mb-6">
+          <h1 className="text-2xl font-bold text-stone-900">狄克森動詞片語 Phrasal Verbs — 國王的學習空間</h1>
+          <p className="text-sm text-stone-500 mt-1">{allQuestions.length} 個常用動詞片語，按動詞分類整理</p>
+        </div>
 
-          <div className="mb-6">
-            <h3 className="text-lg font-bold text-stone-800 mb-3">📋 100 個片語涵蓋以下動詞：</h3>
-            <div className="flex flex-wrap gap-2">
-              {categories.map(cat => (
-                <span key={cat} className="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-medium">
-                  {cat} ({allQuestions.filter(q => q.category === cat).length})
-                </span>
+        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-6 no-print">
+          <h2 className="text-xl font-bold text-blue-800 mb-3">📖 什麼是動詞片語？</h2>
+          <p className="text-stone-700 text-lg leading-relaxed mb-4">
+            <strong>動詞片語 (Phrasal Verb)</strong> 是「動詞 + 介系詞/副詞」的組合，意思<strong>不能從字面猜出</strong>！
+          </p>
+          <p className="text-stone-700 text-lg leading-relaxed mb-4">
+            例如：<strong>give up</strong> 不是「給上去」，而是<strong>「放棄」</strong>！
+            <strong>look forward to</strong> 不是「往前看」，而是<strong>「期待」</strong>！
+          </p>
+          <div className="bg-white rounded-xl p-4 border border-blue-100">
+            <h3 className="font-bold text-stone-800 mb-2">💡 學習要訣：</h3>
+            <ul className="list-disc pl-6 text-stone-700 space-y-1">
+              <li>每個片語要整組記住，不要拆開看</li>
+              <li>多看例句，理解使用情境</li>
+              <li>按「列印」印出來貼書桌前，每天看</li>
+              <li>背完後按「開始考試」測驗自己！</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Full phrase list grouped by verb */}
+        {grouped.map(group => (
+          <div key={group.key} className={`rounded-2xl border ${group.color.border} overflow-hidden`}>
+            <div className={`${group.color.bg} px-5 py-3 border-b ${group.color.border}`}>
+              <h2 className={`text-lg font-bold ${group.color.header}`}>
+                {group.key === "basic" ? "📝 基礎片語" : `✦ ${group.label}`} — {group.items.length} 個片語
+              </h2>
+            </div>
+            <div className="divide-y divide-zinc-100">
+              {group.items.map((item, idx) => (
+                <div key={item.id} className={`px-5 py-3 ${idx % 2 === 0 ? 'bg-white' : 'bg-zinc-50/50'} print:py-2`}>
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span className="font-bold text-stone-900 text-lg print:text-base">{item.phrase}</span>
+                      <span className="text-stone-500">—</span>
+                      <span className="text-stone-700">{item.meaning}</span>
+                    </div>
+                    <div className="text-sm text-stone-500 italic print:text-xs">
+                      📝 {item.example}
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
-        </div>
+        ))}
       </div>
     );
   }
