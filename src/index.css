@@ -48,6 +48,34 @@ pre { tab-size: 2; }
     display: none !important;
   }
 
+  /* CRITICAL: remove all overflow constraints so ALL content prints */
+  body,
+  body > div,
+  body > div > div,
+  main,
+  main > div,
+  [class*="overflow-hidden"],
+  [class*="overflow-y-auto"] {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    position: static !important;
+  }
+
+  /* Undo flex shrink constraints */
+  .flex-1 {
+    flex: none !important;
+  }
+
+  .h-screen {
+    height: auto !important;
+  }
+
+  .min-h-0 {
+    min-height: 0 !important;
+  }
+
   /* Print area fills the page */
   .print-area {
     max-width: 100% !important;
@@ -82,8 +110,8 @@ pre { tab-size: 2; }
   .print-area li,
   .print-area span { font-size: 10pt !important; }
 
-  /* Page break hints */
-  .print-area > div[round] {
+  /* Page break hints - avoid breaking inside a category */
+  .print-area > div {
     break-inside: avoid;
   }
 }
